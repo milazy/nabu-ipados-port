@@ -1,0 +1,68 @@
+name: nabu iPad Pro profile and real 120Hz audit (host-only)
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "ci/qualify_nabu_promotion.py"
+      - "tests/test_nabu_promotion.py"
+      - ".github/workflows/qualify-nabu-promotion-120hz.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+
+      - name: Run fail-closed regression tests
+        run: |
+          set -euxo pipefail
+          python3 -m unittest discover -s tests -p 'test_nabu_promotion.py' -v
+
+      - name: Checkout pinned nabu device source without modifying owners' files
+        run: |
+          set -euxo pipefail
+          mkdir -p references/nabu
+          git -C references/nabu init -q
+          git -C references/nabu remote add origin https://github.com/zzweiqing/UniXNU-nabu.git
+          git -C references/nabu fetch --depth 1 origin 54b4f98457f8e9e232cc0a077c20d08d0b2f0ac9
+          git -C references/nabu checkout --detach FETCH_HEAD
+          test "$(git -C references/nabu rev-parse HEAD)" = "54b4f98457f8e9e232cc0a077c20d08d0b2f0ac9"
+
+      - name: Audit present upstream vsync and refresh implementation
+        run: |
+          set -euxo pipefail
+          mkdir -p output
+          python3 ci/qualify_nabu_promotion.py \
+            --nabu-source references/nabu \
+            --json output/nabu-promotion-audit.json > output/nabu-promotion-console.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          obj=json.loads(Path("output/nabu-promotion-audit.json").read_text())
+          assert obj["apple_profiles"]["stable"]["product_type"]=="iPad7,11"
+          assert obj["apple_profiles"]["promotion_candidate"]["product_type"]=="iPad7,3"
+          assert obj["apple_profiles"]["identity_switched"] is False
+          assert obj["panel_reference"]["h_total"]==1768
+          assert obj["panel_reference"]["v_total"]==2758
+          assert obj["promotable_as_verified_120hz"] is False
+          assert obj["no_partition_writes"] is True
+          assert obj["no_device_flashes"] is True
+          print("AUDIT_VALIDATED: candidate is research-only; physical 120Hz NOT QUALIFIED")
+          PY
+
+      - name: Archive auditable JSON results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-promotion-120hz-unqualified-audit
+          path: |
+            output/nabu-promotion-audit.json
+            output/nabu-promotion-console.json
+          if-no-files-found: warn
+          retention-days: 30
