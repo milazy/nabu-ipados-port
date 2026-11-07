@@ -2,6 +2,9 @@ name: Build nabu owner-verified XNU UFS root (macOS)
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/build-nabu-ufs-owner-root.yml"
 
 permissions:
   contents: read
@@ -43,7 +46,18 @@ jobs:
       - name: Fetch pinned public UniXNU sources
         run: |
           set -euxo pipefail
-          git clone --quiet --depth 1 https://github.com/zzweiqing/UniXNU-nabu.git nabu-source
+          git init -q nabu-source
+          git -C nabu-source remote add origin https://github.com/zzweiqing/UniXNU-nabu.git
+          git -C nabu-source fetch --quiet --depth 1 origin 54b4f98457f8e9e232cc0a077c20d08d0b2f0ac9
+          git -C nabu-source checkout --quiet --detach FETCH_HEAD
+          test "$(git -C nabu-source rev-parse HEAD)" = "54b4f98457f8e9e232cc0a077c20d08d0b2f0ac9"
+          python3 - <<'PY'
+          import json
+          lock=json.load(open('ci/research_sources.lock.json'))
+          nabu=next(x for x in lock['sources'] if x['slug']=='nabu')
+          assert nabu['sha']=='54b4f98457f8e9e232cc0a077c20d08d0b2f0ac9'
+          assert lock['target']['apple_build']=='21H16'
+          PY
           git init -q unixnu
           git -C unixnu remote add origin https://github.com/UniXNU/UniXNU.git
           git -C unixnu fetch --quiet --depth 1 origin 245aca1a9ec5b730b1cad80fade295800d2981f1
@@ -154,6 +168,11 @@ jobs:
             "macos_runner":os.getenv("RUNNER_OS"),
             "kernel_build_outcome":os.getenv("BUILD_OUTCOME"),
             "not_boot_qualified":True,
+            "source_nabu_pin":"54b4f98457f8e9e232cc0a077c20d08d0b2f0ac9",
+            "full_os_and_systemos_images_present":False,
+            "physical_120hz_qualified":False,
+            "apple_services_qualified":False,
+            "ready_to_flash":False,
             "owner_second_trust_cache_required":True,
             "no_tablet_connected":True,
             "no_flash_commands":True
