@@ -1,0 +1,171 @@
+name: Build nabu XNU bootstrap (macOS)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nabu-bootstrap
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: macos-26-intel
+    timeout-minutes: 45
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_NO_INSTALL_CLEANUP: "1"
+      HOMEBREW_NO_ENV_HINTS: "1"
+      UNIXNU_DEVICE: ${{ github.workspace }}/nabu-stage
+      UNIXNU_IPSW: ${{ github.workspace }}/ipsw-21h16-small.zip
+    steps:
+      - name: Checkout private build scripts only
+        uses: actions/checkout@v4
+
+      - name: Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Check Xcode and install dependencies
+        run: |
+          set -euxo pipefail
+          if [ -d /Applications/Xcode_26.6.app/Contents/Developer ]; then
+            echo "DEVELOPER_DIR=/Applications/Xcode_26.6.app/Contents/Developer" >> "$GITHUB_ENV"
+            export DEVELOPER_DIR=/Applications/Xcode_26.6.app/Contents/Developer
+          fi
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
+          brew install llvm lld mtools dtc unifdef
+
+      - name: Fetch pinned public UniXNU sources
+        run: |
+          set -euxo pipefail
+          git clone --quiet --depth 1 https://github.com/zzweiqing/UniXNU-nabu.git nabu-source
+          git init -q unixnu
+          git -C unixnu remote add origin https://github.com/UniXNU/UniXNU.git
+          git -C unixnu fetch --quiet --depth 1 origin 245aca1a9ec5b730b1cad80fade295800d2981f1
+          git -C unixnu checkout --quiet --detach FETCH_HEAD
+          test "$(git -C unixnu rev-parse HEAD)" = "245aca1a9ec5b730b1cad80fade295800d2981f1"
+          test -f nabu-source/source-ci/board-baseline.toml
+          mkdir -p nabu-stage output
+          cp nabu-source/source-ci/board-baseline.toml nabu-stage/board.toml
+          for entry in configs scripts patches platform ufs gpu usb userprobe vendor; do
+            if [ -e "nabu-source/$entry" ]; then cp -a "nabu-source/$entry" "nabu-stage/$entry"; fi
+          done
+          # Bootstrap does not enable second static trust cache; the legacy patch has stale context.
+          rm -f nabu-stage/patches/xnu/nabu-master-second-trust-cache.patch
+
+      - name: Fetch original Apple iPadOS 17.7 build inputs
+        run: |
+          set -euxo pipefail
+          python3 ci/download_ipados_inputs.py
+          test -s "$UNIXNU_IPSW"
+          unzip -t "$UNIXNU_IPSW" > /dev/null
+          shasum -a 256 "$UNIXNU_IPSW" | tee output/ipsw-input-sha256.txt
+
+      - name: Apply nabu source preparation and patches
+        id: prep
+        run: |
+          set -euxo pipefail
+          python3 nabu-source/source-ci/prepare_source.py \
+            --upstream "$GITHUB_WORKSPACE/unixnu" \
+            --device "$UNIXNU_DEVICE" \
+            --profile nabu_bootstrap_defconfig \
+            --report "$GITHUB_WORKSPACE/output/source-prepare.json"
+          # UniXNU's module resolver lets the device patch directory override
+          # its upstream directory. Explicitly merge validated source patches.
+          python3 ci/merge_xnu_patches.py \
+            --upstream "$GITHUB_WORKSPACE/unixnu/patches/xnu" \
+            --device "$UNIXNU_DEVICE/patches/xnu" \
+            --report "$GITHUB_WORKSPACE/output/xnu-patch-manifest.json"
+
+      - name: Compile bootstrap XNU kernel with Xcode
+        id: kernel
+        run: |
+          set -euxo pipefail
+          cd unixnu
+          ./unixnu defconfig nabu_bootstrap_defconfig -D "$UNIXNU_DEVICE"
+          ./unixnu build kernel --ipsw "$UNIXNU_IPSW" 2>&1 | tee "$GITHUB_WORKSPACE/output/kernel-build.log"
+
+      - name: Verify ARM64 Mach-O identity (not boot certification)
+        run: |
+          set -euxo pipefail
+          python3 ci/verify_xnu_macho.py \
+            --input unixnu/out/nabu/kernel/kernel.macho \
+            --report output/kernel-identity.json
+
+      - name: Preserve detailed XNU build logs
+        if: always()
+        run: |
+          set -eu
+          mkdir -p output/xnu-logs
+          if [ -d unixnu/out/nabu/logs ]; then
+            find unixnu/out/nabu/logs -maxdepth 2 -type f -name '*.log' -exec cp -v {} output/xnu-logs/ \;
+          fi
+          if [ -f output/xnu-logs/kernel-bootstrap.log ]; then
+            echo "==== XNU error/context summary ===="
+            grep -n -E -m 35 'error:|fatal error:|Error [0-9]+|FAILED|No rule to make|No such file' output/xnu-logs/kernel-bootstrap.log || true
+            echo "==== XNU last 130 lines ===="
+            tail -n 130 output/xnu-logs/kernel-bootstrap.log
+          fi
+
+      - name: Collect evidence without device installation
+        if: always()
+        env:
+          BUILD_OUTCOME: ${{ steps.kernel.outcome }}
+        run: |
+          set -e
+          python3 - <<'PY'
+          import json, pathlib, os
+          p=pathlib.Path('output/host-check.json')
+          p.parent.mkdir(exist_ok=True)
+          p.write_text(json.dumps({
+            "profile":"nabu_bootstrap_defconfig",
+            "source_commit":"245aca1a9ec5b730b1cad80fade295800d2981f1",
+            "macos_runner":os.getenv("RUNNER_OS"),
+            "kernel_build_outcome":os.getenv("BUILD_OUTCOME"),
+            "not_boot_qualified":True,
+            "no_tablet_connected":True,
+            "no_flash_commands":True
+          },indent=2))
+          PY
+          if [ -f output/source-prepare.json ] && [ -d unixnu/out/nabu ]; then
+            sha=$(shasum -a 256 "$UNIXNU_IPSW" | cut -d ' ' -f 1)
+            python3 nabu-source/source-ci/collect_outputs.py \
+              --upstream "$GITHUB_WORKSPACE/unixnu" --device "$UNIXNU_DEVICE" \
+              --output output/source-candidate \
+              --run-id "$GITHUB_RUN_ID" --attempt "$GITHUB_RUN_ATTEMPT" \
+              --head-sha "$GITHUB_SHA" \
+              --build-outcome "$BUILD_OUTCOME" \
+              --input-sha256 "$sha" \
+              --prepare-report output/source-prepare.json || true
+          fi
+
+      - name: Upload private logs and identity evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-bootstrap-evidence
+          path: |
+            output/host-check.json
+            output/source-prepare.json
+            output/xnu-patch-manifest.json
+            output/kernel-identity.json
+            output/kernel-build.log
+            output/xnu-logs/
+            output/ipsw-input-sha256.txt
+            output/source-candidate/summary.json
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Upload private kernel candidate (not boot-qualified)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-bootstrap-kernel-unqualified
+          path: unixnu/out/nabu/kernel/kernel.macho
+          if-no-files-found: warn
+          retention-days: 7

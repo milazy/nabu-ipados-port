@@ -1,0 +1,19 @@
+name: Runner availability probe
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    steps:
+      - name: Confirm GitHub-hosted runner works
+        run: |
+          echo "Ubuntu GitHub Actions runner allocated"
+          echo "RUNNER_OS=$RUNNER_OS"
+          echo "RUNNER_ARCH=$RUNNER_ARCH"
+          echo "No device access, firmware or secrets are needed."

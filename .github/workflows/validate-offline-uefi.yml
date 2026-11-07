@@ -1,0 +1,146 @@
+name: Validate UniXNU UEFI and DarwinBoot in QEMU
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nabu-offline-uefi
+  cancel-in-progress: false
+
+jobs:
+  uefi:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - name: Checkout private CI repository
+        uses: actions/checkout@v4
+
+      - name: Install EDK2 and QEMU dependencies
+        run: |
+          set -euxo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            build-essential clang-19 lld-19 llvm-19 nasm uuid-dev git make python3-venv \
+            qemu-system-arm qemu-efi-aarch64 mtools device-tree-compiler
+          test -x /usr/lib/llvm-19/bin/llvm-lib
+          test -x /usr/lib/llvm-19/bin/lld-link
+          test -x /usr/lib/llvm-19/bin/clang
+          python3 -m venv "$RUNNER_TEMP/edk2-venv"
+          echo "$RUNNER_TEMP/edk2-venv/bin" >> "$GITHUB_PATH"
+
+      - name: Checkout pinned UniXNU and Mu Basecore
+        run: |
+          set -euxo pipefail
+          git init -q unixnu
+          git -C unixnu remote add origin https://github.com/UniXNU/UniXNU.git
+          git -C unixnu fetch --quiet --depth 1 origin 245aca1a9ec5b730b1cad80fade295800d2981f1
+          git -C unixnu checkout --quiet --detach FETCH_HEAD
+          test "$(git -C unixnu rev-parse HEAD)" = "245aca1a9ec5b730b1cad80fade295800d2981f1"
+          git init -q unixnu/package/Mu_Basecore
+          git -C unixnu/package/Mu_Basecore remote add origin https://github.com/microsoft/mu_basecore.git
+          git -C unixnu/package/Mu_Basecore fetch --quiet --depth 1 origin cfb93724a06ff86ff5ba971413368a7809ee42a5
+          git -C unixnu/package/Mu_Basecore checkout --quiet --detach FETCH_HEAD
+          git -C unixnu/package/Mu_Basecore submodule update --init --depth 1 \
+            MdePkg/Library/BaseFdtLib/libfdt \
+            MdePkg/Library/MipiSysTLib/mipisyst \
+            BaseTools/Source/C/BrotliCompress/brotli
+          python3 -m pip install -r unixnu/package/Mu_Basecore/pip-requirements.txt
+
+      - name: Build UniXNU AArch64 EFI package
+        id: package
+        run: |
+          set -euxo pipefail
+          mkdir -p output
+          export CLANG_BIN=/usr/lib/llvm-19/bin/
+          JOBS=4 bash unixnu/package/build.sh -b DEBUG -t CLANGPDB 2>&1 | tee output/uefi-package-build.log
+          for component in UniXNU UniXNUDxe HelloPayload SampleDriver XnuTest; do
+            test -s "unixnu/package/Build/Out/AARCH64-DEBUG/$component.efi"
+            sha256sum "unixnu/package/Build/Out/AARCH64-DEBUG/$component.efi" | tee -a output/efi-sha256.txt
+          done
+
+      - name: Run isolated UEFI-to-UniXNU-to-payload QEMU smoke
+        id: smoke
+        run: |
+          set -euxo pipefail
+          mkdir -p output/qemu
+          root="$GITHUB_WORKSPACE/unixnu/package"
+          python3 "$root/Scripts/stage-esp.py" -o output/esp \
+            "$root/UniXNUPkg/Test/Qemu/esp" \
+            --put "$root/Build/Out/AARCH64-DEBUG/UniXNU.efi=EFI/BOOT/BOOTAA64.EFI" \
+            --put "$root/Build/Out/AARCH64-DEBUG/HelloPayload.efi=EFI/UniXNU/Payloads/HelloPayload.efi" \
+            --put "$root/Build/Out/AARCH64-DEBUG/SampleDriver.efi=EFI/UniXNU/Kits/SampleDriver.kit/SampleDriver.efi"
+          python3 "$root/Scripts/qemu-run.py" output/esp \
+            --timeout 85 --finish-on-expect \
+            --log output/qemu/default.log --screenshot output/qemu/menu.png \
+            --expect 'UNIXNU: UniXNU [0-9.]+ starting as application' \
+            --expect 'UNIXNU: menu: shown 4 entries, default 0' \
+            --expect 'UNIXNU-HELLO: RESULT PASS 5 passed 0 failed' \
+            --reject 'ASSERT' 2>&1 | tee output/qemu-smoke-result.log
+          echo 'QEMU_OFFLINE_UEFI_HANDOFF_PASS=true' | tee output/qualification.txt
+          echo 'PAD_5_HARDWARE_UEFI_HANDOFF_VALIDATED=false' | tee -a output/qualification.txt
+          echo 'IPADOS_XNU_BOOT_VALIDATED=false' | tee -a output/qualification.txt
+
+      - name: Build separate DarwinBoot EFI driver
+        id: darwinboot
+        if: success()
+        run: |
+          set -euxo pipefail
+          git -C unixnu submodule update --init --depth 1 drivers/DarwinBoot
+          export CLANG_BIN=/usr/lib/llvm-19/bin/
+          JOBS=4 bash unixnu/scripts/build-darwinboot.sh 2>&1 | tee output/darwinboot-build.log
+          loader=unixnu/build/DarwinBoot/DEBUG_CLANGPDB/AARCH64/DarwinBoot.efi
+          test -s "$loader"
+          sha256sum "$loader" | tee -a output/efi-sha256.txt
+
+      - name: Collect diagnostic summary
+        if: always()
+        env:
+          PACKAGE_RESULT: ${{ steps.package.outcome }}
+          SMOKE_RESULT: ${{ steps.smoke.outcome }}
+          DARWINBOOT_RESULT: ${{ steps.darwinboot.outcome }}
+        run: |
+          mkdir -p output
+          python3 - <<'PY'
+          import json,os,pathlib
+          pathlib.Path('output/summary.json').write_text(json.dumps({
+             'uefi_package_build':os.getenv('PACKAGE_RESULT'),
+             'qemu_uefi_handoff':os.getenv('SMOKE_RESULT'),
+             'darwinboot_efi_build':os.getenv('DARWINBOOT_RESULT'),
+             'hardware_pad5_boot_validated':False,
+             'ios_userland_boot_validated':False,
+             'tablet_storage_written':False
+          },indent=2)+"\n")
+          PY
+
+      - name: Upload isolated logs and QEMU evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-offline-uefi-qemu-evidence
+          path: |
+            output/summary.json
+            output/qualification.txt
+            output/efi-sha256.txt
+            output/uefi-package-build.log
+            output/darwinboot-build.log
+            output/qemu-smoke-result.log
+            output/qemu/*.log
+            output/qemu/*.png
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Upload experimental EFI loaders (not hardware qualified)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-unqualified-uefi-loaders
+          path: |
+            unixnu/package/Build/Out/AARCH64-DEBUG/UniXNU.efi
+            unixnu/package/Build/Out/AARCH64-DEBUG/UniXNUDxe.efi
+            unixnu/package/Build/Out/AARCH64-DEBUG/HelloPayload.efi
+            unixnu/build/DarwinBoot/DEBUG_CLANGPDB/AARCH64/DarwinBoot.efi
+          if-no-files-found: warn
+          retention-days: 7

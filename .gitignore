@@ -1,0 +1,26 @@
+# Never commit Apple firmware, owner keys, device backups, downloaded source or artifacts.
+*.ipsw
+*.dmg
+*.img
+*.im4p
+*.macho
+*.pem
+*.p12
+*.p8
+*.key
+*.tar.gz
+*.zip
+*private*
+/UniXNU-nabu/
+/nabu-source/
+/nabu-stage/
+/unixnu/
+/output/
+/backups/
+/owner-keys/
+/owner-policies/
+/system-images/
+/.cache/
+__pycache__/
+*.part
+ipsw-21h16-small.json

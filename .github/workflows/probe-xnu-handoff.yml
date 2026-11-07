@@ -1,0 +1,137 @@
+name: Probe XNU UEFI handoff in isolated ARM64 QEMU
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: nabu-qemu-xnu-handoff
+  cancel-in-progress: false
+
+jobs:
+  handoff:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout safe diagnostic workflow
+        uses: actions/checkout@v4
+
+      - name: Install isolated QEMU toolchain
+        run: |
+          set -euxo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends qemu-system-arm qemu-efi-aarch64 device-tree-compiler
+          command -v qemu-system-aarch64
+
+      - name: Fetch pinned upstream ADT and QEMU scripts
+        run: |
+          set -euxo pipefail
+          git init -q unixnu
+          git -C unixnu remote add origin https://github.com/UniXNU/UniXNU.git
+          git -C unixnu fetch --quiet --depth 1 origin 245aca1a9ec5b730b1cad80fade295800d2981f1
+          git -C unixnu checkout --quiet --detach FETCH_HEAD
+          test "$(git -C unixnu rev-parse HEAD)" = "245aca1a9ec5b730b1cad80fade295800d2981f1"
+
+      - name: Download previously validated ARM64 kernel candidate
+        uses: actions/download-artifact@v4
+        with:
+          name: nabu-bootstrap-kernel-unqualified
+          repository: giacomomilanesi/nabu-ipados-macos-build
+          run-id: 42253081261
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: inputs/kernel
+
+      - name: Download previously compiled UniXNU and DarwinBoot EFI binaries
+        uses: actions/download-artifact@v4
+        with:
+          name: nabu-unqualified-uefi-loaders
+          repository: giacomomilanesi/nabu-ipados-macos-build
+          run-id: 42263766563
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: inputs/efi
+
+      - name: Build read-only QEMU ESP and check all artifact hashes
+        run: |
+          set -euxo pipefail
+          test -s inputs/kernel/kernel.macho
+          test -s inputs/efi/package/Build/Out/AARCH64-DEBUG/UniXNU.efi
+          test -s inputs/efi/build/DarwinBoot/DEBUG_CLANGPDB/AARCH64/DarwinBoot.efi
+          [ "$(sha256sum inputs/kernel/kernel.macho | cut -d ' ' -f1)" = "cf241ec0912ad6cab56fec35facc5ddf1d8937eea15461c7515a1f4400fcec92" ]
+          [ "$(sha256sum inputs/efi/package/Build/Out/AARCH64-DEBUG/UniXNU.efi | cut -d ' ' -f1)" = "f08f187a21e5b9b874f8de6bc3c3104bd200efe4ab2e7b1c630afd3079fc8f20" ]
+          [ "$(sha256sum inputs/efi/build/DarwinBoot/DEBUG_CLANGPDB/AARCH64/DarwinBoot.efi | cut -d ' ' -f1)" = "029d2164702c82b36bebaf56e0e6725efaa25b262e7176ae7f32144faea44acd" ]
+          mkdir -p output/esp/EFI/BOOT output/esp/EFI/UniXNU/Payloads
+          cp inputs/efi/package/Build/Out/AARCH64-DEBUG/UniXNU.efi output/esp/EFI/BOOT/BOOTAA64.EFI
+          cp inputs/efi/build/DarwinBoot/DEBUG_CLANGPDB/AARCH64/DarwinBoot.efi output/esp/EFI/UniXNU/Payloads/DarwinBoot.efi
+          cp inputs/kernel/kernel.macho output/esp/EFI/UniXNU/Payloads/kernel.macho
+          python3 unixnu/scripts/qemu-entry/make-dt.py \
+            --output output/esp/EFI/UniXNU/Payloads/kernel.macho.adt \
+            --dram-size 1073741824 --qemu-accel tcg --armvirt --armcpu --smp 2
+          cat > output/esp/EFI/UniXNU/unixnu.toml <<'EOF'
+          version = 1
+          [boot]
+          timeout = 1
+          default = "xnu"
+          [kits]
+          autoload = false
+          [[driver]]
+          path = "Payloads/DarwinBoot.efi"
+          [[entry]]
+          id = "xnu"
+          title = "Experimental XNU (QEMU only)"
+          type = "xnu"
+          path = "Payloads/kernel.macho"
+          args = "-v serial=3 debug=0x14e kt_fixed_zones=120"
+          EOF
+          echo "UEFI_INPUTS_HASH_VERIFIED" > output/handoff-preflight.txt
+
+      - name: Execute actual UniXNU-to-DarwinBoot handoff in QEMU
+        id: probe
+        run: |
+          set -euxo pipefail
+          python3 unixnu/package/Scripts/qemu-run.py output/esp \
+            --timeout 65 --finish-on-expect \
+            --log output/qemu-handoff.log --screenshot output/qemu-handoff.png \
+            --expect 'UNIXNU: menu: shown' \
+            --expect 'DARWINBOOT: loader v2 installed' \
+            --expect 'DARWINBOOT: inputs validated; exiting boot services' \
+            --reject 'DARWINBOOT: boot refused' \
+            --reject 'ASSERT' 2>&1 | tee output/probe-console.log
+
+      - name: Write evidence-qualified outcome
+        if: always()
+        env:
+          PROBE_RESULT: ${{ steps.probe.outcome }}
+        run: |
+          mkdir -p output
+          python3 - <<'PY'
+          import pathlib,json,os
+          result=os.getenv("PROBE_RESULT")
+          data={
+            "uefi_to_darwinboot_to_xnu_handoff_in_qemu": result,
+            "qemu_virt_not_qualcomm_sm8150": True,
+            "real_pad5_uefi_boot_tested": False,
+            "real_pad5_xnu_boot_tested": False,
+            "ipadOS_springboard_tested": False,
+            "device_partitions_modified": False,
+            "kernel_candidate_hash": "cf241ec0912ad6cab56fec35facc5ddf1d8937eea15461c7515a1f4400fcec92"
+          }
+          pathlib.Path("output/handoff-status.json").write_text(json.dumps(data,indent=2)+"\n")
+          PY
+
+      - name: Upload offline handoff evidence only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-qemu-xnu-handoff-evidence
+          path: |
+            output/handoff-status.json
+            output/handoff-preflight.txt
+            output/probe-console.log
+            output/qemu-handoff.log
+            output/qemu-handoff.clean.log
+            output/qemu-handoff.png
+          if-no-files-found: warn
+          retention-days: 7

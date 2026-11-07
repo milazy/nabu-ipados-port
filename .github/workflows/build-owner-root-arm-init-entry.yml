@@ -1,0 +1,68 @@
+name: Probe XNU arm_init entry reset (no install)
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  arm-init-entry:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pinned LLVM 18 assembler
+        run: |
+          set -euxo pipefail
+          mkdir -p "$GITHUB_WORKSPACE/llvm-tools"
+          for cmd in clang ld.lld llvm-nm llvm-objcopy; do
+            test -x "/usr/lib/llvm-18/bin/$cmd"
+            ln -s "/usr/lib/llvm-18/bin/$cmd" "$GITHUB_WORKSPACE/llvm-tools/$cmd"
+          done
+          echo "$GITHUB_WORKSPACE/llvm-tools" >> "$GITHUB_PATH"
+      - name: Checkout pinned UniXNU source
+        run: |
+          set -euxo pipefail
+          git init -q unixnu-probe
+          git -C unixnu-probe remote add origin https://github.com/UniXNU/UniXNU.git
+          git -C unixnu-probe fetch -q --depth 1 origin e2fdae4312d0acc3d8a52bc457101e7918095e6a
+          git -C unixnu-probe checkout -q --detach FETCH_HEAD
+          test "$(git -C unixnu-probe rev-parse HEAD)" = e2fdae4312d0acc3d8a52bc457101e7918095e6a
+      - name: Download exact owner-root baseline kernel
+        uses: actions/download-artifact@v4
+        with:
+          name: nabu-ufs-owner-root-kernel-unqualified
+          repository: giacomomilanesi/nabu-ipados-macos-build
+          run-id: 42282986870
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: inputs
+      - name: Instrument arm_init entry and validate exact diff
+        run: |
+          set -euxo pipefail
+          echo '756c173f8c4482638c7ef0431455c986b356c4b9ce7e25e9802fe446b90bff56  inputs/kernel.macho' | sha256sum -c -
+          mkdir -p output
+          cp inputs/kernel.macho output/kernel-arm-init-entry-reset.macho
+          python3 ci/enable_arm_init_entry_reset.py unixnu-probe/scripts/patch-xnu-entry-probe.py
+          python3 unixnu-probe/scripts/patch-xnu-entry-probe.py output/kernel-arm-init-entry-reset.macho --reset-after __arm_init_entry__ --reset-before --in _arm_init --reset-delay 0 2>&1 | tee output/assembler.log
+          python3 ci/validate_arm_init_entry_reset.py --original inputs/kernel.macho --instrumented output/kernel-arm-init-entry-reset.macho --report output/validation.json
+          sha256sum output/kernel-arm-init-entry-reset.macho | tee output/kernel-sha256.txt
+      - name: Upload validation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-arm-init-entry-reset-evidence
+          path: |
+            output/assembler.log
+            output/validation.json
+            output/kernel-sha256.txt
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Upload experimental kernel only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-arm-init-entry-reset-kernel-unqualified
+          path: output/kernel-arm-init-entry-reset.macho
+          if-no-files-found: error
+          retention-days: 7

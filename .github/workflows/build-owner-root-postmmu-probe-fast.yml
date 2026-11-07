@@ -1,0 +1,78 @@
+name: Probe owner XNU post-MMU using preinstalled LLVM 18
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  entry-probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use preinstalled LLVM 18 assembler without apt downloads
+        run: |
+          set -euxo pipefail
+          mkdir -p "$GITHUB_WORKSPACE/llvm-tools"
+          for cmd in clang ld.lld llvm-nm llvm-objcopy; do
+            test -x "/usr/lib/llvm-18/bin/$cmd"
+            ln -s "/usr/lib/llvm-18/bin/$cmd" "$GITHUB_WORKSPACE/llvm-tools/$cmd"
+          done
+          echo "$GITHUB_WORKSPACE/llvm-tools" >> "$GITHUB_PATH"
+
+      - name: Checkout known UniXNU entry probe source
+        run: |
+          set -euxo pipefail
+          git init -q unixnu-probe
+          git -C unixnu-probe remote add origin https://github.com/UniXNU/UniXNU.git
+          git -C unixnu-probe fetch -q --depth 1 origin e2fdae4312d0acc3d8a52bc457101e7918095e6a
+          git -C unixnu-probe checkout -q --detach FETCH_HEAD
+          test "$(git -C unixnu-probe rev-parse HEAD)" = e2fdae4312d0acc3d8a52bc457101e7918095e6a
+          test -s unixnu-probe/scripts/patch-xnu-entry-probe.py
+
+      - name: Download independently validated owner-root kernel
+        uses: actions/download-artifact@v4
+        with:
+          name: nabu-ufs-owner-root-kernel-unqualified
+          repository: giacomomilanesi/nabu-ipados-macos-build
+          run-id: 42282986870
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: inputs
+
+      - name: Validate entry pattern and instrument a separate copy
+        run: |
+          set -euxo pipefail
+          test -s inputs/kernel.macho
+          echo '756c173f8c4482638c7ef0431455c986b356c4b9ce7e25e9802fe446b90bff56  inputs/kernel.macho' | sha256sum -c -
+          mkdir -p output
+          cp inputs/kernel.macho output/kernel-postmmu.macho
+          python3 unixnu-probe/scripts/patch-xnu-entry-probe.py output/kernel-postmmu.macho --reset-delay 8 2>&1 | tee output/probe-assembler.log
+          python3 ci/validate_post_mmu_probe_diff.py \
+            --original inputs/kernel.macho \
+            --instrumented output/kernel-postmmu.macho \
+            --report output/probe-validation.json
+          sha256sum output/kernel-postmmu.macho | tee output/probe-sha256.txt
+
+      - name: Collect diagnostic build evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-owner-root-postmmu-probe-evidence
+          path: |
+            output/probe-assembler.log
+            output/probe-validation.json
+            output/probe-sha256.txt
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Preserve distinct experimental probe payload
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-owner-root-postmmu-probe-unqualified
+          path: output/kernel-postmmu.macho
+          if-no-files-found: error
+          retention-days: 7

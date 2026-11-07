@@ -1,0 +1,19 @@
+name: macOS Intel availability probe
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: macos-26-intel
+    timeout-minutes: 3
+    steps:
+      - name: Test Xcode on a macOS Intel runner
+        run: |
+          echo "macOS Intel runner allocated"
+          uname -m
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version

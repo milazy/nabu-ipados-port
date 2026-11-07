@@ -1,0 +1,135 @@
+name: Qualify removable nabu FAT32 UEFI boot-menu image
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  qualify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install FAT32, GPT and ARM64 QEMU tools
+        run: |
+          set -euxo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            dosfstools gdisk mtools qemu-system-arm qemu-efi-aarch64
+          python3 -m pip install --break-system-packages pyfatfs==1.1.0 setuptools==70.3.0
+
+      - name: Download audited private EFI binaries
+        uses: actions/download-artifact@v4
+        with:
+          name: nabu-unqualified-uefi-loaders
+          repository: giacomomilanesi/nabu-ipados-macos-build
+          run-id: 42272984541
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: inputs/efi
+
+      - name: Build 256 MiB FAT32 test ESP with three entry menu
+        run: |
+          set -euxo pipefail
+          mkdir -p output
+          python3 ci/make_safe_esp.py \
+            --output output/Pad5_UEFI_ESP_TEST_256MiB.img \
+            --bootloader inputs/efi/package/Build/Out/AARCH64-DEBUG/UniXNU.efi \
+            --darwinboot inputs/efi/build/DarwinBoot/DEBUG_CLANGPDB/AARCH64/DarwinBoot.efi \
+            --hello inputs/efi/package/Build/Out/AARCH64-DEBUG/HelloPayload.efi \
+            --timeout 180 --size-mib 256
+          fsck.fat -nv output/Pad5_UEFI_ESP_TEST_256MiB.img
+          mdir -i output/Pad5_UEFI_ESP_TEST_256MiB.img ::EFI/BOOT/
+          mdir -i output/Pad5_UEFI_ESP_TEST_256MiB.img ::EFI/UniXNU/Payloads/
+          sha256sum output/Pad5_UEFI_ESP_TEST_256MiB.img | tee output/sha256.txt
+
+      - name: Adapt upstream QEMU test runner to use real raw FAT32 disk
+        run: |
+          set -euxo pipefail
+          git init -q upstream
+          git -C upstream remote add origin https://github.com/UniXNU/UniXNU.git
+          git -C upstream fetch --quiet --depth 1 origin 245aca1a9ec5b730b1cad80fade295800d2981f1
+          git -C upstream checkout --quiet --detach FETCH_HEAD
+          python3 - <<'PY'
+          from pathlib import Path
+          a=Path('upstream/package/Scripts/qemu-run.py').read_text()
+          old='file=fat:{args.esp.resolve()}'
+          assert a.count(old)==1
+          a=a.replace(old,'file={args.esp.resolve()}')
+          Path('output/qemu-run-raw.py').write_text(a)
+          PY
+          python3 -m py_compile output/qemu-run-raw.py
+
+      - name: Test real FAT32 partition under GPT in QEMU UEFI
+        id: qemu
+        run: |
+          set -euxo pipefail
+          cp output/Pad5_UEFI_ESP_TEST_256MiB.img output/esp-qemu.img
+          python3 - <<'PY'
+          from pyfatfs.PyFatFS import PyFatFS
+          path="output/esp-qemu.img"
+          f=PyFatFS(path)
+          try:
+            name='/EFI/UniXNU/unixnu.toml'
+            config=f.readtext(name)
+            assert 'timeout = 180' in config
+            f.writetext(name,config.replace('timeout = 180','timeout = 1'))
+          finally:f.close()
+          PY
+          truncate -s 300M output/qemu-disk.img
+          sgdisk --clear --new=1:2048:+256M --typecode=1:EF00 --change-name=1:ESPNABU output/qemu-disk.img
+          dd if=output/esp-qemu.img of=output/qemu-disk.img bs=1M seek=1 conv=notrunc status=none
+          sgdisk --verify output/qemu-disk.img
+          python3 output/qemu-run-raw.py output/qemu-disk.img \
+            --timeout 60 --finish-on-expect \
+            --log output/qemu-real-fat.log --screenshot output/qemu-menu.png \
+            --expect 'UNIXNU: UniXNU [0-9.]+ starting as application' \
+            --expect 'UNIXNU: menu: shown 3 entries' \
+            --expect 'UNIXNU-HELLO: RESULT PASS' \
+            --reject 'ASSERT' 2>&1 | tee output/qemu-result.txt
+
+      - name: Qualification status
+        if: always()
+        env:
+          QEMU_RESULT: ${{ steps.qemu.outcome }}
+        run: |
+          python3 - <<'PY'
+          import json,os,pathlib
+          p=pathlib.Path('output/qualification.json')
+          p.write_text(json.dumps({
+            'offline_real_fat32_gpt_uefi_test':os.getenv('QEMU_RESULT'),
+            'android_userdata_erased':False,
+            'physical_pad5_uefi_test':False,
+            'ready_to_claim_ipados_installed':False,
+            'cust_original_backup_required':True
+          },indent=2)+"\n")
+          PY
+
+      - name: Archive test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-fat32-qemu-validation
+          path: |
+            output/qualification.json
+            output/qemu-result.txt
+            output/qemu-real-fat.log
+            output/qemu-real-fat.clean.log
+            output/qemu-menu.png
+            output/sha256.txt
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Archive FAT32 image for physical reversible test only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-fat32-esp-physical-test
+          path: |
+            output/Pad5_UEFI_ESP_TEST_256MiB.img
+            output/Pad5_UEFI_ESP_TEST_256MiB.json
+          if-no-files-found: error
+          retention-days: 7

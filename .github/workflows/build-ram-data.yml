@@ -1,0 +1,62 @@
+name: Build nabu volatile APFS Data seed (Linux)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install APFS development utilities
+        run: |
+          set -euxo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y build-essential uuid-dev
+          # The Ubuntu 24.04 apfsprogs package rejects 32 MiB containers.
+          # Compile the upstream formatter that supports small images.
+          git clone --quiet --depth 1 https://github.com/linux-apfs/apfsprogs.git formatter
+          make -C formatter/mkapfs -j2
+          test -x formatter/mkapfs/mkapfs
+          echo "$GITHUB_WORKSPACE/formatter/mkapfs" >> "$GITHUB_PATH"
+
+      - name: Checkout nabu Data seed producer
+        run: |
+          set -euxo pipefail
+          git clone --quiet --depth 1 https://github.com/zzweiqing/UniXNU-nabu.git nabu-source
+          test -f nabu-source/device_bringup/xnu_stage/make_ram_data_seed.py
+
+      - name: Build empty 32 MiB APFS seed and verify volume UUID
+        run: |
+          set -euxo pipefail
+          mkdir -p output
+          python3 ci/make_ram_seed.py --size-mib 32 --output output/owner-data-seed.apfs
+          python3 - <<'PY'
+          import hashlib, json, pathlib
+          f=pathlib.Path('output/owner-data-seed.apfs')
+          r=json.loads(pathlib.Path('output/owner-data-seed.apfs.json').read_text())
+          with f.open('rb') as stream:
+              stream.seek(32)
+              assert stream.read(4)==b'NXSB'
+          assert f.stat().st_size==32*1024*1024
+          assert r['volume_uuid']=='0A5EED00-0000-4000-8000-000000000001'
+          assert r['sha256']==hashlib.sha256(f.read_bytes()).hexdigest()
+          assert r['production_storage_qualified'] is False
+          print('APFS_SEED_VERIFIED')
+          PY
+
+      - name: Private artifact (test-only, not installed)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-volatile-apfs-data-seed
+          path: |
+            output/owner-data-seed.apfs
+            output/owner-data-seed.apfs.json
+          if-no-files-found: error
+          retention-days: 7
