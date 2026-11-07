@@ -17,6 +17,9 @@ TARGET = {"device": "nabu", "ios_build": "21H16",
 REQUIRED = ("kernel", "adt", "os_volume", "systemos_volume",
             "trustcache_os", "trustcache_systemos", "uefi_esp")
 HEX = re.compile(r"^[0-9a-f]{64}$")
+MIN_BYTES = {"kernel": 32_000_000, "adt": 1_024, "os_volume": 256_000_000,
+             "systemos_volume": 32_000_000, "trustcache_os": 128,
+             "trustcache_systemos": 128, "uefi_esp": 16_000_000}
 
 
 def sha256(path: Path) -> str:
@@ -57,6 +60,15 @@ def audit(candidate: Path, backup_report: Path | None = None) -> dict:
                 "errors": [f"Cannot parse candidate manifest: {exc}"]}
     if data.get("schema") != 1:
         errs.append("Unsupported candidate manifest schema")
+    if not isinstance(data.get("target"), dict):
+        errs.append("Target definition must be a dictionary")
+        data["target"] = {}
+    if not isinstance(data.get("artifacts"), dict):
+        errs.append("Artifacts must be a dictionary")
+        data["artifacts"] = {}
+    if not isinstance(data.get("storage"), dict):
+        errs.append("Storage inventory must be a dictionary")
+        data["storage"] = {}
     for name, expected in TARGET.items():
         if data.get("target", {}).get(name) != expected:
             errs.append(f"Target {name}: expected {expected!r}")
@@ -84,6 +96,8 @@ def audit(candidate: Path, backup_report: Path | None = None) -> dict:
         checks[name] = {"sha256_valid": ok, "bytes": file.stat().st_size}
         if not ok:
             errs.append(f"Artifact hash mismatch: {name}")
+        if file.stat().st_size < MIN_BYTES[name]:
+            errs.append(f"Artifact implausibly small: {name}")
         if name == "kernel" and file.open("rb").read(4) != b"\xcf\xfa\xed\xfe":
             errs.append("Kernel does not have a Mach-O 64-bit little-endian header")
         if name == "uefi_esp":
