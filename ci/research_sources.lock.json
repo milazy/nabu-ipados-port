@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "target": {
+    "device": "Xiaomi Pad 5",
+    "codename": "nabu",
+    "apple_product": "iPad7,11",
+    "apple_build": "21H16",
+    "apple_os": "iPadOS 17.7"
+  },
+  "build": {
+    "unixnu_core": "245aca1a9ec5b730b1cad80fade295800d2981f1",
+    "owner_root_workflow": ".github/workflows/build-nabu-ufs-owner-root.yml"
+  },
+  "sources": [
+    {
+      "slug": "nabu",
+      "url": "https://github.com/zzweiqing/UniXNU-nabu.git",
+      "sha": "54b4f98457f8e9e232cc0a077c20d08d0b2f0ac9",
+      "role": "primary_nabu",
+      "required": [
+        "board.toml",
+        "source-ci/nabu-build.sh",
+        "platform/NabuLegacyDisplayProbe.cpp",
+        "gpu/a640"
+      ]
+    },
+    {
+      "slug": "bergamota",
+      "url": "https://github.com/ry-diffusion/Bergamota.git",
+      "sha": "37a7a7a917fc09945ed2f7d1ae68b84d4525b4cb",
+      "role": "research_only",
+      "required": [
+        "enxerto/loader.c",
+        "tools/renegade/pacstrip.py",
+        "tools/renegade/mkroot-full.py"
+      ]
+    },
+    {
+      "slug": "hakios",
+      "url": "https://github.com/oosexgang/hakios-xnu-kernel.git",
+      "sha": "63fc2b4633bac3af8e57dadab9f5a8d4cb940438",
+      "role": "research_only",
+      "required": [
+        "xnu/files/iokit/Kernel/MiniIOMobileFramebuffer.cpp",
+        "userland/src/fps_info.m",
+        "userland/mkhighrate.py",
+        "hakios-metal/README.md"
+      ]
+    },
+    {
+      "slug": "dada",
+      "url": "https://github.com/superboyyy/hakios-arm64e-dada.git",
+      "sha": "f1ae906fcc43ba8f763663257724ba938fb820ab",
+      "role": "ios26_research_only",
+      "required": [
+        "kernel/xnu-12377.121.6-dada.patch",
+        "gpu2/build_turnip_ios.sh",
+        "uefi-dada/README.md"
+      ]
+    }
+  ],
+  "restrictions": {
+    "source_only": true,
+    "clone_no_execute": true,
+    "no_device_usb": true,
+    "no_flash": true,
+    "no_apple_binaries_in_git": true,
+    "no_automatic_identity_switch": true
+  },
+  "status": {
+    "ipados_boot_qualified": false,
+    "apple_store_qualified": false,
+    "native_120hz_qualified": false
+  }
+}
