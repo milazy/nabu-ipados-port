@@ -1,0 +1,112 @@
+name: Prepare nabu source baseline and flash review (NO DEVICE FLASH)
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/prepare-nabu-flash-review.yml"
+      - "ci/research_sources.lock.json"
+      - "ci/audit_research_sources.py"
+      - "ci/audit_nabu_boot_candidate.py"
+      - "ci/qualify_nabu_promotion.py"
+      - "tests/test_nabu_release_pipeline.py"
+      - "tests/test_nabu_promotion.py"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nabu-source-review
+  cancel-in-progress: false
+
+jobs:
+  source-and-preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout private project source and tests
+        uses: actions/checkout@v4
+
+      - name: Test target identity, 120Hz pacing and fail-closed storage checks
+        run: |
+          set -euxo pipefail
+          python3 -m unittest discover -s tests -p 'test_nabu_*.py' -v
+
+      - name: Fetch only SHA-pinned public research repositories
+        run: |
+          set -euxo pipefail
+          mkdir -p references
+          python3 - <<'PY'
+          import json, pathlib, subprocess
+          lock=json.loads(pathlib.Path('ci/research_sources.lock.json').read_text())
+          for item in lock['sources']:
+              root=pathlib.Path('references')/item['slug']
+              root.mkdir(parents=True,exist_ok=False)
+              subprocess.run(['git','init','-q',str(root)],check=True)
+              subprocess.run(['git','-C',str(root),'remote','add','origin',item['url']],check=True)
+              subprocess.run(['git','-C',str(root),'fetch','--quiet','--depth','1','origin',item['sha']],check=True)
+              subprocess.run(['git','-C',str(root),'checkout','--quiet','--detach','FETCH_HEAD'],check=True)
+              real=subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip()
+              if real!=item['sha']: raise RuntimeError('Unexpected git source revision')
+              print(item['slug'],real,flush=True)
+          PY
+
+      - name: Audit source files and missing real 120Hz implementation
+        run: |
+          set -euxo pipefail
+          mkdir -p output
+          python3 ci/audit_research_sources.py \
+            --root references --output output/pinned-source-audit.json > output/audit-log.json
+          python3 ci/qualify_nabu_promotion.py \
+            --nabu-source references/nabu --json output/120hz-audit.json > /dev/null
+          python3 - <<'PY'
+          import json,pathlib
+          source=json.loads(pathlib.Path('output/pinned-source-audit.json').read_text())
+          promotion=json.loads(pathlib.Path('output/120hz-audit.json').read_text())
+          assert source['status']=='PASS_SOURCE_ONLY'
+          assert source['checks']['nabu']['verified']
+          assert source['checks']['hakios']['verified']
+          assert promotion['promotable_as_verified_120hz'] is False
+          assert promotion['apple_profiles']['identity_switched'] is False
+          print('SOURCES_PINNED=true')
+          print('PHYSICAL_NABU_120HZ_UNQUALIFIED=true')
+          print('ACTUAL_APPLE_USERLAND_NOT_PACKAGED=true')
+          PY
+
+      - name: Write explicit 17.7 installation blockers without device operations
+        if: always()
+        run: |
+          mkdir -p output
+          python3 - <<'PY'
+          import json,pathlib
+          info={
+            'device':'nabu', 'target_build':'21H16',
+            'target_profile':'iPad7,11',
+            'research_sources_audited':pathlib.Path('output/pinned-source-audit.json').exists(),
+            'ufs_os_volume_in_this_artifact':False,
+            'ufs_systemos_volume_in_this_artifact':False,
+            'kernel_compiled_by_this_workflow':False,
+            'native_120hz_hardware_qualified':False,
+            'springboard_boot_on_owner_device_qualified':False,
+            'apple_account_or_appstore_qualified':False,
+            'trollstore_on_17_7_supported':False,
+            'host_package_complete':False,
+            'ready_to_flash':False,
+            'physical_device_written':False,
+            'next_step':'Use owner-root XNU macOS build; prepare verified genuine Apple OS/SystemOS volumes and actual owner GPT layout; retest candidate only after backups',
+          }
+          pathlib.Path('output/FLASH_READINESS.json').write_text(json.dumps(info,indent=2)+'\n')
+          PY
+
+      - name: Upload audit evidence only (never publish Apple binaries)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-source-and-flash-readiness-NOT-READY
+          path: |
+            output/pinned-source-audit.json
+            output/audit-log.json
+            output/120hz-audit.json
+            output/FLASH_READINESS.json
+          if-no-files-found: warn
+          retention-days: 30
