@@ -1,0 +1,189 @@
+name: Build nabu integrated UI kernel (two-pass)
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/build-nabu-integrated-ui.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nabu-integrated-ui
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: macos-26-intel
+    timeout-minutes: 90
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_NO_INSTALL_CLEANUP: "1"
+      HOMEBREW_NO_ENV_HINTS: "1"
+      UNIXNU_IPSW: ${{ github.workspace }}/ipsw-21h16-small.zip
+      NABU_SOURCE_SHA: "54b4f98457f8e9e232cc0a077c20d08d0b2f0ac9"
+      UNIXNU_SOURCE_SHA: "245aca1a9ec5b730b1cad80fade295800d2981f1"
+
+    steps:
+      - name: Checkout private build helpers
+        uses: actions/checkout@v4
+
+      - name: Python and Xcode toolchain
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Verify Xcode and install host dependencies
+        run: |
+          set -euxo pipefail
+          if [ -d /Applications/Xcode_26.6.app/Contents/Developer ]; then
+            echo "DEVELOPER_DIR=/Applications/Xcode_26.6.app/Contents/Developer" >> "$GITHUB_ENV"
+            export DEVELOPER_DIR=/Applications/Xcode_26.6.app/Contents/Developer
+          fi
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
+          brew install llvm lld mtools dtc unifdef
+
+      - name: Fetch exact current nabu source and two pinned UniXNU trees
+        run: |
+          set -euxo pipefail
+          git init -q nabu-source
+          git -C nabu-source remote add origin https://github.com/zzweiqing/UniXNU-nabu.git
+          git -C nabu-source fetch --quiet --depth 1 origin "$NABU_SOURCE_SHA"
+          git -C nabu-source checkout --quiet --detach FETCH_HEAD
+          test "$(git -C nabu-source rev-parse HEAD)" = "$NABU_SOURCE_SHA"
+
+          for tree in unixnu-pass1 unixnu-final; do
+            git init -q "$tree"
+            git -C "$tree" remote add origin https://github.com/UniXNU/UniXNU.git
+            git -C "$tree" fetch --quiet --depth 1 origin "$UNIXNU_SOURCE_SHA"
+            git -C "$tree" checkout --quiet --detach FETCH_HEAD
+            test "$(git -C "$tree" rev-parse HEAD)" = "$UNIXNU_SOURCE_SHA"
+          done
+
+          mkdir -p output pass1 nabu-pass1 nabu-final
+          for stage in nabu-pass1 nabu-final; do
+            cp nabu-source/source-ci/board-baseline.toml "$stage/board.toml"
+            for entry in configs scripts patches platform ufs gpu usb userprobe vendor; do
+              if [ -e "nabu-source/$entry" ]; then cp -a "nabu-source/$entry" "$stage/$entry"; fi
+            done
+          done
+
+      - name: Fetch original iPadOS 17.7 build inputs
+        run: |
+          set -euxo pipefail
+          python3 ci/download_ipados_inputs.py
+          test -s "$UNIXNU_IPSW"
+          unzip -t "$UNIXNU_IPSW" >/dev/null
+          shasum -a 256 "$UNIXNU_IPSW" | tee output/ipsw-input-sha256.txt
+
+      - name: Fetch and verify owner OS + SystemOS trust policies
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euxo pipefail
+          mkdir -p owner-input/os owner-input/systemos owner-input/download
+          gh release download owner-hash-policies-20261106             --repo "${{ github.repository }}"             --pattern '*-policy.tar.gz' --dir owner-input/download
+          mv owner-input/download/os-policy.tar.gz owner-input/os-policy.tar.gz
+          mv owner-input/download/systemos-policy.tar.gz owner-input/systemos-policy.tar.gz
+          echo '762b971b49462cbaa99c0449a20a83edb9bbeec5bdbf07fbb07e6c3a2f9c5c14  owner-input/os-policy.tar.gz' | shasum -a 256 -c -
+          echo '2fe6f4806ad4cb7a663321e0df781779cfbc825e296da88ecf26f5ebf8ee7b45  owner-input/systemos-policy.tar.gz' | shasum -a 256 -c -
+          tar -xzf owner-input/os-policy.tar.gz -C owner-input/os
+          tar -xzf owner-input/systemos-policy.tar.gz -C owner-input/systemos
+          test -s owner-input/os/manifest.bin
+          test -s owner-input/systemos/manifest.bin
+          test -s owner-input/os/trusted-key.bin
+          cmp owner-input/os/trusted-key.bin owner-input/systemos/trusted-key.bin
+          test ! -e owner-input/os/private.pem
+          test ! -e owner-input/systemos/private.pem
+          echo "UNIXNU_OWNER_POLICY=$GITHUB_WORKSPACE/owner-input/os" >> "$GITHUB_ENV"
+          echo "UNIXNU_OWNER_POLICY_SYSTEMOS=$GITHUB_WORKSPACE/owner-input/systemos" >> "$GITHUB_ENV"
+
+      - name: Prepare pass 1 graphics-closure kernel
+        run: |
+          set -euxo pipefail
+          UNIXNU_DEVICE="$GITHUB_WORKSPACE/nabu-pass1"           python3 nabu-source/source-ci/prepare_source.py             --upstream "$GITHUB_WORKSPACE/unixnu-pass1"             --device "$GITHUB_WORKSPACE/nabu-pass1"             --profile nabu_ufs_cpu_ui_defconfig             --report "$GITHUB_WORKSPACE/output/pass1-source-prepare.json"
+
+          python3 ci/rebase_owner_trust_patch.py             --patch "$GITHUB_WORKSPACE/nabu-pass1/patches/xnu/nabu-master-second-trust-cache.patch"
+          python3 ci/merge_xnu_patches.py             --upstream "$GITHUB_WORKSPACE/unixnu-pass1/patches/xnu"             --device "$GITHUB_WORKSPACE/nabu-pass1/patches/xnu"             --report "$GITHUB_WORKSPACE/output/pass1-xnu-patch-manifest.json"             --owner-root
+
+      - name: Build pass 1 reference kernel
+        run: |
+          set -euxo pipefail
+          cd unixnu-pass1
+          ./unixnu defconfig nabu_ufs_cpu_ui_defconfig -D "$GITHUB_WORKSPACE/nabu-pass1"
+          ./unixnu build kernel --ipsw "$UNIXNU_IPSW" 2>&1 | tee "$GITHUB_WORKSPACE/output/pass1-kernel-build.log"
+          cp out/nabu/kernel/kernel.macho "$GITHUB_WORKSPACE/pass1/kernel.macho"
+          test -s "$GITHUB_WORKSPACE/pass1/kernel.macho"
+          shasum -a 256 "$GITHUB_WORKSPACE/pass1/kernel.macho" | tee "$GITHUB_WORKSPACE/output/pass1-kernel-sha256.txt"
+
+      - name: Prepare final GPU + display kernel against pass 1 ABI
+        run: |
+          set -euxo pipefail
+          export UNIXNU_DISPLAY_REFERENCE="$GITHUB_WORKSPACE/pass1/kernel.macho"
+          UNIXNU_DEVICE="$GITHUB_WORKSPACE/nabu-final"           python3 nabu-source/source-ci/prepare_source.py             --upstream "$GITHUB_WORKSPACE/unixnu-final"             --device "$GITHUB_WORKSPACE/nabu-final"             --profile nabu_ufs_gpu_metal_defconfig             --capture-logs             --report "$GITHUB_WORKSPACE/output/final-source-prepare.json"
+
+          python3 ci/rebase_owner_trust_patch.py             --patch "$GITHUB_WORKSPACE/nabu-final/patches/xnu/nabu-master-second-trust-cache.patch"
+          python3 ci/merge_xnu_patches.py             --upstream "$GITHUB_WORKSPACE/unixnu-final/patches/xnu"             --device "$GITHUB_WORKSPACE/nabu-final/patches/xnu"             --report "$GITHUB_WORKSPACE/output/final-xnu-patch-manifest.json"             --owner-root
+
+      - name: Build final integrated nabu kernel
+        id: final_kernel
+        run: |
+          set -euxo pipefail
+          export UNIXNU_DISPLAY_REFERENCE="$GITHUB_WORKSPACE/pass1/kernel.macho"
+          cd unixnu-final
+          ./unixnu defconfig nabu_ufs_gpu_metal_defconfig -D "$GITHUB_WORKSPACE/nabu-final"
+          ./unixnu build kernel --ipsw "$UNIXNU_IPSW" 2>&1 | tee "$GITHUB_WORKSPACE/output/final-kernel-build.log"
+
+      - name: Reject stale display kernel
+        run: |
+          set -euxo pipefail
+          K=unixnu-final/out/nabu/kernel/kernel.macho
+          test -s "$K"
+          python3 ci/verify_xnu_macho.py --input "$K" --report output/final-kernel-identity.json
+          STRINGS="$(xcrun strings "$K")"
+          printf '%s
+' "$STRINGS" | grep -F 'NativeLegacyDisplay'
+          printf '%s
+' "$STRINGS" | grep -F 'offline-legacy-pm'
+          printf '%s
+' "$STRINGS" | grep -F 'offline-legacy-transfer'
+          printf '%s
+' "$STRINGS" | grep -F 'sheng-vsync'
+          printf '%s
+' "$STRINGS" | grep -F 'NABU DISPLAY'
+          shasum -a 256 "$K" | tee output/final-kernel-sha256.txt
+
+      - name: Record integrated build identity
+        if: always()
+        env:
+          BUILD_OUTCOME: ${{ steps.final_kernel.outcome }}
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib
+          pathlib.Path('output/integrated-build.json').write_text(json.dumps({
+            "nabu_source":"54b4f98457f8e9e232cc0a077c20d08d0b2f0ac9",
+            "unixnu_source":"245aca1a9ec5b730b1cad80fade295800d2981f1",
+            "pass1_profile":"nabu_ufs_cpu_ui_defconfig",
+            "final_profile":"nabu_ufs_gpu_metal_defconfig",
+            "final_outcome":os.getenv("BUILD_OUTCOME"),
+            "display_reference":"pass1/kernel.macho",
+            "owner_os_policy_sha256":"762b971b49462cbaa99c0449a20a83edb9bbeec5bdbf07fbb07e6c3a2f9c5c14",
+            "owner_systemos_policy_sha256":"2fe6f4806ad4cb7a663321e0df781779cfbc825e296da88ecf26f5ebf8ee7b45",
+            "device_flash_performed":False,
+            "boot_verified":False
+          }, indent=2)+"\n")
+          PY
+
+      - name: Upload integrated kernel and build evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-integrated-ui-build
+          path: |
+            unixnu-final/out/nabu/kernel/kernel.macho
+            pass1/kernel.macho
+            output/
+          if-no-files-found: warn
+          retention-days: 7
