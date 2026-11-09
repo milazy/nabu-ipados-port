@@ -111,6 +111,7 @@ jobs:
       - name: Build pass 1 reference kernel
         run: |
           set -euxo pipefail
+          export UNIXNU_DEVICE="$GITHUB_WORKSPACE/nabu-pass1"
           cd unixnu-pass1
           ./unixnu defconfig nabu_ufs_cpu_ui_defconfig -D "$GITHUB_WORKSPACE/nabu-pass1"
           ./unixnu build kernel --ipsw "$UNIXNU_IPSW" 2>&1 | tee "$GITHUB_WORKSPACE/output/pass1-kernel-build.log"
@@ -131,6 +132,7 @@ jobs:
         id: final_kernel
         run: |
           set -euxo pipefail
+          export UNIXNU_DEVICE="$GITHUB_WORKSPACE/nabu-final"
           export UNIXNU_DISPLAY_REFERENCE="$GITHUB_WORKSPACE/pass1/kernel.macho"
           cd unixnu-final
           ./unixnu defconfig nabu_ufs_gpu_metal_defconfig -D "$GITHUB_WORKSPACE/nabu-final"
