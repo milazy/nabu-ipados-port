@@ -142,17 +142,11 @@ jobs:
           K=unixnu-final/out/nabu/kernel/kernel.macho
           test -s "$K"
           python3 ci/verify_xnu_macho.py --input "$K" --report output/final-kernel-identity.json
-          STRINGS="$(xcrun strings "$K")"
-          printf '%s
-' "$STRINGS" | grep -F 'NativeLegacyDisplay'
-          printf '%s
-' "$STRINGS" | grep -F 'offline-legacy-pm'
-          printf '%s
-' "$STRINGS" | grep -F 'offline-legacy-transfer'
-          printf '%s
-' "$STRINGS" | grep -F 'sheng-vsync'
-          printf '%s
-' "$STRINGS" | grep -F 'NABU DISPLAY'
+          xcrun strings "$K" | grep -F 'NativeLegacyDisplay'
+          xcrun strings "$K" | grep -F 'offline-legacy-pm'
+          xcrun strings "$K" | grep -F 'offline-legacy-transfer'
+          xcrun strings "$K" | grep -F 'sheng-vsync'
+          xcrun strings "$K" | grep -F 'NABU DISPLAY'
           shasum -a 256 "$K" | tee output/final-kernel-sha256.txt
 
       - name: Record integrated build identity
