@@ -1,0 +1,16 @@
+--- a/gpu/a640/NativeAdrenoService.cpp
++++ b/gpu/a640/NativeAdrenoService.cpp
+@@ -1256,7 +1256,12 @@
+     unsigned probe=0;
+     PE_parse_boot_argn("nabu-gpu-userprobe",&probe,sizeof(probe));
+     observation_.enableProbe(probe==1);
+-    if(probe==1)__atomic_store_n(&nabu_log_probe_poll,nabuGpuProbeWriterSample,__ATOMIC_RELEASE);
++    unsigned uiwatch=0;
++    PE_parse_boot_argn("nabu-ui-watch",&uiwatch,sizeof(uiwatch));
++    if(probe==1 || uiwatch==1) {
++        __atomic_store_n(&nabu_log_probe_poll,nabuGpuProbeWriterSample,__ATOMIC_RELEASE);
++        if(uiwatch==1) IOLog("NABU UI writer sampling enabled\n");
++    }
+ #endif
+     native_adreno_a6xx_stats[0]=7;
+     nabuGpuState(7,0,"ready");

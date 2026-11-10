@@ -10,6 +10,7 @@ MARKERS=(
     b"nabu-disable-watchdogd",b"nabu-skip-setup",
     b"sheng-gpu-addon",b"NABU ADDON standard files=",b"NABU ADDON standard mounts=",
     b"nabu-ui-watch",b"NabuUI: event=",b"NABU DISPLAY vsync hz=",b"/private/var/ngpu",
+    b"NABU UI writer sampling enabled",
 )
 METHODS=("validateSwap","validateSwapLocked","kickSwapQueue","vsyncFired")
 GLOBALS=("_nabu_graphics_start_after_root","_nabu_graphics_worker_stage","_native_mobile_graphics_load_status",

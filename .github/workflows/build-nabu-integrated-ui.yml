@@ -76,6 +76,8 @@ jobs:
           git -C nabu-source apply "$GITHUB_WORKSPACE/ci/nabu-integrated-vsync-21h16.patch"
           git -C nabu-source apply --check "$GITHUB_WORKSPACE/ci/nabu-display-status-transport.patch"
           git -C nabu-source apply "$GITHUB_WORKSPACE/ci/nabu-display-status-transport.patch"
+          git -C nabu-source apply --check "$GITHUB_WORKSPACE/ci/nabu-ui-writer-sampling.patch"
+          git -C nabu-source apply "$GITHUB_WORKSPACE/ci/nabu-ui-writer-sampling.patch"
           python3 -m py_compile nabu-source/scripts/nabu_display_bindings.py nabu-source/scripts/nabu_ui_watch_source.py nabu-source/source-ci/nabu_data_skeleton.py
           grep -F 'sheng-vsync' nabu-source/platform/NabuLegacyCpuPresent.cpp
           grep -F 'VSYNC_NOTIFY = 0xfffffff005cd9720' nabu-source/scripts/nabu_display_bindings.py
