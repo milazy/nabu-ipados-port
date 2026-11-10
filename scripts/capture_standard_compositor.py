@@ -12,11 +12,11 @@ def main():
     adb=root/'platform-tools/adb.exe';fb=root/'platform-tools/fastboot.exe'
     image=root/'boot-preflight/V4-MODDED-TWRP-LINUX.img'
     if hashlib.file_digest(image.open('rb'),'sha256').hexdigest()!='7a71da691a9117cf959ced0557593d647a8fc384b2374404f14184126ab7cbc6':raise ValueError('Recovery image changed')
-    receipt=root/'build-artifacts/nabu-metal-joint-20261110/install-receipt.json'
+    receipt=root/'build-artifacts/nabu-metal-async-20261110/install-receipt.json'
     if not receipt.exists():receipt=root/'build-artifacts/nabu-memory-ui-20261110/install-receipt.json'
     if not receipt.exists():receipt=root/'build-artifacts/nabu-standard-compositor-20261110/install-receipt.json'
     expected=json.loads(receipt.read_text())
-    if expected['status'] not in ('STANDARD_COMPOSITOR_INSTALL_PASS_BOOT_UNVERIFIED','MEMORY_UI_INSTALL_PASS_BOOT_UNVERIFIED','JOINT_METAL_INSTALL_PASS_BOOT_UNVERIFIED'):raise ValueError('Installation identity missing')
+    if expected['status'] not in ('STANDARD_COMPOSITOR_INSTALL_PASS_BOOT_UNVERIFIED','MEMORY_UI_INSTALL_PASS_BOOT_UNVERIFIED','ASYNC_METAL_INSTALL_PASS_BOOT_UNVERIFIED'):raise ValueError('Installation identity missing')
     def run(exe,args,timeout=20,check=True):
         r=subprocess.run([str(exe),'-s',a.serial,*args],capture_output=True,timeout=timeout)
         if check and r.returncode:raise RuntimeError(r.stderr.decode(errors='replace')[-350:])

@@ -9,15 +9,15 @@ def main():
     for key in ('runtime','kernel','trustcache','out'):p.add_argument('--'+key,type=Path,required=True)
     a=p.parse_args();base=a.runtime/'plugin'
     report=json.loads((base/'plugin-report.json').read_text())
-    host=json.loads((base/'joint-fix-host-report.json').read_text())
-    need(host['status']=='JOINT_METAL_FRONTEND_HOST_PASS' and host['async_cases']==20 and host['completion_cases']==16,'Host qualification missing')
-    need(report['async_fix'] is True and report['completion_fix'] is True and report['fps_opt'] is False,'Wrong frontend variant')
+    host=json.loads((base/'async-fix-host-report.json').read_text())
+    need(host['status']=='ASYNC_METAL_FRONTEND_HOST_PASS' and host['async_cases']==20 and host['completion_wait_contract_preserved'] is True,'Host qualification missing')
+    need(report['async_fix'] is True and report['completion_fix'] is False and report['fps_opt'] is False,'Wrong frontend variant')
+    patches=list(report['adrenometal_patches'])
+    need(len(patches)==5 and patches[-1]=='patches/adrenometal-nabu-async-creation.patch' and 'patches/adrenometal-nabu-completion-wait.patch' not in patches and 'patches/adrenometal-nabu-ci-kernels.patch' not in patches,'Unexpected patch combination')
     need(report['bundle_built'] and report['plugin_returncode']==0 and report['async_creation']['passed'],'Plugin build or async qualification failed')
-    completion=json.loads((base/'completion-qualification/report.json').read_text())
-    need(completion['passed'] and len(completion['cases'])==16 and all(x['passed'] for x in completion['cases']),'Completion qualification failed')
     need(len(report['async_creation']['cases'])==20 and all(x['passed'] for x in report['async_creation']['cases']),'Async cases incomplete')
     fixed=digest((base/'async-source/NativeBridgeMetalFrontend.mm').read_bytes())
-    need(report['async_creation']['fixed_source_sha256']==fixed==completion['fixed_source_sha256'],'Qualification source binding mismatch')
+    need(report['async_creation']['fixed_source_sha256']==fixed,'Qualification source binding mismatch')
     need(report['abi_header_sha256']=='1608250c2c6cee12588a756f105bebc8652b03eb1ad383cc38eab8fa5da22734' and report['scanout_wire_sha256']=='3c91848ec16b02090d12862ca6e8cb61375488fa2885d141210cbc504d73984b','A640 ABI or scanout wire mismatch')
     need(report['adrenometal_commit']=='baad47ca22b181bf0ef0d08412d3ed1f96945e16' and report['metal2vulkan_commit']=='624bab3918de5b978e1101517abca2b4fa426565','Source pin mismatch')
     need(digest(a.kernel.read_bytes())=='e522b69aeaf901bc0188a79ed4860c3608a980021833a33a95ff65ab4a3c3b97','Installed kernel input changed')
@@ -50,17 +50,17 @@ def main():
         trusted.update(m[24+i*stride:44+i*stride] for i in range(n))
     missing=sorted(newhashes-trusted);need(missing,'New plugin has no new CDHash')
     entries=b''.join(cd+bytes((2,0,0,0)) for cd in missing)
-    uuid=hashlib.sha256(b'nabu-metal-joint-v1'+entries).digest()[:16]
+    uuid=hashlib.sha256(b'nabu-metal-async-v1'+entries).digest()[:16]
     modules.append(struct.pack('<I16sI',2,uuid,len(missing))+entries)
     starts=[];cursor=4+4*len(modules)
     for m in modules:starts.append(cursor);cursor+=len(m)
     cache=struct.pack('<I',len(modules))+struct.pack('<'+'I'*len(modules),*starts)+b''.join(modules)
     a.out.mkdir(parents=True,exist_ok=True)
-    addonpath=a.out/'kernel-metal-joint.macho.gpuaddon';tcpath=a.out/'kernel-metal-joint.macho.trustcache';receipt=a.out/'payload-preparation.json'
+    addonpath=a.out/'kernel-metal-async.macho.gpuaddon';tcpath=a.out/'kernel-metal-async.macho.trustcache';receipt=a.out/'payload-preparation.json'
     need(not any(x.exists() for x in (addonpath,tcpath,receipt)),'Prepared output already exists')
     addonpath.write_bytes(addon);tcpath.write_bytes(cache)
     checked=audit(a.kernel,addonpath,tcpath)
-    result={'status':'JOINT_METAL_PAYLOAD_HOST_PASS','kernel_path':str(a.kernel.resolve()),'kernel_sha256':digest(a.kernel.read_bytes()),'addon_path':str(addonpath.resolve()),'addon_sha256':digest(addon),'trustcache_path':str(tcpath.resolve()),'trustcache_sha256':digest(cache),'old_trustcache_sha256':digest(old),'preserved_module_sha256':[digest(m) for m in modules[:-1]],'new_cdhashes':[x.hex() for x in missing],'async_cases':20,'completion_cases':16,'transport':checked,'boot_verified':False}
+    result={'status':'ASYNC_METAL_PAYLOAD_HOST_PASS','kernel_path':str(a.kernel.resolve()),'kernel_sha256':digest(a.kernel.read_bytes()),'addon_path':str(addonpath.resolve()),'addon_sha256':digest(addon),'trustcache_path':str(tcpath.resolve()),'trustcache_sha256':digest(cache),'old_trustcache_sha256':digest(old),'preserved_module_sha256':[digest(m) for m in modules[:-1]],'new_cdhashes':[x.hex() for x in missing],'async_cases':20,'transport':checked,'boot_verified':False}
     receipt.write_text(json.dumps(result,indent=2)+'\n')
     print(result['status'],result['addon_sha256'],result['trustcache_sha256'])
 if __name__=='__main__':main()

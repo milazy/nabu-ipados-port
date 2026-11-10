@@ -1,0 +1,56 @@
+name: Build nabu asynchronous Metal frontend repair
+on:
+  workflow_call:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  runtime:
+    runs-on: macos-26-intel
+    timeout-minutes: 45
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+      HOMEBREW_NO_INSTALL_CLEANUP: '1'
+      HOMEBREW_NO_ENV_HINTS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Select Xcode and install frontend toolchains
+        run: |
+          set -euo pipefail
+          if [ -d /Applications/Xcode_26.6.app/Contents/Developer ]; then
+            echo 'DEVELOPER_DIR=/Applications/Xcode_26.6.app/Contents/Developer' >> "$GITHUB_ENV"
+            export DEVELOPER_DIR=/Applications/Xcode_26.6.app/Contents/Developer
+          fi
+          xcodebuild -version
+          brew install llvm lld glslang pkg-config
+          echo "$(brew --prefix llvm)/bin" >> "$GITHUB_PATH"
+          rustup toolchain install 1.98.0 --profile minimal
+          rustup target add --toolchain 1.98.0 aarch64-apple-ios
+      - name: Fetch exact nabu source
+        run: |
+          set -euo pipefail
+          git init -q nabu-source
+          git -C nabu-source remote add origin https://github.com/zzweiqing/UniXNU-nabu.git
+          git -C nabu-source fetch --quiet --depth 1 origin 54b4f98457f8e9e232cc0a077c20d08d0b2f0ac9
+          git -C nabu-source checkout --quiet --detach FETCH_HEAD
+          test "$(git -C nabu-source rev-parse HEAD)" = 54b4f98457f8e9e232cc0a077c20d08d0b2f0ac9
+      - name: Verify existing Turnip; build and qualify async frontend
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p output
+          python3 ci/build_async_metal_reuse.py --device nabu-source --work runtime-work --output output/runtime 2>&1 | tee output/runtime-build.log
+      - name: Upload runtime and exact-method qualification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nabu-metal-async-fix
+          retention-days: 7
+          if-no-files-found: error
+          path: |
+            output/runtime-build.log
+            output/runtime/

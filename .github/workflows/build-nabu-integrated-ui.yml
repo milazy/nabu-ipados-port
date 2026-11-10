@@ -3,8 +3,8 @@ name: Build nabu integrated UI kernel (two-pass)
 on:
   workflow_dispatch:
     inputs:
-      metal_joint_only:
-        description: "Build and qualify the two Metal frontend deadlock repairs without rebuilding XNU"
+      metal_async_only:
+        description: "Build and qualify the asynchronous Metal frontend repair without rebuilding XNU"
         type: boolean
         required: false
         default: false
@@ -32,13 +32,13 @@ concurrency:
 
 jobs:
   metal-runtime:
-    if: inputs.metal_joint_only && !inputs.usb_audit_only
-    uses: ./.github/workflows/build-nabu-metal-joint.yml
+    if: inputs.metal_async_only && !inputs.usb_audit_only
+    uses: ./.github/workflows/build-nabu-metal-async.yml
   usb-models:
-    if: inputs.usb_audit_only && !inputs.metal_joint_only
+    if: inputs.usb_audit_only && !inputs.metal_async_only
     uses: ./.github/workflows/audit-nabu-usb-console.yml
   build:
-    if: ${{ !inputs.usb_audit_only && !inputs.metal_joint_only }}
+    if: ${{ !inputs.usb_audit_only && !inputs.metal_async_only }}
     runs-on: macos-26-intel
     timeout-minutes: 90
     env:
