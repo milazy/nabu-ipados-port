@@ -1,6 +1,6 @@
 # Integrated nabu UI repair — 2026-11-10
 
-Status: blocked before runner allocation by GitHub account billing/spending restrictions. No new kernel was installed or booted in this session. The tablet remains in recovery.
+Status: corrected kernel rebuild remains blocked by GitHub billing/spending restrictions. At the owner's later request, the already-installed kernel was retained and its supported UI policies were activated in a separate backed-up menu entry. The menu installation and unchanged payload hashes were verified, then one tablet reboot was accepted. Hardware UI outcome is pending observation.
 
 Blocked retry: https://github.com/yeahyeah97/nabu-ipados-macos-build/actions/runs/42731389168 . GitHub reports: “The job was not started because recent account payments have failed or your spending limit needs to be increased.” No payment setting or spending limit was changed.
 
@@ -39,3 +39,9 @@ gh workflow run build-nabu-integrated-ui.yml --repo yeahyeah97/nabu-ipados-macos
 ```
 
 No full App Store, networking, audio, persistent Data or 120 Hz operation is claimed. The Pad 7 macOS project uses a different SoC/GPU and cannot supply interchangeable firmware for this Pad 5.
+
+## Existing-kernel UI policy test
+
+The active test entry is `xnu-existing-ui-policy`. The unchanged kernel SHA-256 is `2a7430ce4f5a0da25fa0005063bd283db7c528b05b69ac94e13262dd669a3d9a`; installed menu SHA-256 is `8523904268023a7493e28957dd9767506836217ee21dd714f77ecf34b0dc9fe2`. The previous menu is preserved as `unixnu.pre-ui-policy-test-20261110.toml` on the ESP and as a PC copy.
+
+Only supported existing-kernel options were enabled: `offline-legacy-unit-scale=2`, `nabu-keybag-notifications=1`, `nabu-aks-state=1`, `nabu-disable-watchdogd=1`, `nabu-skip-setup=1`, and `-no_corpses`. The new VSYNC implementation is absent from this kernel and was not enabled. Kernel, ADT, packed Data and OS volumes were not replaced. A reboot command was accepted after the verified install; this is not confirmation of a successful SpringBoard session.
