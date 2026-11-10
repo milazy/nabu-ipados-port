@@ -202,11 +202,7 @@ jobs:
           test -s "$K"
           python3 ci/verify_display_reference.py --reference pass1/kernel.macho --candidate "$K" --report output/final-display-reference-validation.json
           python3 ci/verify_xnu_macho.py --input "$K" --report output/final-kernel-identity.json
-          xcrun strings "$K" | grep -F 'NativeLegacyDisplay'
-          xcrun strings "$K" | grep -F 'offline-legacy-pm'
-          xcrun strings "$K" | grep -F 'offline-legacy-transfer'
-          xcrun strings "$K" | grep -F 'sheng-vsync'
-          xcrun strings "$K" | grep -F 'NABU DISPLAY'
+          python3 ci/verify_cpu_display_backend.py --input "$K" --report output/final-cpu-backend-validation.json
           shasum -a 256 "$K" | tee output/final-kernel-sha256.txt
 
       - name: Record integrated build identity
