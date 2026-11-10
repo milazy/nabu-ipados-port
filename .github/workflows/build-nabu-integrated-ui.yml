@@ -86,7 +86,9 @@ jobs:
           git -C nabu-source apply "$GITHUB_WORKSPACE/ci/nabu-display-status-transport.patch"
           git -C nabu-source apply --check "$GITHUB_WORKSPACE/ci/nabu-ui-writer-sampling.patch"
           git -C nabu-source apply "$GITHUB_WORKSPACE/ci/nabu-ui-writer-sampling.patch"
-          python3 -m py_compile nabu-source/scripts/nabu_display_bindings.py nabu-source/scripts/nabu_ui_watch_source.py nabu-source/source-ci/nabu_data_skeleton.py
+          python3 ci/apply_iomfb_compat.py --source nabu-source
+          grep -F 'nabu-iomfb-compat' nabu-source/platform/NabuLegacyDisplayProbe.cpp
+          python3 -m py_compile ci/apply_iomfb_compat.py nabu-source/scripts/nabu_display_bindings.py nabu-source/scripts/nabu_ui_watch_source.py nabu-source/source-ci/nabu_data_skeleton.py
           grep -F 'sheng-vsync' nabu-source/platform/NabuLegacyCpuPresent.cpp
           grep -F 'VSYNC_NOTIFY = 0xfffffff005cd9720' nabu-source/scripts/nabu_display_bindings.py
           test -z "$(git -C nabu-source diff --check)"
