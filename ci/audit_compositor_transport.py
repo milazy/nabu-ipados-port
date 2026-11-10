@@ -36,9 +36,20 @@ def cdhashes(b):
         if magic!=0xfade0c02: continue
         cd=sig[off:off+length];hash_type=cd[37]
         need(hash_type in (1,2,3,4),'Unknown CodeDirectory hash')
-        digest=(hashlib.sha1(cd).digest() if hash_type==1 else
-                hashlib.sha384(cd).digest() if hash_type==4 else hashlib.sha256(cd).digest())[:20]
-        result.append({'hash_type':hash_type,'cdhash':digest.hex()})
+        hasher=hashlib.sha1 if hash_type==1 else hashlib.sha384 if hash_type==4 else hashlib.sha256
+        digest=hasher(cd).digest()[:20]
+        hash_offset=struct.unpack_from('>I',cd,16)[0]
+        slots,limit=struct.unpack_from('>II',cd,28)
+        hash_size,page_shift=cd[36],cd[39]
+        need(10<=page_shift<=16 and 0<hash_size<=hasher().digest_size,'Unsupported signature page geometry')
+        page=1<<page_shift
+        need(0<limit<=len(b) and slots==(limit+page-1)//page and hash_offset+slots*hash_size<=len(cd),
+             'CodeDirectory page bounds')
+        for index in range(slots):
+            actual=hasher(b[index*page:min((index+1)*page,limit)]).digest()[:hash_size]
+            need(actual==cd[hash_offset+index*hash_size:hash_offset+(index+1)*hash_size],
+                 'Signed executable page digest mismatch')
+        result.append({'hash_type':hash_type,'cdhash':digest.hex(),'code_pages_verified':slots})
     need(result,'No CodeDirectory')
     return result
 
