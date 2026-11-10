@@ -1,6 +1,6 @@
 # Integrated nabu UI repair — 2026-11-10
 
-Status: corrected kernel rebuild remains blocked by GitHub billing/spending restrictions. At the owner's later request, the already-installed kernel was retained and its supported UI policies were activated in a separate backed-up menu entry. The menu installation and unchanged payload hashes were verified, then one tablet reboot was accepted. Hardware UI outcome is pending observation.
+Status: the corrected final kernel is building under beamerwz in run 42734654454. The repository transfer cleared runner allocation. Fresh readback of the existing-kernel UI policy test confirms Apple startup and a running kernel for at least 420 seconds, but zero presented frames. The tablet is in recovery with the ESP block-read-only while the rebuilt candidate is compiled and validated.
 
 Blocked retry: https://github.com/yeahyeah97/nabu-ipados-macos-build/actions/runs/42731389168 . GitHub reports: “The job was not started because recent account payments have failed or your spending limit needs to be increased.” No payment setting or spending limit was changed.
 
