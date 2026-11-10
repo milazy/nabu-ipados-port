@@ -1,6 +1,6 @@
 # Standard compositor repair - 2026-11-10
 
-Status: run 42738683958 is compiling the repair at kernel source commit `7b36b383c2a99541a59f291b6ec43754227a183f`. The tablet is in temporary recovery with the ESP block-read-only. No working UI is claimed.
+Status: run 42738683958 passed all build and validation steps at kernel source commit `7b36b383c2a99541a59f291b6ec43754227a183f`. The matched kernel, supplementary trust module and corrected menu were installed with readback verification on 2026-11-10. One reboot command was accepted at 10:34 UTC (11:34 Europe/Rome). Visible UI remains unverified.
 
 ## New device evidence
 
@@ -27,3 +27,11 @@ The generic source patch and the nabu source patch passed application checks aga
 `ci/prepare_standard_compositor.py` requires the new compiled backend/UI symbols, the matching postlink display-layout report and the audited signed addon/cache set before creating an owner-ZAP-adjusted image. The device installer stages all new and rollback inputs in RAM, preserves an independent fallback menu, checks each write and the protected payloads, then remounts the ESP block-read-only. Activation follows verified kernel/cache installation. A later accepted reboot command is still not proof of a visible UI.
 
 OS/SystemOS, packed Data, ADT and the standard addon remain unchanged during this repair. Only the experimental kernel slot, its paired trust-cache sidecar and the selected menu entry are to change. Sustained visible SpringBoard and advancing presentation counters remain the decisive checks. Full App Store, networking, audio, persistent Data and 120 Hz operation remain unproven.
+
+## Completed build and installation
+
+Build: https://github.com/beamerwz/nabu-ipados-macos-build/actions/runs/42738683958 . Artifact ZIP digest `3703cf210cbae68d700f43e423316feaec3898cddf6e365e39eed03ca608e012` was independently checked after download. Compiled raw kernel SHA-256: `c84f637a9fd90949f572424450d8bead419d0ac69faf654bd6c8d7e62dbd2c6a`; the paired kernel report agrees. UI observer build capabilities, executable backend definitions and the original display layout passed validation.
+
+Installed kernel: `dc260d7980a9f0baadd8730f14e3659fa1975c88ab8d917f14851c21055037a4`, 124399616 bytes. Installed trust-cache bundle: `0a5679e8a6d49228a4c9bda6b6b0363b50e96f74047847dbb943c3aa426739b5`. Installed menu: `e917bc95db124a4ae55ea603a51c5a9ab4cf2fc676b8433db540b45fc2ed5b62`.
+
+The installer and a separate pre-reboot readback both confirmed those hashes. ADT, standard addon and packed Data hashes remained unchanged; the ESP was block-read-only at finish. Local `install-receipt.json` and `reboot-receipt.json` in the lab's `build-artifacts/nabu-standard-compositor-20261110` record these checks with `boot_verified: false`. Android GPT and Apple partitions were not modified. The next evidence required is sustained visible SpringBoard; installation success does not establish UI success.
