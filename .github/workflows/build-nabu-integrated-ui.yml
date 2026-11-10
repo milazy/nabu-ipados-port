@@ -3,6 +3,11 @@ name: Build nabu integrated UI kernel (two-pass)
 on:
   workflow_dispatch:
     inputs:
+      metal_joint_only:
+        description: "Build and qualify the two Metal frontend deadlock repairs without rebuilding XNU"
+        type: boolean
+        required: false
+        default: false
       usb_audit_only:
         description: "Run the pinned USB host models without building or accessing a device"
         type: boolean
@@ -26,11 +31,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  metal-runtime:
+    if: inputs.metal_joint_only && !inputs.usb_audit_only
+    uses: ./.github/workflows/build-nabu-metal-joint.yml
   usb-models:
-    if: inputs.usb_audit_only
+    if: inputs.usb_audit_only && !inputs.metal_joint_only
     uses: ./.github/workflows/audit-nabu-usb-console.yml
   build:
-    if: ${{ !inputs.usb_audit_only }}
+    if: ${{ !inputs.usb_audit_only && !inputs.metal_joint_only }}
     runs-on: macos-26-intel
     timeout-minutes: 90
     env:
