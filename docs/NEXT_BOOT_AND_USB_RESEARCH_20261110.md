@@ -25,3 +25,11 @@ The new explicit-dispatch `audit-nabu-usb-console.yml` runs the published USB co
 ## Next decision
 
 Read the current repair's new addon extraction/mount results, UI activation/thread samples, VSYNC counts and frame counters. Choose the next graphics change from that evidence. In parallel, qualify a reversible control/recovery path. Check the actual Android slot/partition state before claiming Android is erased or attempting any restoration; no Android reinstall or data wipe is authorized by this research note.
+
+## Host qualification results
+
+Run https://github.com/beamerwz/nabu-ipados-macos-build/actions/runs/42801698996 passed all **42** published USB model/cross-compilation checks at consumer commit `6bb969900d0edb53eeaea93b95326f7d58cfb4ee`; the kernel build job was skipped. Artifact ZIP SHA-256: `01b72d5bd734c1d0d84a2160e75d72deaf384ad7df5818af83ba5ecb117d3336`. The report explicitly states `hardware_verified: false`. No USB-enabled kernel was installed by this audit.
+
+The saved November 6 baseline boot/vendor_boot/dtbo/vbmeta inputs for both slots passed comparison with their original manifest hashes; boot and vendor_boot inputs have Android header magic. `scripts/audit_saved_android_boot.py` performed only host reads. This establishes intact saved inputs, not a working current Android root or permission to wipe/reinstall Android.
+
+The current captured kernel also includes opt-in `nabu-source-text` and `nabu-vc-scale` for readable console output. These are diagnostic options, not evidence of a graphics fix, and were not activated in this session. Fresh current-build readback remains the next device step.
