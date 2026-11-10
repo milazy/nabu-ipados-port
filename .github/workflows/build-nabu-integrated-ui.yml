@@ -3,6 +3,11 @@ name: Build nabu integrated UI kernel (two-pass)
 on:
   workflow_dispatch:
     inputs:
+      usb_audit_only:
+        description: "Run the pinned USB host models without building or accessing a device"
+        type: boolean
+        required: false
+        default: false
       reference_run:
         description: "Optional successful pass-one artifact run"
         required: false
@@ -21,7 +26,11 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  usb-models:
+    if: inputs.usb_audit_only
+    uses: ./.github/workflows/audit-nabu-usb-console.yml
   build:
+    if: ${{ !inputs.usb_audit_only }}
     runs-on: macos-26-intel
     timeout-minutes: 90
     env:

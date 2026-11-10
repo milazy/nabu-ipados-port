@@ -1,6 +1,7 @@
 name: Audit nabu USB console models (no device access)
 on:
   workflow_dispatch:
+  workflow_call:
 permissions:
   contents: read
 jobs:
