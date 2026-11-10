@@ -1,6 +1,8 @@
 # Integrated nabu UI repair — 2026-11-10
 
-Status: build in progress; new kernel has not been installed or booted.
+Status: blocked before runner allocation by GitHub account billing/spending restrictions. No new kernel was installed or booted in this session. The tablet remains in recovery.
+
+Blocked retry: https://github.com/yeahyeah97/nabu-ipados-macos-build/actions/runs/42731389168 . GitHub reports: “The job was not started because recent account payments have failed or your spending limit needs to be increased.” No payment setting or spending limit was changed.
 
 ## Verified current failure
 
@@ -27,5 +29,13 @@ The device installer still checks device/recovery identity, battery, all expecte
 3. Apply and verify the owner firmware digest adjustment; verify the final menu and protected payload hashes.
 4. Install once with rollback guards, then reboot once.
 5. Confirm sustained visible SpringBoard and presentation progress. Compilation or provider registration alone does not establish success.
+
+The nine patch sections affecting BSD startup and IOUserClient apply together to pinned XNU, and all three missing definitions appear exactly once. A broader exploratory flat-patch dry run encountered unrelated carrier/union ordering issues; it does not establish that the complete staged build succeeds. The decisive remaining check is the macOS CI rebuild.
+
+After the account restriction is resolved, resume explicitly (no monitoring or automatic retry was scheduled):
+
+```powershell
+gh workflow run build-nabu-integrated-ui.yml --repo yeahyeah97/nabu-ipados-macos-build --ref build/nabu-integrated-vsync-20261110 -f reference_run=42727406285 -f reference_sha256=606571c37363bfcc477ad881272793d35a57c61b32786ec1b18fbe9a7fe63762
+```
 
 No full App Store, networking, audio, persistent Data or 120 Hz operation is claimed. The Pad 7 macOS project uses a different SoC/GPU and cannot supply interchangeable firmware for this Pad 5.
