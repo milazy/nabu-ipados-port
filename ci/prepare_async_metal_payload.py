@@ -16,8 +16,18 @@ def main():
     need(len(patches)==5 and patches[-1]=='patches/adrenometal-nabu-async-creation.patch' and 'patches/adrenometal-nabu-completion-wait.patch' not in patches and 'patches/adrenometal-nabu-ci-kernels.patch' not in patches,'Unexpected patch combination')
     need(report['bundle_built'] and report['plugin_returncode']==0 and report['async_creation']['passed'],'Plugin build or async qualification failed')
     need(len(report['async_creation']['cases'])==20 and all(x['passed'] for x in report['async_creation']['cases']),'Async cases incomplete')
-    fixed=digest((base/'async-source/NativeBridgeMetalFrontend.mm').read_bytes())
+    fixedpath=base/'async-source/NativeBridgeMetalFrontend.mm'
+    fixed=digest(fixedpath.read_bytes())
     need(report['async_creation']['fixed_source_sha256']==fixed,'Qualification source binding mismatch')
+    baseline=(base/'async-source/NativeBridgeMetalFrontend.baseline.mm').read_text()
+    repaired=fixedpath.read_text()
+    for method,group in (('waitUntilCompleted','_handlers'),('waitUntilScheduled','_schedulingHandlers')):
+        marker='- (void)'+method+' {'
+        bodies=[]
+        for source in (baseline,repaired):
+            need(source.count(marker)==1,'Wait method source drift')
+            start=source.index(marker);bodies.append(source[start:source.index('\n}',start)+2])
+        need(bodies[0]==bodies[1] and 'dispatch_group_wait('+group+',DISPATCH_TIME_FOREVER)' in bodies[1],'Metal wait contract changed')
     need(report['abi_header_sha256']=='1608250c2c6cee12588a756f105bebc8652b03eb1ad383cc38eab8fa5da22734' and report['scanout_wire_sha256']=='3c91848ec16b02090d12862ca6e8cb61375488fa2885d141210cbc504d73984b','A640 ABI or scanout wire mismatch')
     need(report['adrenometal_commit']=='baad47ca22b181bf0ef0d08412d3ed1f96945e16' and report['metal2vulkan_commit']=='624bab3918de5b978e1101517abca2b4fa426565','Source pin mismatch')
     need(digest(a.kernel.read_bytes())=='e522b69aeaf901bc0188a79ed4860c3608a980021833a33a95ff65ab4a3c3b97','Installed kernel input changed')
