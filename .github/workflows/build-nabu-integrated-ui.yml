@@ -2,12 +2,19 @@ name: Build nabu integrated UI kernel (two-pass)
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - ".github/workflows/build-nabu-integrated-ui.yml"
+    inputs:
+      reference_run:
+        description: "Optional successful pass-one artifact run"
+        required: false
+        default: ""
+      reference_sha256:
+        description: "Required expected kernel SHA-256 when reusing pass one"
+        required: false
+        default: ""
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: nabu-integrated-ui
@@ -110,6 +117,7 @@ jobs:
           echo "UNIXNU_OWNER_POLICY_SYSTEMOS=$GITHUB_WORKSPACE/owner-input/systemos" >> "$GITHUB_ENV"
 
       - name: Prepare pass 1 graphics-closure kernel
+        if: inputs.reference_run == ''
         run: |
           set -euxo pipefail
           UNIXNU_DEVICE="$GITHUB_WORKSPACE/nabu-pass1"           python3 nabu-source/source-ci/prepare_source.py             --upstream "$GITHUB_WORKSPACE/unixnu-pass1"             --device "$GITHUB_WORKSPACE/nabu-pass1"             --profile nabu_ufs_cpu_ui_defconfig             --report "$GITHUB_WORKSPACE/output/pass1-source-prepare.json"
@@ -118,6 +126,7 @@ jobs:
           python3 ci/merge_xnu_patches.py             --upstream "$GITHUB_WORKSPACE/unixnu-pass1/patches/xnu"             --device "$GITHUB_WORKSPACE/nabu-pass1/patches/xnu"             --report "$GITHUB_WORKSPACE/output/pass1-xnu-patch-manifest.json"             --owner-root
 
       - name: Build pass 1 reference kernel
+        if: inputs.reference_run == ''
         run: |
           set -euxo pipefail
           export UNIXNU_DEVICE="$GITHUB_WORKSPACE/nabu-pass1"
@@ -136,6 +145,32 @@ jobs:
           PY
           shasum -a 256 "$GITHUB_WORKSPACE/pass1/kernel.macho" | tee "$GITHUB_WORKSPACE/output/pass1-kernel-sha256.txt"
 
+      - name: Restore verified pass-one reference
+        if: inputs.reference_run != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REF_RUN: ${{ inputs.reference_run }}
+          REF_SHA: ${{ inputs.reference_sha256 }}
+        run: |
+          set -euxo pipefail
+          python3 - <<'PY'
+          import os, re
+          assert re.fullmatch(r"[0-9]+", os.environ["REF_RUN"])
+          assert re.fullmatch(r"[0-9a-f]{64}", os.environ["REF_SHA"])
+          PY
+          gh run download "$REF_RUN" --repo "${{ github.repository }}" --name nabu-integrated-ui-build --dir reference-download
+          cp reference-download/pass1/kernel.macho pass1/kernel.macho
+          cp reference-download/pass1/kernel.json pass1/kernel.json
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib
+          root=pathlib.Path("reference-download")
+          identity=json.loads((root/"output/integrated-build.json").read_text())
+          assert identity["nabu_source"]==os.environ["NABU_SOURCE_SHA"]
+          assert identity["unixnu_source"]==os.environ["UNIXNU_SOURCE_SHA"]
+          assert hashlib.sha256(pathlib.Path("pass1/kernel.macho").read_bytes()).hexdigest()==os.environ["REF_SHA"]
+          PY
+          python3 ci/verify_display_reference.py --reference pass1/kernel.macho --candidate pass1/kernel.macho --report output/reused-reference-validation.json
+
       - name: Prepare final GPU + display kernel against pass 1 ABI
         run: |
           set -euxo pipefail
@@ -144,6 +179,11 @@ jobs:
 
           python3 ci/rebase_owner_trust_patch.py             --patch "$GITHUB_WORKSPACE/nabu-final/patches/xnu/nabu-master-second-trust-cache.patch"
           python3 ci/merge_xnu_patches.py             --upstream "$GITHUB_WORKSPACE/unixnu-final/patches/xnu"             --device "$GITHUB_WORKSPACE/nabu-final/patches/xnu"             --report "$GITHUB_WORKSPACE/output/final-xnu-patch-manifest.json"             --owner-root
+
+      - name: Restore required graphics startup code
+        run: |
+          set -euxo pipefail
+          python3 ci/stage_graphics_startup.py --input unixnu-final/patches/xnu/offline-component-load-probes.patch --output nabu-final/patches/xnu/nabu-graphics-startup.patch
 
       - name: Build final integrated nabu kernel
         id: final_kernel
@@ -160,6 +200,7 @@ jobs:
           set -euxo pipefail
           K=unixnu-final/out/nabu/kernel/kernel.macho
           test -s "$K"
+          python3 ci/verify_display_reference.py --reference pass1/kernel.macho --candidate "$K" --report output/final-display-reference-validation.json
           python3 ci/verify_xnu_macho.py --input "$K" --report output/final-kernel-identity.json
           xcrun strings "$K" | grep -F 'NativeLegacyDisplay'
           xcrun strings "$K" | grep -F 'offline-legacy-pm'
@@ -199,6 +240,7 @@ jobs:
             unixnu-final/out/nabu/kernel/kernel.json
             pass1/kernel.macho
             pass1/kernel.json
+            nabu-final/patches/xnu/nabu-graphics-startup.patch
             output/
           if-no-files-found: warn
           retention-days: 7
