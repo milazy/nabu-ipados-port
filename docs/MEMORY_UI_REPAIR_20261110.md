@@ -32,3 +32,7 @@ Owner ZAP identity preparation produced kernel `e522b69aeaf901bc0188a79ed4860c36
 `scripts/reboot_memory_ui.py` independently rechecked all six fingerprints, nabu/recovery identity and the read-only ESP block state. One ADB reboot request was accepted at 11:34:02 UTC (12:34 Rome). Its receipt is `FINAL_READBACK_PASS_REBOOT_REQUEST_ACCEPTED_UI_UNVERIFIED`. Actual UEFI allocation, reduced memory pressure, UI process progress and visible iPadOS remain unverified until the next device observation/readback.
 
 `scripts/install_memory_ui.py` stages and verifies the new/rollback kernels, ADTs and menus in RAM, selects the independent fallback before replacement, then verifies each write and returns the ESP to block-read-only. The paired trust cache, standard addon and packed Data are protected. It checks the exact previous live fingerprints and the independent memory report. This installation changed only the ESP kernel, ADT and menu; it did not write Android images, GPT or Apple OS/Data partitions.
+
+## Follow-up device confirmation
+
+The next CRC-verified readback, sequence 862, confirmed 475607 free plus 48681 wired 4 KiB pages (2 GiB total), successful UI process activation and no recorded namespace-1 memory-pressure exits through the committed snapshot. Visible UI was still absent. See [the frontend repair record](METAL_FRONTEND_REPAIR_20261110.md) for the exact capture identity, remaining zero-frame behavior and the subsequently installed async-only Metal repair.
