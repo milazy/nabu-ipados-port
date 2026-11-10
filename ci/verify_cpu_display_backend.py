@@ -8,9 +8,12 @@ MARKERS=(
     b"sheng-vsync",b"nabu-gpu-scanout",b"NABU DISPLAY gpu-blit handoff ready",
     b"nabu-keybag-notifications",b"nabu-aks-state",
     b"nabu-disable-watchdogd",b"nabu-skip-setup",
+    b"sheng-gpu-addon",b"NABU ADDON standard files=",b"NABU ADDON standard mounts=",
+    b"nabu-ui-watch",b"NabuUI: event=",b"NABU DISPLAY vsync hz=",b"/private/var/ngpu",
 )
 METHODS=("validateSwap","validateSwapLocked","kickSwapQueue","vsyncFired")
-GLOBALS=("_nabu_graphics_start_after_root","_nabu_graphics_worker_stage","_native_mobile_graphics_load_status")
+GLOBALS=("_nabu_graphics_start_after_root","_nabu_graphics_worker_stage","_native_mobile_graphics_load_status",
+         "_nabu_ui_watch_snapshot","_nabu_ui_watch_activate_image_v2","_nabu_ui_watch_thread_state")
 
 def verify(path):
     b=path.read_bytes()

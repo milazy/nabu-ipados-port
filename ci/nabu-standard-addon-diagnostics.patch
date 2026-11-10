@@ -1,0 +1,47 @@
+--- a/patches/xnu/zzy-native-gpu-addon-mount.patch
++++ b/patches/xnu/zzy-native-gpu-addon-mount.patch
+@@ -2,7 +2,7 @@
+ index a5ff474..4704203 100644
+ --- a/bsd/kern/kern_exec.c
+ +++ b/bsd/kern/kern_exec.c
+-@@ -7193,6 +7193,321 @@ uint64_t native_owner_data_seed_base, native_owner_data_seed_size;
++@@ -7193,6 +7193,325 @@ uint64_t native_owner_data_seed_base, native_owner_data_seed_size;
+  uint8_t native_owner_data_seed_sha256[32];
+  char native_owner_data_device_path[64];
+  
+@@ -300,6 +300,8 @@
+ +		return;
+ +	}
+ +	native_gpu_addon_install(p, scratch);
+++	printf("NABU ADDON standard files=%d written=%d same=%d failed=%d error=%d\n",
+++	    native_gpu_addon_files, native_gpu_addon_written, native_gpu_addon_same, native_gpu_addon_failed, native_gpu_addon_error);
+ +	static const char extensions_source[] = "/private/var/ngpu/addons", extensions_point[] = "/System/Library/Extensions";
+ +	static const char daemons_source[] = "/private/var/ngpu/daemons", daemons_point[] = "/System/Library/LaunchDaemons";
+ +	native_gpu_addon_mount(p, scratch, 0x400, extensions_source, sizeof(extensions_source), extensions_point,
+@@ -309,6 +311,8 @@
+ +	native_gpu_addon_mount(p, scratch, 0x600, daemons_source, sizeof(daemons_source), daemons_point, sizeof(daemons_point),
+ +	    "/System/Library/LaunchDaemons/com.apple.backboardd.plist",
+ +	    "/System/Library/LaunchDaemons/org.blu-sharky.adrenoprobed.plist", &native_gpu_addon2_stage, &native_gpu_addon2_status);
+++	printf("NABU ADDON standard mounts=extensions:%d/%d daemons:%d/%d\n",
+++	    native_gpu_addon_stage, native_gpu_addon_status, native_gpu_addon2_stage, native_gpu_addon2_status);
+ +	/* The default iPadOS 17 wallpaper's layered animation with PNG images in place of its HEIC ones (no hardware HEVC decoder here).
+ +	 * The overlay carries the animation's documents and the PNG images; the sealed assets directory stays visible below it. */
+ +	static const char wallpaper_source[] = "/private/var/ngpu/wallpaper",
+@@ -371,7 +375,7 @@
+ index 8609009..0c659c7 100644
+ --- a/bsd/miscfs/bindfs/bind_vnops.c
+ +++ b/bsd/miscfs/bindfs/bind_vnops.c
+-@@ -105,6 +105,14 @@ bindfs_getattr(struct vnop_getattr_args * args)
++@@ -105,5 +105,13 @@ bindfs_getattr(struct vnop_getattr_args * args)
+  		vnode_put(lowervp);
+ 
+  		if (error == 0) {
+@@ -390,7 +394,7 @@
+ index c3bebc8..4555530 100644
+ --- a/bsd/miscfs/bindfs/bindfs.h
+ +++ b/bsd/miscfs/bindfs/bindfs.h
+-@@ -81,6 +81,9 @@
++@@ -81,4 +81,7 @@
+  //#define BINDFS_DEBUG 0
+ 
+  #define BINDM_CACHE 0x0001

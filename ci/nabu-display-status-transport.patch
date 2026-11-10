@@ -1,0 +1,63 @@
+--- a/platform/NabuLegacyDisplayProbe.cpp
++++ b/platform/NabuLegacyDisplayProbe.cpp
+@@ -30,6 +30,16 @@
+ extern "C" void native_legacy_vsync_observed(unsigned event, unsigned hz) {
+     if (event < 6) nabu_legacy_vsync_events[event] = nabu_legacy_vsync_events[event] + 1;
+     nabu_legacy_vsync_hz = hz;
++}
++extern "C" void nabu_legacy_vsync_dump(void) {
++    IOLog("NABU DISPLAY vsync hz=%u armed=%llu sent=%llu idle=%llu late=%llu started=%llu refresh=%llu\n",
++        nabu_legacy_vsync_hz,
++        (unsigned long long)nabu_legacy_vsync_events[0],
++        (unsigned long long)nabu_legacy_vsync_events[1],
++        (unsigned long long)nabu_legacy_vsync_events[2],
++        (unsigned long long)nabu_legacy_vsync_events[3],
++        (unsigned long long)nabu_legacy_vsync_events[4],
++        (unsigned long long)nabu_legacy_vsync_events[5]);
+ }
+ extern "C" kmod_info_t g_kernel_kmod_info;
+ extern "C" void native_legacy_display_static_init(void) __asm__("__GLOBAL__sub_I_NativeLegacyDisplay.cpp");
+--- a/platform/NabuGraphicsStatus.cpp
++++ b/platform/NabuGraphicsStatus.cpp
+@@ -39,6 +39,7 @@
+ extern volatile int nabu_keybag_notification_status;
+ extern volatile uint32_t nabu_keybag_notification_subscriptions, nabu_keybag_notification_failures;
+ extern volatile uint32_t nabu_keybag_notification_refused_opens;
++void nabu_legacy_vsync_dump(void);
+ unsigned native_legacy_state_words(char *out, unsigned cap);
+ extern volatile uint32_t native_legacy_pm_stage, native_legacy_pm_ordinal;
+ extern volatile uint32_t native_legacy_pm_calls, native_legacy_pm_callbacks;
+@@ -102,6 +103,7 @@
+             nabu_keybag_notification_stage, (unsigned)nabu_keybag_notification_status,
+             nabu_keybag_notification_subscriptions, nabu_keybag_notification_failures,
+             nabu_keybag_notification_refused_opens);
++        nabu_legacy_vsync_dump();
+         char words[192];
+         if (native_legacy_state_words(words, sizeof(words))) IOLog("NABU DISPLAY state %s\n", words);
+         IOLog("NABU DISPLAY pm stage=%u status=0x%x ordinal=%u calls=%u callbacks=%u\n",
+--- a/source-ci/nabu_data_skeleton.py
++++ b/source-ci/nabu_data_skeleton.py
+@@ -97,6 +97,7 @@
+     ('MobileSoftwareUpdate', 0o755, 0, 0),
+     ('msgs', 0o755, 0, 0),
+     ('networkd', 0o755, 24, 0),
++    ('ngpu', 0o755, 0, 0),
+     ('OOPJit', 0o777, 0, 80),
+     ('PersonaVolumes', 0o755, 0, 0),
+     ('preboot', 0o755, 0, 0),
+--- a/scripts/nabu_ui_watch_source.py
++++ b/scripts/nabu_ui_watch_source.py
+@@ -454,6 +454,13 @@
+ 	}
+ ''',
+      r'''#define nabu_gpu_userprobe_exec_snapshot nabu_ui_watch_snapshot
++	/* Observe standard-addon UI startup without selecting the closed probe addon. */
++	unsigned nabu_ui_standard = 0;
++	if (PE_parse_boot_argn("nabu-ui-watch", &nabu_ui_standard, sizeof(nabu_ui_standard)) && nabu_ui_standard == 1) {
++		extern void nabu_ui_watch_snapshot(uint32_t out[6]);
++		extern void (*nabu_log_probe_process_snapshot)(uint32_t *);
++		__atomic_store_n(&nabu_log_probe_process_snapshot, nabu_ui_watch_snapshot, __ATOMIC_RELEASE);
++	}
+ 	/* NABU_GPU_USERPROBE_JOB_V1 */
+ 	uint32_t nabu_probe = 0;
+ 	if (PE_parse_boot_argn("nabu-gpu-userprobe", &nabu_probe, sizeof(nabu_probe)) && nabu_probe == 1) {

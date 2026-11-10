@@ -65,7 +65,9 @@ jobs:
           # fail-closed 21H16 port qualified against this exact kernelcache.
           git -C nabu-source apply --check "$GITHUB_WORKSPACE/ci/nabu-integrated-vsync-21h16.patch"
           git -C nabu-source apply "$GITHUB_WORKSPACE/ci/nabu-integrated-vsync-21h16.patch"
-          python3 -m py_compile nabu-source/scripts/nabu_display_bindings.py
+          git -C nabu-source apply --check "$GITHUB_WORKSPACE/ci/nabu-display-status-transport.patch"
+          git -C nabu-source apply "$GITHUB_WORKSPACE/ci/nabu-display-status-transport.patch"
+          python3 -m py_compile nabu-source/scripts/nabu_display_bindings.py nabu-source/scripts/nabu_ui_watch_source.py nabu-source/source-ci/nabu_data_skeleton.py
           grep -F 'sheng-vsync' nabu-source/platform/NabuLegacyCpuPresent.cpp
           grep -F 'VSYNC_NOTIFY = 0xfffffff005cd9720' nabu-source/scripts/nabu_display_bindings.py
           test -z "$(git -C nabu-source diff --check)"
@@ -175,7 +177,9 @@ jobs:
         run: |
           set -euxo pipefail
           export UNIXNU_DISPLAY_REFERENCE="$GITHUB_WORKSPACE/pass1/kernel.macho"
-          UNIXNU_DEVICE="$GITHUB_WORKSPACE/nabu-final"           python3 nabu-source/source-ci/prepare_source.py             --upstream "$GITHUB_WORKSPACE/unixnu-final"             --device "$GITHUB_WORKSPACE/nabu-final"             --profile nabu_ufs_gpu_metal_defconfig             --capture-logs             --report "$GITHUB_WORKSPACE/output/final-source-prepare.json"
+          git -C unixnu-final apply --check "$GITHUB_WORKSPACE/ci/nabu-standard-addon-diagnostics.patch"
+          git -C unixnu-final apply "$GITHUB_WORKSPACE/ci/nabu-standard-addon-diagnostics.patch"
+          UNIXNU_DEVICE="$GITHUB_WORKSPACE/nabu-final"           python3 nabu-source/source-ci/prepare_source.py             --upstream "$GITHUB_WORKSPACE/unixnu-final"             --device "$GITHUB_WORKSPACE/nabu-final"             --profile nabu_ufs_gpu_metal_defconfig             --capture-logs --gpu-userprobe --ui-watch             --report "$GITHUB_WORKSPACE/output/final-source-prepare.json"
 
           python3 ci/rebase_owner_trust_patch.py             --patch "$GITHUB_WORKSPACE/nabu-final/patches/xnu/nabu-master-second-trust-cache.patch"
           python3 ci/merge_xnu_patches.py             --upstream "$GITHUB_WORKSPACE/unixnu-final/patches/xnu"             --device "$GITHUB_WORKSPACE/nabu-final/patches/xnu"             --report "$GITHUB_WORKSPACE/output/final-xnu-patch-manifest.json"             --owner-root
