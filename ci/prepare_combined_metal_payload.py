@@ -1,5 +1,5 @@
 """Pack the source-qualified, still hardware-UNVERIFIED combined frontend into an independent addon and trust module."""
-import argparse,hashlib,json,struct,zlib
+import argparse,hashlib,json,struct,zlib,subprocess
 from pathlib import Path
 from audit_compositor_transport import EXPECTED,audit,cdhashes,need
 
@@ -35,7 +35,7 @@ def main():
             (' // Scheduled state must not wait for handler dispatch.\n // dispatch_group_wait('+group+',DISPATCH_TIME_FOREVER);'))==bodies[1],
             'Only the two audited wait statements may change')
     need(report['abi_header_sha256']=='1608250c2c6cee12588a756f105bebc8652b03eb1ad383cc38eab8fa5da22734' and report['scanout_wire_sha256']=='3c91848ec16b02090d12862ca6e8cb61375488fa2885d141210cbc504d73984b','A640 ABI or scanout wire mismatch')
-    need(report.get('completion_patch_sha256')==digest((Path(__file__).parents[1]/'nabu-source/patches/adrenometal-nabu-completion-wait.patch').read_bytes()) and report['adrenometal_commit']=='baad47ca22b181bf0ef0d08412d3ed1f96945e16' and report['metal2vulkan_commit']=='624bab3918de5b978e1101517abca2b4fa426565','Source pin mismatch')
+    need(report.get('completion_patch_sha256')==digest(subprocess.check_output(['git','-C',str(Path(__file__).parents[1]/'nabu-source'),'show','54b4f98457f8e9e232cc0a077c20d08d0b2f0ac9:patches/adrenometal-nabu-completion-wait.patch'])) and report['adrenometal_commit']=='baad47ca22b181bf0ef0d08412d3ed1f96945e16' and report['metal2vulkan_commit']=='624bab3918de5b978e1101517abca2b4fa426565','Source pin mismatch')
     need(digest(a.kernel.read_bytes())=='7291773563faf2791ca4e874117b9c517437791f0d8efe98cb3838a16839b60d','Installed kernel input changed')
     old=a.trustcache.read_bytes()
     need(digest(old)=='985f504f98ac96b69f04025934363b8e65da4fdc7236e0bc7cb3e87edf8a8457','Expected previous trust cache')
