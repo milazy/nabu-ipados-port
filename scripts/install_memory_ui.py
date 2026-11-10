@@ -38,6 +38,8 @@ def main():
     memory=json.loads((OUT/'memory-window-preparation.json').read_text())
     need(memory['status']=='NABU_RESERVED_MEMORY_WINDOW_HOST_PASS' and memory['old_bytes']==0x40000000 and memory['new_bytes']==0x80000000,'Memory report mismatch')
     need(sha(OLDADT)==OLD['adt'] and sha(NEWADT)==memory['new_sha256'],'ADT input mismatch')
+    independent=json.loads((OUT/'independent-adt-validation.json').read_text())
+    need(independent['status']=='INDEPENDENT_ADT_DECODER_PASS' and independent['old_sha256']==sha(OLDADT) and independent['new_sha256']==sha(NEWADT),'Independent ADT evidence missing or stale')
     need(r['trustcache_sha256']==OLD['trustcache'],'Paired trust cache must remain unchanged')
     need(sha(newk)==r['kernel_sha256'] and sha(newtc)==r['trustcache_sha256'],'Prepared bytes changed')
     need(sha(OLDK)==OLD['kernel'] and sha(OLDTC)==OLD['trustcache'] and sha(OLDMENU)==OLD['menu'],'Rollback input mismatch')
