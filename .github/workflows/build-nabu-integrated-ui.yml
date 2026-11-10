@@ -54,6 +54,15 @@ jobs:
           git -C nabu-source checkout --quiet --detach FETCH_HEAD
           test "$(git -C nabu-source rev-parse HEAD)" = "$NABU_SOURCE_SHA"
 
+          # The public nabu pin predates the working GOP VSYNC path. Apply the
+          # fail-closed 21H16 port qualified against this exact kernelcache.
+          git -C nabu-source apply --check "$GITHUB_WORKSPACE/ci/nabu-integrated-vsync-21h16.patch"
+          git -C nabu-source apply "$GITHUB_WORKSPACE/ci/nabu-integrated-vsync-21h16.patch"
+          python3 -m py_compile nabu-source/scripts/nabu_display_bindings.py
+          grep -F 'sheng-vsync' nabu-source/platform/NabuLegacyCpuPresent.cpp
+          grep -F 'VSYNC_NOTIFY = 0xfffffff005cd9720' nabu-source/scripts/nabu_display_bindings.py
+          test -z "$(git -C nabu-source diff --check)"
+
           for tree in unixnu-pass1 unixnu-final; do
             git init -q "$tree"
             git -C "$tree" remote add origin https://github.com/UniXNU/UniXNU.git

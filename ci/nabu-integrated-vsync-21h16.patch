@@ -1,0 +1,231 @@
+diff --git a/platform/NabuLegacyCpuPresent.cpp b/platform/NabuLegacyCpuPresent.cpp
+index 8e612e5..6f0a38e 100644
+--- a/platform/NabuLegacyCpuPresent.cpp
++++ b/platform/NabuLegacyCpuPresent.cpp
+@@ -4,6 +4,8 @@
+ #include "NabuLegacyCpuPixels.h"
+ #include <IOKit/IOLib.h>
+ #include <IOKit/IOMemoryDescriptor.h>
++#include <IOKit/IOWorkLoop.h>
++#include <IOKit/IOTimerEventSource.h>
+ #include <IOKit/pwr_mgt/IOPM.h>
+ #include <IOKit/pwr_mgt/IOPMpowerState.h>
+ #include <libkern/c++/OSData.h>
+@@ -29,6 +31,10 @@ extern "C" void native_legacy_surface_rejected(uint64_t, uint64_t, uint32_t, uin
+ extern "C" void native_legacy_transfer_observed(IOReturn, const void *, uint64_t);
+ extern "C" void native_legacy_retirement_observed(IOService *);
+ extern "C" void native_legacy_pm_observed(unsigned, IOReturn, unsigned long);
++extern "C" void native_legacy_vsync_notify(void *, uint64_t, uint64_t, uint64_t);
++extern "C" bool native_legacy_set_refresh_properties(void *);
++extern "C" void native_legacy_vsync_observed(unsigned, unsigned);
++extern "C" uint64_t mach_continuous_time(void);
+ // This binding must be generated from this version's original activation path.
+ extern "C" void nabu_legacy_request_active(void *, const OriginalLegacySwapRequest *, uint32_t);
+ extern "C" int nabu_legacy_display_state(void *, void *, bool);
+@@ -57,6 +63,64 @@ class NativeLegacyDisplay : public IOMobileFramebufferLegacy {
+     size_t shadowBytes = 0;
+     bool shadowValid = false, diffEnabled = true;
+     const OriginalLegacySwapRequest *validated[64] = {};
++    IOTimerEventSource *vsyncTimer = nullptr;
++    uint64_t vsyncInterval = 0, vsyncNext = 0;
++    unsigned vsyncHz = 0;
++    bool vsyncArmed = false;
++    bool vsyncWanted() const {
++        const void *head = nullptr;
++        memcpy(&head, reinterpret_cast<const unsigned char *>(this) + 5592, sizeof(head));
++        return head != nullptr;
++    }
++    void armVsync() {
++        if (!vsyncTimer || vsyncArmed || !vsyncWanted()) return;
++        vsyncArmed = true;
++        vsyncNext = mach_absolute_time() + vsyncInterval;
++        vsyncTimer->wakeAtTime(vsyncNext);
++        native_legacy_vsync_observed(0, vsyncHz);
++    }
++    static void vsyncFired(OSObject *owner, IOTimerEventSource *) {
++        static_cast<NativeLegacyDisplay *>(owner)->vsyncTick();
++    }
++    void vsyncTick() {
++        vsyncArmed = false;
++        if (!vsyncTimer) return;
++        if (!vsyncWanted()) { native_legacy_vsync_observed(2, vsyncHz); return; }
++        const uint64_t now = mach_absolute_time();
++        native_legacy_vsync_notify(this, now, mach_continuous_time(), vsyncInterval);
++        native_legacy_vsync_observed(1, vsyncHz);
++        vsyncNext += vsyncInterval;
++        if (vsyncNext <= now) {
++            vsyncNext = now + vsyncInterval;
++            native_legacy_vsync_observed(3, vsyncHz);
++        }
++        vsyncArmed = true;
++        vsyncTimer->wakeAtTime(vsyncNext);
++    }
++    void startVsync() {
++        unsigned hz = 0;
++        PE_parse_boot_argn("sheng-vsync", &hz, sizeof(hz));
++        if (!hz || hz > 240 || !primary || !bootMapping || vsyncTimer) return;
++        IOWorkLoop *loop = getWorkLoop();
++        if (!loop) return;
++        IOTimerEventSource *timer = IOTimerEventSource::timerEventSource(this, &NativeLegacyDisplay::vsyncFired);
++        if (!timer) return;
++        if (loop->addEventSource(timer) != kIOReturnSuccess) { timer->release(); return; }
++        nanoseconds_to_absolutetime(1000000000ull / hz, &vsyncInterval);
++        vsyncHz = hz; vsyncTimer = timer;
++        native_legacy_vsync_observed(4, hz);
++        loop->runAction([](OSObject *owner, void *, void *, void *, void *) -> IOReturn {
++            static_cast<NativeLegacyDisplay *>(owner)->armVsync();
++            return kIOReturnSuccess;
++        }, this);
++    }
++    void stopVsync() {
++        if (!vsyncTimer) return;
++        vsyncTimer->cancelTimeout();
++        if (IOWorkLoop *loop = getWorkLoop()) loop->removeEventSource(vsyncTimer);
++        OSSafeReleaseNULL(vsyncTimer);
++        vsyncArmed = false;
++    }
+ #if defined(NABU_LEGACY_GPU_SCANOUT)
+     NabuGpuScanoutHandoff *gpuHandoff = nullptr;
+     const OriginalLegacySwapRequest *gpuRequest = nullptr;
+@@ -217,12 +281,14 @@ class NativeLegacyDisplay : public IOMobileFramebufferLegacy {
+     }
+ public:
+     void free() override {
++        stopVsync();
+         if (logicalPM) { PMstop(); logicalPM = false; }
+         releaseShadow();
+         OSSafeReleaseNULL(bootMapping);
+         IOMobileFramebufferLegacy::free();
+     }
+     void stop(IOService *provider) override {
++        stopVsync();
+ #if defined(NABU_LEGACY_GPU_SCANOUT)
+         if (gpuHandoff) {
+             getWorkLoop()->runAction([](OSObject *target, void *, void *, void *, void *) -> IOReturn {
+@@ -288,6 +354,7 @@ public:
+             }
+ #endif
+         }
++        startVsync();
+         return true;
+     }
+     // UniXNU startDisplay: the actual IOKit PM lifecycle for logical scanout
+@@ -333,6 +400,9 @@ public:
+         unsigned value = 0;
+         PE_parse_boot_argn("offline-legacy-register", &value, sizeof(value));
+         if (value != 1) native_legacy_backend_guard(84, this, __builtin_return_address(0));
++        unsigned hz = 0;
++        PE_parse_boot_argn("sheng-vsync", &hz, sizeof(hz));
++        if (primary && hz > 60 && hz <= 240) native_legacy_set_refresh_properties(this);
+         IOService::registerService(options);
+         native_legacy_registration_observed(this);
+     }
+@@ -344,6 +414,7 @@ public:
+         kicking = false;
+     }
+     void kickSwapQueue() override {
++        armVsync();
+ #if defined(NABU_LEGACY_GPU_SCANOUT)
+         if (gpuHandoff) {
+             getWorkLoop()->runAction([](OSObject *target, void *, void *, void *, void *) -> IOReturn {
+diff --git a/platform/NabuLegacyDisplayProbe.cpp b/platform/NabuLegacyDisplayProbe.cpp
+index 5efb242..63b4070 100644
+--- a/platform/NabuLegacyDisplayProbe.cpp
++++ b/platform/NabuLegacyDisplayProbe.cpp
+@@ -17,14 +17,20 @@
+ #include <mach/kmod.h>
+ #include <machine/machine_routines.h>
+ 
+-// nabu CPU-only adaptation: no GOP presenter, GPU hand-off or vsync backend.
++// nabu keeps its own scanout hand-off, while VSYNC/refresh call the original
++// 21H16 IOMobileGraphicsFamily helpers qualified by nabu_display_bindings.py.
+ extern "C" void native_gop_presenter_static_init(void) {}
+ extern "C" IOService *native_gop_presenter_create(void) { return nullptr; }
+ extern "C" void native_gop_presenter_set_source(IOService *, IOService *) {}
+ extern "C" bool native_gop_gpu_offer(IOService *, void *, IOMemoryDescriptor *, uint64_t, uint32_t, uint32_t) { return false; }
+-extern "C" void native_legacy_vsync_notify(void *, uint64_t, uint64_t, uint64_t) {}
+-extern "C" bool native_legacy_set_refresh_properties(void *) { return false; }
+-extern "C" void native_legacy_vsync_observed(unsigned, unsigned) {}
++extern "C" void native_legacy_vsync_notify(void *, uint64_t, uint64_t, uint64_t);
++extern "C" bool native_legacy_set_refresh_properties(void *);
++static volatile uint64_t nabu_legacy_vsync_events[6];
++static volatile unsigned nabu_legacy_vsync_hz;
++extern "C" void native_legacy_vsync_observed(unsigned event, unsigned hz) {
++    if (event < 6) nabu_legacy_vsync_events[event] = nabu_legacy_vsync_events[event] + 1;
++    nabu_legacy_vsync_hz = hz;
++}
+ extern "C" kmod_info_t g_kernel_kmod_info;
+ extern "C" void native_legacy_display_static_init(void) __asm__("__GLOBAL__sub_I_NativeLegacyDisplay.cpp");
+ extern "C" IOService *native_legacy_display_allocate(void);
+diff --git a/scripts/nabu_display_bindings.py b/scripts/nabu_display_bindings.py
+index 162cbce..564ac7b 100644
+--- a/scripts/nabu_display_bindings.py
++++ b/scripts/nabu_display_bindings.py
+@@ -55,6 +55,13 @@ EXPECTED_GMETACLASS = 0xfffffff007afe840
+ EXPECTED_METACLASS_VPTR = 0xfffffff006d594b8
+ EXPECTED_PARENT = 0xfffffff007afa300
+ EXPECTED_NAME_VA = 0xfffffff005444807
++VSYNC_NOTIFY = 0xfffffff005cd9720
++SET_REFRESH_PROPERTIES = 0xfffffff005ce1bb8
++VSYNC_NOTIFY_HEAD = bytes.fromhex("ff0302d1fd7b07a9fdc30191a0831ff8")
++VSYNC_QUEUE_LOAD = bytes.fromhex("08ed4af9")
++VSYNC_SEND_BODY = bytes.fromhex("e2230091c3008052240080521684ff97")
++REFRESH_HEAD = bytes.fromhex("ff0302d1fd7b07a9fdc30191a0031ff8")
++SLOT301_WORDS = bytes.fromhex("888888d28888a0f2")
+ # Slot 249: nullable width/height outputs, reading uint32 fields +5808/+5812.
+ DIMENSIONS_ACCESSOR = bytes.fromhex(
+     'ff8300d1e00f00f9e10b00f9e20700f9e80f40f9e80300f9e80b40f9080100f1'
+@@ -63,6 +70,28 @@ DIMENSIONS_ACCESSOR = bytes.fromhex(
+     '280100b901000014ff830091c0035fd6')
+ 
+ 
++def qualify_vsync_refresh(data, image, legacy):
++    if read_va(image, data, VSYNC_NOTIFY, 16) != VSYNC_NOTIFY_HEAD:
++        raise ValueError('21H16 vsync sender prologue mismatch')
++    if read_va(image, data, VSYNC_NOTIFY + 0x110, 4) != VSYNC_QUEUE_LOAD:
++        raise ValueError('21H16 vsync queue load mismatch')
++    if read_va(image, data, VSYNC_NOTIFY + 0x13c, 16) != VSYNC_SEND_BODY:
++        raise ValueError('21H16 vsync async-send body mismatch')
++    if legacy[301] != 0xfffffff005ce1a5c:
++        raise ValueError(f'21H16 Legacy slot 301 changed: {legacy[301]:#x}')
++    if read_va(image, data, legacy[301] + 0x0c, 8) != SLOT301_WORDS:
++        raise ValueError('21H16 refresh words mismatch')
++    if read_va(image, data, SET_REFRESH_PROPERTIES, 16) != REFRESH_HEAD:
++        raise ValueError('21H16 setDisplayRefreshProperties prologue mismatch')
++    interior = bytes.fromhex('e00f40f949f082d2e80300aa0801098b09014039080040f908b544f9')
++    if read_va(image, data, SET_REFRESH_PROPERTIES + 0x84, len(interior)) != interior:
++        raise ValueError('21H16 setDisplayRefreshProperties interior mismatch')
++    return {'status':'static_qualified_21H16',
++            'vsync_notify':hex(VSYNC_NOTIFY),
++            'set_refresh_properties':hex(SET_REFRESH_PROPERTIES),
++            'slot301':hex(legacy[301])}
++
++
+ def qualify_dimensions_accessor(code):
+     if code != DIMENSIONS_ACCESSOR:
+         raise ValueError('Original dimension accessor differs from the audited 21H16 body')
+@@ -464,6 +493,7 @@ def main():
+ 
+     legacy_ctor, legacy_vptr, legacy = find_legacy_ctor(data, image, module, native_prelink)
+     dimensions = qualify_dimensions_accessor(read_va(image, data, legacy[249], len(DIMENSIONS_ACCESSOR)))
++    vsync_refresh = qualify_vsync_refresh(data, image, legacy)
+     cpu_contract = None
+     if args.cpu_present:
+         from nabu_cpu_abi import qualify
+@@ -508,6 +538,8 @@ def main():
+         from nabu_cpu_abi import ACTIVE_REQUEST, DISPLAY_STATE
+         binding_specs.append(('_nabu_legacy_request_active', ACTIVE_REQUEST, 'family'))
+         binding_specs.append(('_nabu_legacy_display_state', DISPLAY_STATE, 'family'))
++        binding_specs.append(('_native_legacy_vsync_notify', VSYNC_NOTIFY, 'family'))
++        binding_specs.append(('_native_legacy_set_refresh_properties', SET_REFRESH_PROPERTIES, 'family'))
+     translators = {}
+     candidate = {}
+     if args.native is not None:
+@@ -601,6 +633,7 @@ def main():
+         'bindings': {name: hex(va) for name, va in bindings.items()},
+         'contracts': {
+             'display_dimensions': dimensions,
++            'vsync_refresh': vsync_refresh,
+             'iosurface_getters': {
+                 'status': 'confirmed_addresses',
+                 'detail': 'seven ldr/ret getters validated; virtual owner/invocation unknown',
