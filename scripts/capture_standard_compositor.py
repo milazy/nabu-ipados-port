@@ -12,10 +12,11 @@ def main():
     adb=root/'platform-tools/adb.exe';fb=root/'platform-tools/fastboot.exe'
     image=root/'boot-preflight/V4-MODDED-TWRP-LINUX.img'
     if hashlib.file_digest(image.open('rb'),'sha256').hexdigest()!='7a71da691a9117cf959ced0557593d647a8fc384b2374404f14184126ab7cbc6':raise ValueError('Recovery image changed')
-    receipt=root/'build-artifacts/nabu-memory-ui-20261110/install-receipt.json'
+    receipt=root/'build-artifacts/nabu-metal-joint-20261110/install-receipt.json'
+    if not receipt.exists():receipt=root/'build-artifacts/nabu-memory-ui-20261110/install-receipt.json'
     if not receipt.exists():receipt=root/'build-artifacts/nabu-standard-compositor-20261110/install-receipt.json'
     expected=json.loads(receipt.read_text())
-    if expected['status'] not in ('STANDARD_COMPOSITOR_INSTALL_PASS_BOOT_UNVERIFIED','MEMORY_UI_INSTALL_PASS_BOOT_UNVERIFIED'):raise ValueError('Installation identity missing')
+    if expected['status'] not in ('STANDARD_COMPOSITOR_INSTALL_PASS_BOOT_UNVERIFIED','MEMORY_UI_INSTALL_PASS_BOOT_UNVERIFIED','JOINT_METAL_INSTALL_PASS_BOOT_UNVERIFIED'):raise ValueError('Installation identity missing')
     def run(exe,args,timeout=20,check=True):
         r=subprocess.run([str(exe),'-s',a.serial,*args],capture_output=True,timeout=timeout)
         if check and r.returncode:raise RuntimeError(r.stderr.decode(errors='replace')[-350:])
@@ -44,6 +45,7 @@ def main():
     k='/esp/EFI/UniXNU/Payloads/kernel-fulltrace-panic.macho'
     checks=[(k,'kernel_sha256'),(k+'.trustcache','trustcache_sha256'),('/esp/EFI/UniXNU/unixnu.toml','menu_sha256')]
     if 'adt_sha256' in expected:checks.append((k+'.adt','adt_sha256'))
+    if 'addon_sha256' in expected:checks.append((k+'.gpuaddon','addon_sha256'))
     for remote,key in checks:
         if sh('sha256sum '+remote).split()[0]!=expected[key]:raise ValueError('Installed identity changed: '+key)
     stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
@@ -57,6 +59,8 @@ def main():
     binding=all(flag in args.split() for flag in ('sheng-gpu-addon=1','nabu-ui-watch=1','sheng-vsync=60'))
     lines=[line for line in text.splitlines() if re.search(r'NABU ADDON|NabuUI:|NABU DISPLAY|NABU EXIT|NABU.*EXCEPTION|panic\(cpu|Process\[|Library not loaded|AMFI.*(deny|reject|killed)',line)]
     report={'status':'CRC_VERIFIED_RECOVERY_READBACK_UI_NOT_PROVEN','utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'raw_sha256':hashlib.file_digest(raw.open('rb'),'sha256').hexdigest(),'container':info,'installed_kernel_sha256':expected['kernel_sha256'],'selected_boot_arguments_match':binding,'kernel_version':text.splitlines()[0] if text else '', 'focused_lines':len(lines),'boot_proven':False,'ESP_readonly_after':sh('blockdev --getro '+esp)=='1'}
+    report['installed_trustcache_sha256']=expected['trustcache_sha256']
+    if 'addon_sha256' in expected:report['installed_addon_sha256']=expected['addon_sha256']
     (out/'readback.json').write_text(json.dumps(report,indent=2)+'\n')
     (out/'focused.txt').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     print('CRC_VERIFIED_READBACK',out,flush=True)
