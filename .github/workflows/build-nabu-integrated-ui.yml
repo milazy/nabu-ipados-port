@@ -125,7 +125,15 @@ jobs:
           ./unixnu defconfig nabu_ufs_cpu_ui_defconfig -D "$GITHUB_WORKSPACE/nabu-pass1"
           ./unixnu build kernel --ipsw "$UNIXNU_IPSW" 2>&1 | tee "$GITHUB_WORKSPACE/output/pass1-kernel-build.log"
           cp out/nabu/kernel/kernel.macho "$GITHUB_WORKSPACE/pass1/kernel.macho"
+          cp out/nabu/kernel/kernel.json "$GITHUB_WORKSPACE/pass1/kernel.json"
           test -s "$GITHUB_WORKSPACE/pass1/kernel.macho"
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib
+          base = pathlib.Path(os.environ["GITHUB_WORKSPACE"]) / "pass1"
+          report = json.loads((base / "kernel.json").read_text())
+          assert report["candidate_sha256"] == hashlib.sha256((base / "kernel.macho").read_bytes()).hexdigest(), "Pass 1 prelink identity mismatch"
+          assert report["original_executable_sha256"], "Pass 1 component identities missing"
+          PY
           shasum -a 256 "$GITHUB_WORKSPACE/pass1/kernel.macho" | tee "$GITHUB_WORKSPACE/output/pass1-kernel-sha256.txt"
 
       - name: Prepare final GPU + display kernel against pass 1 ABI
@@ -188,7 +196,9 @@ jobs:
           name: nabu-integrated-ui-build
           path: |
             unixnu-final/out/nabu/kernel/kernel.macho
+            unixnu-final/out/nabu/kernel/kernel.json
             pass1/kernel.macho
+            pass1/kernel.json
             output/
           if-no-files-found: warn
           retention-days: 7
