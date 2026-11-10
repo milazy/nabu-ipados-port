@@ -45,3 +45,22 @@ No full App Store, networking, audio, persistent Data or 120 Hz operation is cla
 The active test entry is `xnu-existing-ui-policy`. The unchanged kernel SHA-256 is `2a7430ce4f5a0da25fa0005063bd283db7c528b05b69ac94e13262dd669a3d9a`; installed menu SHA-256 is `8523904268023a7493e28957dd9767506836217ee21dd714f77ecf34b0dc9fe2`. The previous menu is preserved as `unixnu.pre-ui-policy-test-20261110.toml` on the ESP and as a PC copy.
 
 Only supported existing-kernel options were enabled: `offline-legacy-unit-scale=2`, `nabu-keybag-notifications=1`, `nabu-aks-state=1`, `nabu-disable-watchdogd=1`, `nabu-skip-setup=1`, and `-no_corpses`. The new VSYNC implementation is absent from this kernel and was not enabled. Kernel, ADT, packed Data and OS volumes were not replaced. A reboot command was accepted after the verified install; this is not confirmation of a successful SpringBoard session.
+
+## Fresh readback after the existing-kernel test
+
+Recovery was started temporarily from Fastboot and the ESP was mounted block-read-only. The new CRC-verified capture is `NABU_NEWEST_LOG_20261110T011048Z.bin`, SHA-256 `8e1e979f1c8d6a7cf44fd7a6c636c475437f1eac80ea5bf9340ffee7fa7d00bc`, boot ID `c00b5d15000000009701000000000000`, committed sequence 492. The 712-byte boot command in the capture includes all six newly selected settings, confirming this run actually used them.
+
+| Observation | Fresh capture |
+|---|---|
+| Apple startup | launchd and OwnerData mount reached |
+| Duration | display status sample at 420 seconds |
+| GPU | command-processor fence proof passes; Metal accelerator publishes |
+| Keybag | state-client calls succeed; notification status 0, 43 subscriptions |
+| SpringBoard | no captured exception/exit records; this does not prove a healthy UI |
+| Display | 0 accepted swaps, 0 transfers, 0 retired frames |
+| backboardd client | 16 calls, 12 returned errors; some may be capability probes |
+| Other process failures | 15 ScreenTimeAgent signalled exits; optional services also exit |
+
+`-no_corpses` suppresses normal corpse/crash-report messages, so the generic analyzer's zero crash-message count cannot establish that all processes are healthy. The independent exception/exit trace has no SpringBoard records in this snapshot. The remaining visible failure is presentation: the kernel ran behind the unchanged menu but no UI frames reached scanout. This supports testing the missing display timing path in the corrected rebuild; it does not prove VSYNC is the sole remaining cause.
+
+A retry under the previous repository owner was rejected before runner assignment (run `42734123019`). The owner subsequently transferred the same private repository to `beamerwz/nabu-ipados-macos-build`; branch, reference artifact and policy assets were verified after transfer. The canonical Git remote now uses that owner. The tablet remains in recovery awaiting a validated new kernel.
