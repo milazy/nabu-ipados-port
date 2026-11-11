@@ -10,8 +10,9 @@ permissions:
 
 jobs:
   symbolize:
-    runs-on: ubuntu-latest
-    timeout-minutes: 90
+    # macOS mounts the APFS system image natively (no apfs-fuse, no apt).
+    runs-on: macos-14
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - name: Install ipsw
@@ -20,24 +21,13 @@ jobs:
         run: |
           set -euxo pipefail
           gh release view --repo blacktop/ipsw --json assets --jq '.assets[].name' | tee /tmp/assets.txt
-          ASSET="$(grep -E '^ipsw_' /tmp/assets.txt | grep -iE 'linux' | grep -iE 'x86_64|amd64' | grep -iE '\.tar\.gz$' | grep -viE 'extras|sbom|\.sig' | head -1)"
+          ASSET="$(grep -E '^ipsw_' /tmp/assets.txt | grep -iE 'macos|darwin' | grep -iE 'arm64|universal|all' | grep -iE '\.tar\.gz$' | grep -viE 'extras|sbom|\.sig' | head -1)"
           test -n "$ASSET"
           mkdir -p /tmp/ipsw
           gh release download --repo blacktop/ipsw --pattern "$ASSET" --dir /tmp/ipsw
           tar -xzf "/tmp/ipsw/$ASSET" -C /tmp/ipsw
           sudo install -m 0755 "$(find /tmp/ipsw -type f -name ipsw | head -1)" /usr/local/bin/ipsw
           ipsw version
-      - name: Build apfs-fuse (ipsw mounts the system DMG with it)
-        run: |
-          set -euxo pipefail
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq fuse3 libfuse3-dev bzip2 libbz2-dev cmake g++ git libattr1-dev zlib1g-dev
-          git clone --recursive --depth 1 https://github.com/sgan81/apfs-fuse.git /tmp/apfs-fuse
-          cmake -S /tmp/apfs-fuse -B /tmp/apfs-fuse/build -DCMAKE_BUILD_TYPE=Release
-          cmake --build /tmp/apfs-fuse/build -j4
-          sudo install -m 0755 /tmp/apfs-fuse/build/apfs-fuse /usr/local/bin/apfs-fuse
-          echo 'user_allow_other' | sudo tee -a /etc/fuse.conf
-          apfs-fuse 2>&1 | head -3 || true
       - name: Fetch the iPadOS 17.7 21H16 IPSW for iPad7,11 and extract its dyld shared cache
         run: |
           set -euxo pipefail
@@ -47,9 +37,8 @@ jobs:
           URL="$(python3 -c 'import json;print(json.load(open("meta.json"))["url"])')"
           SHA1="$(python3 -c 'import json;print(json.load(open("meta.json"))["sha1sum"])')"
           curl -fL --retry 5 --retry-delay 10 -o ipswfile/fw.ipsw "$URL"
-          echo "$SHA1  ipswfile/fw.ipsw" | sha1sum -c -
-          sudo -E env "PATH=$PATH" ipsw extract --dyld --output dsc ipswfile/fw.ipsw
-          sudo chown -R "$(id -u):$(id -g)" dsc
+          echo "$SHA1  ipswfile/fw.ipsw" | shasum -a 1 -c -
+          ipsw extract --dyld --output dsc ipswfile/fw.ipsw
           rm -f ipswfile/fw.ipsw
           find dsc -type f | head -50
           du -sh dsc
@@ -65,7 +54,7 @@ jobs:
             case "$slide" in ''|\#*) continue;; esac
             un="$(printf '0x%x' $(( 0x${addr#0x} - 0x${slide#0x} )))"
             sym="$(ipsw dyld a2s "$DSC" "$un" 2>&1 | tail -2 | tr '\n' ' ')"
-            printf '%s %s %s => %s\n' "$slide" "$addr" "${label:-}" "$sym" | tee -a out/symbols.txt
+            printf '%s %s %s => %s\n' "$addr" "$un" "${label:-}" "$sym" | tee -a out/symbols.txt
           done < symbolize/request.txt
       - uses: actions/upload-artifact@v4
         if: always()
