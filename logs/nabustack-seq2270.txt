@@ -1,0 +1,2136 @@
+NabuStack: s=7 SpringBoard pid=27 threads=1/1 sr_base=180000000 sr_slide=11750000
+NabuStack: s=7 pid=27 tid=302 st=9 h=1 w=36f24527 pc=19184530c lr=191844888 sp=16f5e3250 fp=16f5e32d0 n=23
+NabuStack: s=7 tid=302 f0: 191844888 191844234 191851bfc 19185c1bc 1bab3c568 1bab4b8b8 1bab62d14 1bab62c0c
+NabuStack: s=7 tid=302 f8: 19185d3a8 1a0d020b4 1a0ce4d90 1eee8d6c4 1bab3e218 1bab2b8c8 1bab2aa6c 1bab29cc4
+NabuStack: s=7 tid=302 f16: 1bab3f928 1bab34594 1bab341f0 1bab340dc 1bab29184 1bab3dc38 1bab5f1d8
+NabuStack: s=9 SpringBoard pid=27 threads=3/3 sr_base=180000000 sr_slide=11750000
+NabuStack: s=9 pid=27 tid=302 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f603ba0 fp=16f603bf0 n=15
+NabuStack: s=9 tid=302 f0: 1dcf161b0 1dcf15fb8 1a0da8cac 1a0da8b98 1a0da8884 1a0ddebb8 1a0dddef4 1b87c9e58
+NabuStack: s=9 tid=302 f8: 1b87ca200 1a0d02cc0 1a0cd40e4 1b87ca1d8 1b87f8460 1e11c8d60 1bab5f228
+NabuStack: s=9 pid=27 tid=447 st=1 h=15 w=21307788 pc=1dcf128e8 lr=1eedf5580 sp=16f70eb30 fp=16f70eb50 n=1
+NabuStack: s=9 tid=447 f0: 1eedf2ccc
+NabuStack: s=9 pid=27 tid=481 st=1 h=15 w=ad694f4f pc=1dcf128e8 lr=1eedf5580 sp=16f6889a0 fp=16f6889c0 n=1
+NabuStack: s=9 tid=481 f0: 1eedf2ccc
+NabuStack: s=9 backboardd pid=57 threads=4/4 sr_base=180000000 sr_slide=11750000
+NabuStack: s=9 pid=57 tid=383 st=1 h=6 w=e7e6ff0a pc=1dcf12ad4 lr=1a0cd2fe8 sp=16edde530 fp=16edde540 n=9
+NabuStack: s=9 tid=383 f0: 1a0cd3624 1a1749e94 1a1742b0c 1d9085cfc 1010437a4 1010444d4 10104377c 101043df4
+NabuStack: s=9 tid=383 f8: 1bab5f228
+NabuStack: s=9 pid=57 tid=590 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee5d6b0 fp=16ee5d700 n=24
+NabuStack: s=9 tid=590 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=9 tid=590 f8: 1986349cc 1b915ab58 1b190d92c 1b190e0c4 1c920c198 21622f38c 21622f20c 1011bc6d4
+NabuStack: s=9 tid=590 f16: 19960e160 1a174a800 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce0168 1a0ce8a34
+NabuStack: s=9 pid=57 tid=595 st=1 h=15 w=63eccbe1 pc=1dcf128e8 lr=1eedf5580 sp=16eee8b30 fp=16eee8b50 n=1
+NabuStack: s=9 tid=595 f0: 1eedf2ccc
+NabuStack: s=9 pid=57 tid=596 st=1 h=15 w=dfdd6129 pc=1dcf128e8 lr=1eedf5580 sp=16ef6eb30 fp=16ef6eb50 n=1
+NabuStack: s=9 tid=596 f0: 1eedf2ccc
+NabuStack: s=9 chronod pid=97 threads=4/4 sr_base=180000000 sr_slide=11750000
+NabuStack: s=9 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f2a23d0 fp=16f2a2420 n=10
+NabuStack: s=9 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0da8cac 1a0da8b98 1a0da8884 19bb057e4 19bbae8f8 1e3088a40
+NabuStack: s=9 tid=558 f8: 100b604c0 1bab5f228
+NabuStack: s=9 pid=97 tid=572 st=1 h=15 w=9481515a pc=1dcf128e8 lr=1eedf5580 sp=16f326b30 fp=16f326b50 n=1
+NabuStack: s=9 tid=572 f0: 1eedf2ccc
+NabuStack: s=9 pid=97 tid=577 st=1 h=15 w=b4d72a1d pc=1dcf128e8 lr=1eedf5580 sp=16f3acb30 fp=16f3acb50 n=1
+NabuStack: s=9 tid=577 f0: 1eedf2ccc
+NabuStack: s=9 pid=97 tid=620 st=1 h=15 w=1bef003b pc=1dcf128e8 lr=1eedf5580 sp=16f432b30 fp=16f432b50 n=1
+NabuStack: s=9 tid=620 f0: 1eedf2ccc
+NabuStack: s=9 liveactivitiesd pid=100 threads=6/6 sr_base=180000000 sr_slide=11750000
+NabuStack: s=9 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=9 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=9 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=9 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=9 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=9 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=9 tid=615 f16: 1eedf2ccc
+NabuStack: s=9 pid=100 tid=616 st=1 h=15 w=97b3f56 pc=1dcf128e8 lr=1eedf5580 sp=16ef31a20 fp=16ef31a40 n=1
+NabuStack: s=9 tid=616 f0: 1eedf2ccc
+NabuStack: s=9 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=9 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=9 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=9 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=9 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=9 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=9 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=9 pid=100 tid=635 st=1 h=15 w=c3dd45b2 pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=9 tid=635 f0: 1eedf2ccc
+NabuStack: s=9 lsd pid=98 threads=9/9 sr_base=180000000 sr_slide=11750000
+NabuStack: s=9 pid=98 tid=562 st=1 h=16 w=abc254f pc=1dcf128c0 lr=1a0cef628 sp=16f93e590 fp=16f93e5f0 n=9
+NabuStack: s=9 tid=562 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 19950c84c 199505f70 1a0d02cc0 1a0cd40e4 1994ec094
+NabuStack: s=9 tid=562 f8: 1bab5f228
+NabuStack: s=9 pid=98 tid=569 st=41 h=10 w=e3fac02c pc=1dcf18bdc lr=1a0cd33ec sp=16f9c2650 fp=16f9c2670 n=10
+NabuStack: s=9 tid=569 f0: 1a0cd3784 199506518 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=9 tid=569 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=9 pid=98 tid=578 st=1 h=15 w=88bf4e55 pc=1dcf128e8 lr=1eedf5580 sp=16fa48ac0 fp=16fa48ae0 n=1
+NabuStack: s=9 tid=578 f0: 1eedf2ccc
+NabuStack: s=9 pid=98 tid=643 st=1 h=15 w=bdd9dd4d pc=1dcf128e8 lr=1eedf5580 sp=16facea90 fp=16faceab0 n=1
+NabuStack: s=9 tid=643 f0: 1eedf2ccc
+NabuStack: s=9 pid=98 tid=708 st=1 h=15 w=ff091791 pc=1dcf128e8 lr=1eedf5580 sp=16fb549c0 fp=16fb549e0 n=1
+NabuStack: s=9 tid=708 f0: 1eedf2ccc
+NabuStack: s=9 pid=98 tid=709 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fbd4ae0 fp=16fbd4b30 n=24
+NabuStack: s=9 tid=709 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1ef1c1c24 1ef1c1f54 1ef1b51cc
+NabuStack: s=9 tid=709 f8: 1ef1b4ed4 1ef1adb04 1c9bca560 1c9bcaec0 1c9bb61b8 1c9bb51e4 1c9bcd4b0 1c9bce8f8
+NabuStack: s=9 tid=709 f16: 1c9b96e3c 1c9bc49c8 1c9b847fc 1c9b83d4c 1c9bc48ec 1c9b96b68 1c9b98194 1c9bcf050
+NabuStack: s=9 pid=98 tid=710 st=41 h=10 w=5fc08e63 pc=1dcf18bdc lr=1a0cd33ec sp=16fc5ffe0 fp=16fc60000 n=19
+NabuStack: s=9 tid=710 f0: 1a0cd3784 1994c3fd0 1994c3eec 1986184d0 1986174a0 198616824 198616700 1eee47ee8
+NabuStack: s=9 tid=710 f8: 1eee49978 1a0d02d74 1a0cd6894 1a0cde77c 1a0cd7434 1a0cde77c 1a0cdf374 1a0ce8a34
+NabuStack: s=9 tid=710 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=9 pid=98 tid=711 st=1 h=15 w=7c0fbfd1 pc=1dcf128e8 lr=1eedf5580 sp=16fce6fc0 fp=16fce6fe0 n=1
+NabuStack: s=9 tid=711 f0: 1eedf2ccc
+NabuStack: s=9 pid=98 tid=914 st=1 h=15 w=cf56c202 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=11 SpringBoard pid=27 threads=4/4 sr_base=180000000 sr_slide=11750000
+NabuStack: s=11 pid=27 tid=302 st=1 h=10 w=905d8439 pc=1dcf12970 lr=1eed3f0e0 sp=16f603950 fp=16f6039a0 n=24
+NabuStack: s=11 tid=302 f0: 1993d5084 1993d4d14 1993d4924 1993f7ac4 21255ece0 1a0e540e8 21255e6b8 21255e5b0
+NabuStack: s=11 tid=302 f8: 212566c68 212566a60 212566460 1a0d02cc0 1a0ce544c 21256641c 212566274 2125600a8
+NabuStack: s=11 tid=302 f16: 212560054 1a0d02cc0 1a0cd40e4 212560038 1e11e6214 1b87f8548 1e11c8d60 1bab5f228
+NabuStack: s=11 pid=27 tid=481 st=1 h=15 w=ad694f4f pc=1dcf128e8 lr=1eedf5580 sp=16f688b30 fp=16f688b50 n=1
+NabuStack: s=11 tid=481 f0: 1eedf2ccc
+NabuStack: s=11 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78ef90 fp=16f78efe0 n=24
+NabuStack: s=11 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=11 tid=1200 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 1993dafb0 1993daeec 19963df24
+NabuStack: s=11 tid=1200 f16: 1b87ed1ac 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=11 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=11 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=11 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=11 backboardd pid=57 threads=21/21 sr_base=180000000 sr_slide=11750000
+NabuStack: s=11 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=11 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=11 pid=57 tid=595 st=1 h=15 w=63eccbe1 pc=1dcf128e8 lr=1eedf5580 sp=16eee8b30 fp=16eee8b50 n=1
+NabuStack: s=11 tid=595 f0: 1eedf2ccc
+NabuStack: s=11 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=11 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=11 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=11 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=11 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=11 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=11 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=11 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=11 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=11 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=11 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=11 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=11 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=11 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=11 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=11 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=11 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=11 tid=1081 f8: 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=11 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=11 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=11 pid=57 tid=1181 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1701bc830 fp=1701bc880 n=24
+NabuStack: s=11 tid=1181 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=11 tid=1181 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 199403910 199402fcc 192e8287c
+NabuStack: s=11 tid=1181 f16: 192e86aec 192e854d4 192e850cc 1985e3874 19963e294 19963df24 22d85bbb4 1a0d01c9c
+NabuStack: s=11 pid=57 tid=1467 st=1 h=14 w=b013d039 pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=11 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1468 st=1 h=14 w=76f9925d pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=11 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=11 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1470 st=1 h=14 w=d4e93fec pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=11 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1471 st=1 h=14 w=bf0a7812 pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=11 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1472 st=1 h=14 w=1047b98a pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=11 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=11 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=11 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=11 chronod pid=97 threads=10/10 sr_base=180000000 sr_slide=11750000
+NabuStack: s=11 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=11 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=11 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=11 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=11 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=11 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=11 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=11 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=11 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=11 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=11 tid=577 f16: 1eedf2ccc
+NabuStack: s=11 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=11 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=11 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=11 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=11 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=11 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=11 pid=97 tid=1199 st=1 h=15 w=55b78a0c pc=1dcf128e8 lr=1eedf5580 sp=16f53eb40 fp=16f53eb60 n=1
+NabuStack: s=11 tid=1199 f0: 1eedf2ccc
+NabuStack: s=11 pid=97 tid=1363 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f5befe0 fp=16f5bf030 n=24
+NabuStack: s=11 tid=1363 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=11 tid=1363 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 1993f7490 1993f7210 1a31bf498
+NabuStack: s=11 tid=1363 f16: 1a3154190 1a3154088 1a31210a4 1a3120564 1e2f19700 1e2f18944 1e2ef8448 1a0d01c9c
+NabuStack: s=11 pid=97 tid=1364 st=1 h=15 w=9d81d52f pc=1dcf128e8 lr=1eedf5580 sp=16f64afc0 fp=16f64afe0 n=1
+NabuStack: s=11 tid=1364 f0: 1eedf2ccc
+NabuStack: s=11 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0b30 fp=16f6d0b50 n=1
+NabuStack: s=11 tid=1365 f0: 1eedf2ccc
+NabuStack: s=11 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=11 liveactivitiesd pid=100 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=11 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=11 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=11 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=11 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=11 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=11 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=11 tid=615 f16: 1eedf2ccc
+NabuStack: s=11 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=11 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=11 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=11 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=11 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=11 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=11 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=11 pid=100 tid=635 st=1 h=15 w=c3dd45b2 pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=11 tid=635 f0: 1eedf2ccc
+NabuStack: s=11 lsd pid=98 threads=12/12 sr_base=180000000 sr_slide=11750000
+NabuStack: s=11 pid=98 tid=562 st=1 h=16 w=abc254f pc=1dcf128c0 lr=1a0cef628 sp=16f93e590 fp=16f93e5f0 n=9
+NabuStack: s=11 tid=562 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 19950c84c 199505f70 1a0d02cc0 1a0cd40e4 1994ec094
+NabuStack: s=11 tid=562 f8: 1bab5f228
+NabuStack: s=11 pid=98 tid=569 st=41 h=10 w=e3fac02c pc=1dcf18bdc lr=1a0cd33ec sp=16f9c2650 fp=16f9c2670 n=10
+NabuStack: s=11 tid=569 f0: 1a0cd3784 199506518 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=11 tid=569 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=11 pid=98 tid=578 st=1 h=15 w=88bf4e55 pc=1dcf128e8 lr=1eedf5580 sp=16fa48fc0 fp=16fa48fe0 n=1
+NabuStack: s=11 tid=578 f0: 1eedf2ccc
+NabuStack: s=11 pid=98 tid=708 st=1 h=15 w=ff091791 pc=1dcf128e8 lr=1eedf5580 sp=16fb54fc0 fp=16fb54fe0 n=1
+NabuStack: s=11 tid=708 f0: 1eedf2ccc
+NabuStack: s=11 pid=98 tid=709 st=4 h=0 w=0 pc=1995baf34 lr=1995baee8 sp=16fbd7d40 fp=16fbd7da0 n=1
+NabuStack: s=11 tid=709 f0: 159126e70
+NabuStack: s=11 pid=98 tid=710 st=41 h=10 w=5fc08e63 pc=1dcf18bdc lr=1a0cd33ec sp=16fc5ffe0 fp=16fc60000 n=19
+NabuStack: s=11 tid=710 f0: 1a0cd3784 1994c3fd0 1994c3eec 1986184d0 1986174a0 198616824 198616700 1eee47ee8
+NabuStack: s=11 tid=710 f8: 1eee49978 1a0d02d74 1a0cd6894 1a0cde77c 1a0cd7434 1a0cde77c 1a0cdf374 1a0ce8a34
+NabuStack: s=11 tid=710 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=11 pid=98 tid=711 st=1 h=15 w=7c0fbfd1 pc=1dcf128e8 lr=1eedf5580 sp=16fce6fc0 fp=16fce6fe0 n=1
+NabuStack: s=11 tid=711 f0: 1eedf2ccc
+NabuStack: s=11 pid=98 tid=914 st=1 h=15 w=cf56c202 pc=1dcf128e8 lr=1eedf5580 sp=16fd6cfc0 fp=16fd6cfe0 n=1
+NabuStack: s=11 tid=914 f0: 1eedf2ccc
+NabuStack: s=11 pid=98 tid=978 st=1 h=15 w=de51f98 pc=1dcf128e8 lr=1eedf5580 sp=16fdf2fc0 fp=16fdf2fe0 n=1
+NabuStack: s=11 tid=978 f0: 1eedf2ccc
+NabuStack: s=11 pid=98 tid=979 st=1 h=15 w=aa97cc47 pc=1dcf128e8 lr=1eedf5580 sp=16fe78fc0 fp=16fe78fe0 n=1
+NabuStack: s=11 tid=979 f0: 1eedf2ccc
+NabuStack: s=11 pid=98 tid=980 st=1 h=15 w=5926be68 pc=1dcf128e8 lr=1eedf5580 sp=16fefefc0 fp=16fefefe0 n=1
+NabuStack: s=11 tid=980 f0: 1eedf2ccc
+NabuStack: s=11 pid=98 tid=1392 st=1 h=15 w=bb680281 pc=1dcf128e8 lr=1eedf5580 sp=16ff84fc0 fp=16ff84fe0 n=1
+NabuStack: s=11 tid=1392 f0: 1eedf2ccc
+NabuStack: s=13 SpringBoard pid=27 threads=4/4 sr_base=180000000 sr_slide=11750000
+NabuStack: s=13 pid=27 tid=302 st=1 h=10 w=905d8439 pc=1dcf12970 lr=1eed3f0e0 sp=16f603950 fp=16f6039a0 n=24
+NabuStack: s=13 tid=302 f0: 1993d5084 1993d4d14 1993d4924 1993f7ac4 21255ece0 1a0e540e8 21255e6b8 21255e5b0
+NabuStack: s=13 tid=302 f8: 212566c68 212566a60 212566460 1a0d02cc0 1a0ce544c 21256641c 212566274 2125600a8
+NabuStack: s=13 tid=302 f16: 212560054 1a0d02cc0 1a0cd40e4 212560038 1e11e6214 1b87f8548 1e11c8d60 1bab5f228
+NabuStack: s=13 pid=27 tid=481 st=1 h=15 w=ad694f4f pc=1dcf128e8 lr=1eedf5580 sp=16f688b30 fp=16f688b50 n=1
+NabuStack: s=13 tid=481 f0: 1eedf2ccc
+NabuStack: s=13 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78ef90 fp=16f78efe0 n=24
+NabuStack: s=13 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=13 tid=1200 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 1993dafb0 1993daeec 19963df24
+NabuStack: s=13 tid=1200 f16: 1b87ed1ac 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=13 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=13 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=13 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=13 backboardd pid=57 threads=21/21 sr_base=180000000 sr_slide=11750000
+NabuStack: s=13 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=13 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=13 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=13 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=13 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=13 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=13 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=13 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=13 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=13 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=13 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=13 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=13 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=13 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=13 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=13 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=13 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=13 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=13 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=13 tid=1081 f8: 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=13 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=13 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=13 pid=57 tid=1181 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1701bc830 fp=1701bc880 n=24
+NabuStack: s=13 tid=1181 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=13 tid=1181 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 199403910 199402fcc 192e8287c
+NabuStack: s=13 tid=1181 f16: 192e86aec 192e854d4 192e850cc 1985e3874 19963e294 19963df24 22d85bbb4 1a0d01c9c
+NabuStack: s=13 pid=57 tid=1467 st=1 h=14 w=20ba4b87 pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=13 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1468 st=1 h=14 w=a1751812 pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=13 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=13 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1470 st=1 h=14 w=2f3260e0 pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=13 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1471 st=1 h=14 w=1d24e17c pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=13 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1472 st=1 h=14 w=ad25cea3 pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=13 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=13 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=13 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=57 tid=1839 st=1 h=15 w=ac4b33d0 pc=1dcf128e8 lr=1eedf5580 sp=16eee8b40 fp=16eee8b60 n=1
+NabuStack: s=13 tid=1839 f0: 1eedf2ccc
+NabuStack: s=13 chronod pid=97 threads=10/10 sr_base=180000000 sr_slide=11750000
+NabuStack: s=13 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=13 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=13 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=13 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=13 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=13 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=13 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=13 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=13 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=13 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=13 tid=577 f16: 1eedf2ccc
+NabuStack: s=13 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=13 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=13 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=13 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=13 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=13 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=13 pid=97 tid=1199 st=1 h=15 w=55b78a0c pc=1dcf128e8 lr=1eedf5580 sp=16f53eb40 fp=16f53eb60 n=1
+NabuStack: s=13 tid=1199 f0: 1eedf2ccc
+NabuStack: s=13 pid=97 tid=1363 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f5befe0 fp=16f5bf030 n=24
+NabuStack: s=13 tid=1363 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=13 tid=1363 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 1993f7490 1993f7210 1a31bf498
+NabuStack: s=13 tid=1363 f16: 1a3154190 1a3154088 1a31210a4 1a3120564 1e2f19700 1e2f18944 1e2ef8448 1a0d01c9c
+NabuStack: s=13 pid=97 tid=1364 st=1 h=15 w=9d81d52f pc=1dcf128e8 lr=1eedf5580 sp=16f64afc0 fp=16f64afe0 n=1
+NabuStack: s=13 tid=1364 f0: 1eedf2ccc
+NabuStack: s=13 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0b30 fp=16f6d0b50 n=1
+NabuStack: s=13 tid=1365 f0: 1eedf2ccc
+NabuStack: s=13 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=13 liveactivitiesd pid=100 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=13 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=13 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=13 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=13 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=13 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=13 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=13 tid=615 f16: 1eedf2ccc
+NabuStack: s=13 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=13 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=13 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=13 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=13 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=13 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=13 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=13 pid=100 tid=635 st=1 h=15 w=c3dd45b2 pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=13 tid=635 f0: 1eedf2ccc
+NabuStack: s=13 lsd pid=98 threads=13/13 sr_base=180000000 sr_slide=11750000
+NabuStack: s=13 pid=98 tid=562 st=1 h=16 w=abc254f pc=1dcf128c0 lr=1a0cef628 sp=16f93e590 fp=16f93e5f0 n=9
+NabuStack: s=13 tid=562 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 19950c84c 199505f70 1a0d02cc0 1a0cd40e4 1994ec094
+NabuStack: s=13 tid=562 f8: 1bab5f228
+NabuStack: s=13 pid=98 tid=569 st=41 h=10 w=e3fac02c pc=1dcf18bdc lr=1a0cd33ec sp=16f9c2650 fp=16f9c2670 n=10
+NabuStack: s=13 tid=569 f0: 1a0cd3784 199506518 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=13 tid=569 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=13 pid=98 tid=578 st=1 h=15 w=88bf4e55 pc=1dcf128e8 lr=1eedf5580 sp=16fa48b40 fp=16fa48b60 n=1
+NabuStack: s=13 tid=578 f0: 1eedf2ccc
+NabuStack: s=13 pid=98 tid=708 st=1 h=15 w=ff091791 pc=1dcf128e8 lr=1eedf5580 sp=16fb54fc0 fp=16fb54fe0 n=1
+NabuStack: s=13 tid=708 f0: 1eedf2ccc
+NabuStack: s=13 pid=98 tid=709 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fbd48a0 fp=16fbd48f0 n=24
+NabuStack: s=13 tid=709 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1e03541e4 1e0353ff4 1e0353ea8
+NabuStack: s=13 tid=709 f8: 1e0367b5c 1b1e079b8 1e0367a5c 1c9bb5930 1c9ba1da4 1c9ba3600 1c9ba3314 1c9bcced8
+NabuStack: s=13 tid=709 f16: 1c9bcdd24 1c9bce384 1c9bce948 1c9b96e3c 1c9bc49c8 1c9b847fc 1c9b83d4c 1c9bc48ec
+NabuStack: s=13 pid=98 tid=710 st=41 h=10 w=5fc08e63 pc=1dcf18bdc lr=1a0cd33ec sp=16fc5ffe0 fp=16fc60000 n=19
+NabuStack: s=13 tid=710 f0: 1a0cd3784 1994c3fd0 1994c3eec 1986184d0 1986174a0 198616824 198616700 1eee47ee8
+NabuStack: s=13 tid=710 f8: 1eee49978 1a0d02d74 1a0cd6894 1a0cde77c 1a0cd7434 1a0cde77c 1a0cdf374 1a0ce8a34
+NabuStack: s=13 tid=710 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=13 pid=98 tid=711 st=1 h=15 w=7c0fbfd1 pc=1dcf128e8 lr=1eedf5580 sp=16fce6b30 fp=16fce6b50 n=1
+NabuStack: s=13 tid=711 f0: 1eedf2ccc
+NabuStack: s=13 pid=98 tid=914 st=1 h=15 w=cf56c202 pc=1dcf128e8 lr=1eedf5580 sp=16fd6cfc0 fp=16fd6cfe0 n=1
+NabuStack: s=13 tid=914 f0: 1eedf2ccc
+NabuStack: s=13 pid=98 tid=978 st=1 h=15 w=de51f98 pc=1dcf128e8 lr=1eedf5580 sp=16fdf2fc0 fp=16fdf2fe0 n=1
+NabuStack: s=13 tid=978 f0: 1eedf2ccc
+NabuStack: s=13 pid=98 tid=979 st=1 h=15 w=aa97cc47 pc=1dcf128e8 lr=1eedf5580 sp=16fe78fc0 fp=16fe78fe0 n=1
+NabuStack: s=13 tid=979 f0: 1eedf2ccc
+NabuStack: s=13 pid=98 tid=980 st=1 h=15 w=5926be68 pc=1dcf128e8 lr=1eedf5580 sp=16fefefc0 fp=16fefefe0 n=1
+NabuStack: s=13 tid=980 f0: 1eedf2ccc
+NabuStack: s=13 pid=98 tid=1392 st=1 h=15 w=bb680281 pc=1dcf128e8 lr=1eedf5580 sp=16ff84fc0 fp=16ff84fe0 n=1
+NabuStack: s=13 tid=1392 f0: 1eedf2ccc
+NabuStack: s=13 pid=98 tid=1794 st=1 h=15 w=d0216fb pc=1dcf128e8 lr=1eedf5580 sp=16facefc0 fp=16facefe0 n=1
+NabuStack: s=13 tid=1794 f0: 1eedf2ccc
+NabuStack: s=15 SpringBoard pid=27 threads=4/4 sr_base=180000000 sr_slide=11750000
+NabuStack: s=15 pid=27 tid=302 st=1 h=10 w=905d8439 pc=1dcf12970 lr=1eed3f0e0 sp=16f603950 fp=16f6039a0 n=24
+NabuStack: s=15 tid=302 f0: 1993d5084 1993d4d14 1993d4924 1993f7ac4 21255ece0 1a0e540e8 21255e6b8 21255e5b0
+NabuStack: s=15 tid=302 f8: 212566c68 212566a60 212566460 1a0d02cc0 1a0ce544c 21256641c 212566274 2125600a8
+NabuStack: s=15 tid=302 f16: 212560054 1a0d02cc0 1a0cd40e4 212560038 1e11e6214 1b87f8548 1e11c8d60 1bab5f228
+NabuStack: s=15 pid=27 tid=481 st=1 h=15 w=ad694f4f pc=1dcf128e8 lr=1eedf5580 sp=16f688b30 fp=16f688b50 n=1
+NabuStack: s=15 tid=481 f0: 1eedf2ccc
+NabuStack: s=15 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78ef90 fp=16f78efe0 n=24
+NabuStack: s=15 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=15 tid=1200 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 1993dafb0 1993daeec 19963df24
+NabuStack: s=15 tid=1200 f16: 1b87ed1ac 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=15 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=15 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=15 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=15 backboardd pid=57 threads=24/24 sr_base=180000000 sr_slide=11750000
+NabuStack: s=15 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=15 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=15 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=15 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=15 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=15 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=15 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=15 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=15 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=15 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=15 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=15 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=15 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=15 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=15 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=15 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=15 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=15 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=15 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=15 tid=1081 f8: 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=15 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=15 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=15 pid=57 tid=1181 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1701bc830 fp=1701bc880 n=24
+NabuStack: s=15 tid=1181 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=15 tid=1181 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 199403910 199402fcc 192e8287c
+NabuStack: s=15 tid=1181 f16: 192e86aec 192e854d4 192e850cc 1985e3874 19963e294 19963df24 22d85bbb4 1a0d01c9c
+NabuStack: s=15 pid=57 tid=1467 st=1 h=14 w=5d8717d4 pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=15 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1468 st=1 h=14 w=76f9925d pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=15 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=15 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1470 st=1 h=14 w=d4e93fec pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=15 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1471 st=1 h=14 w=5a531403 pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=15 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1472 st=1 h=14 w=60598dd3 pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=15 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=15 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=15 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=57 tid=1945 st=1 h=15 w=ed78a5a4 pc=1dcf128e8 lr=1eedf5580 sp=16ee62fc0 fp=16ee62fe0 n=1
+NabuStack: s=15 tid=1945 f0: 1eedf2ccc
+NabuStack: s=15 pid=57 tid=1951 st=1 h=15 w=8bae14e5 pc=1dcf128e8 lr=1eedf5580 sp=16eff4b30 fp=16eff4b50 n=1
+NabuStack: s=15 tid=1951 f0: 1eedf2ccc
+NabuStack: s=15 pid=57 tid=1952 st=1 h=15 w=412c45ad pc=1dcf128e8 lr=1eedf5580 sp=16f8b0b30 fp=16f8b0b50 n=1
+NabuStack: s=15 tid=1952 f0: 1eedf2ccc
+NabuStack: s=15 pid=57 tid=2008 st=1 h=15 w=f1a96479 pc=1dcf128e8 lr=1eedf5580 sp=16eee8b40 fp=16eee8b60 n=1
+NabuStack: s=15 tid=2008 f0: 1eedf2ccc
+NabuStack: s=15 chronod pid=97 threads=10/10 sr_base=180000000 sr_slide=11750000
+NabuStack: s=15 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=15 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=15 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=15 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=15 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=15 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=15 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=15 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=15 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=15 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=15 tid=577 f16: 1eedf2ccc
+NabuStack: s=15 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=15 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=15 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=15 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=15 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=15 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=15 pid=97 tid=1199 st=1 h=15 w=55b78a0c pc=1dcf128e8 lr=1eedf5580 sp=16f53efc0 fp=16f53efe0 n=1
+NabuStack: s=15 tid=1199 f0: 1eedf2ccc
+NabuStack: s=15 pid=97 tid=1363 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f5befe0 fp=16f5bf030 n=24
+NabuStack: s=15 tid=1363 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=15 tid=1363 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 1993f7490 1993f7210 1a31bf498
+NabuStack: s=15 tid=1363 f16: 1a3154190 1a3154088 1a31210a4 1a3120564 1e2f19700 1e2f18944 1e2ef8448 1a0d01c9c
+NabuStack: s=15 pid=97 tid=1364 st=1 h=15 w=9d81d52f pc=1dcf128e8 lr=1eedf5580 sp=16f64ab40 fp=16f64ab60 n=1
+NabuStack: s=15 tid=1364 f0: 1eedf2ccc
+NabuStack: s=15 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0b30 fp=16f6d0b50 n=1
+NabuStack: s=15 tid=1365 f0: 1eedf2ccc
+NabuStack: s=15 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=15 liveactivitiesd pid=100 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=15 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=15 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=15 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=15 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=15 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=15 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=15 tid=615 f16: 1eedf2ccc
+NabuStack: s=15 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=15 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=15 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=15 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=15 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=15 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=15 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=15 pid=100 tid=635 st=1 h=15 w=c3dd45b2 pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=15 tid=635 f0: 1eedf2ccc
+NabuStack: s=15 lsd pid=98 threads=12/12 sr_base=180000000 sr_slide=11750000
+NabuStack: s=15 pid=98 tid=562 st=1 h=16 w=abc254f pc=1dcf128c0 lr=1a0cef628 sp=16f93e590 fp=16f93e5f0 n=9
+NabuStack: s=15 tid=562 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 19950c84c 199505f70 1a0d02cc0 1a0cd40e4 1994ec094
+NabuStack: s=15 tid=562 f8: 1bab5f228
+NabuStack: s=15 pid=98 tid=569 st=41 h=10 w=e3fac02c pc=1dcf18bdc lr=1a0cd33ec sp=16f9c2650 fp=16f9c2670 n=10
+NabuStack: s=15 tid=569 f0: 1a0cd3784 199506518 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=15 tid=569 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=15 pid=98 tid=578 st=1 h=15 w=88bf4e55 pc=1dcf128e8 lr=1eedf5580 sp=16fa48fc0 fp=16fa48fe0 n=1
+NabuStack: s=15 tid=578 f0: 1eedf2ccc
+NabuStack: s=15 pid=98 tid=708 st=1 h=15 w=ff091791 pc=1dcf128e8 lr=1eedf5580 sp=16fb54fc0 fp=16fb54fe0 n=1
+NabuStack: s=15 tid=708 f0: 1eedf2ccc
+NabuStack: s=15 pid=98 tid=709 st=4 h=0 w=0 pc=19962b3fc lr=19962b3d4 sp=16fbd9190 fp=16fbd91d0 n=24
+NabuStack: s=15 tid=709 f0: 19962b054 199756130 199755d68 1c9b826a4 1c9b917c8 1c9b90d80 1c9bb35fc 1c9b910cc
+NabuStack: s=15 tid=709 f8: 1c9b91274 1c9b95384 1c9b97214 1c9bc49c8 1c9b847fc 1c9b83d4c 1c9bc48ec 1c9b96f9c
+NabuStack: s=15 tid=709 f16: 1c9b97420 1c9b98134 1c9bcf050 1c9bad01c 199452220 1994bd728 1994bd75c 199451ec0
+NabuStack: s=15 pid=98 tid=710 st=41 h=10 w=5fc08e63 pc=1dcf18bdc lr=1a0cd33ec sp=16fc5ffe0 fp=16fc60000 n=19
+NabuStack: s=15 tid=710 f0: 1a0cd3784 1994c3fd0 1994c3eec 1986184d0 1986174a0 198616824 198616700 1eee47ee8
+NabuStack: s=15 tid=710 f8: 1eee49978 1a0d02d74 1a0cd6894 1a0cde77c 1a0cd7434 1a0cde77c 1a0cdf374 1a0ce8a34
+NabuStack: s=15 tid=710 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=15 pid=98 tid=914 st=1 h=15 w=cf56c202 pc=1dcf128e8 lr=1eedf5580 sp=16fd6cfc0 fp=16fd6cfe0 n=1
+NabuStack: s=15 tid=914 f0: 1eedf2ccc
+NabuStack: s=15 pid=98 tid=978 st=1 h=15 w=de51f98 pc=1dcf128e8 lr=1eedf5580 sp=16fdf2fc0 fp=16fdf2fe0 n=1
+NabuStack: s=15 tid=978 f0: 1eedf2ccc
+NabuStack: s=15 pid=98 tid=979 st=1 h=15 w=aa97cc47 pc=1dcf128e8 lr=1eedf5580 sp=16fe78fc0 fp=16fe78fe0 n=1
+NabuStack: s=15 tid=979 f0: 1eedf2ccc
+NabuStack: s=15 pid=98 tid=980 st=1 h=15 w=5926be68 pc=1dcf128e8 lr=1eedf5580 sp=16fefefc0 fp=16fefefe0 n=1
+NabuStack: s=15 tid=980 f0: 1eedf2ccc
+NabuStack: s=15 pid=98 tid=1392 st=1 h=15 w=bb680281 pc=1dcf128e8 lr=1eedf5580 sp=16ff84fc0 fp=16ff84fe0 n=1
+NabuStack: s=15 tid=1392 f0: 1eedf2ccc
+NabuStack: s=15 pid=98 tid=1794 st=1 h=15 w=d0216fb pc=1dcf128e8 lr=1eedf5580 sp=16facefc0 fp=16facefe0 n=1
+NabuStack: s=15 tid=1794 f0: 1eedf2ccc
+NabuStack: s=17 SpringBoard pid=27 threads=4/4 sr_base=180000000 sr_slide=11750000
+NabuStack: s=17 pid=27 tid=302 st=1 h=10 w=905d8439 pc=1dcf12970 lr=1eed3f0e0 sp=16f603950 fp=16f6039a0 n=24
+NabuStack: s=17 tid=302 f0: 1993d5084 1993d4d14 1993d4924 1993f7ac4 21255ece0 1a0e540e8 21255e6b8 21255e5b0
+NabuStack: s=17 tid=302 f8: 212566c68 212566a60 212566460 1a0d02cc0 1a0ce544c 21256641c 212566274 2125600a8
+NabuStack: s=17 tid=302 f16: 212560054 1a0d02cc0 1a0cd40e4 212560038 1e11e6214 1b87f8548 1e11c8d60 1bab5f228
+NabuStack: s=17 pid=27 tid=481 st=1 h=15 w=ad694f4f pc=1dcf128e8 lr=1eedf5580 sp=16f688fc0 fp=16f688fe0 n=1
+NabuStack: s=17 tid=481 f0: 1eedf2ccc
+NabuStack: s=17 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78ef90 fp=16f78efe0 n=24
+NabuStack: s=17 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=17 tid=1200 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 1993dafb0 1993daeec 19963df24
+NabuStack: s=17 tid=1200 f16: 1b87ed1ac 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=17 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=17 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=17 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=17 backboardd pid=57 threads=24/24 sr_base=180000000 sr_slide=11750000
+NabuStack: s=17 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=17 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=17 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=17 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=17 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=17 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=17 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=17 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=17 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=17 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=17 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=17 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=17 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=17 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=17 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=17 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=17 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=17 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=17 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=17 tid=1081 f8: 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=17 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=17 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=17 pid=57 tid=1181 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1701bc830 fp=1701bc880 n=24
+NabuStack: s=17 tid=1181 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=17 tid=1181 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 199403910 199402fcc 192e8287c
+NabuStack: s=17 tid=1181 f16: 192e86aec 192e854d4 192e850cc 1985e3874 19963e294 19963df24 22d85bbb4 1a0d01c9c
+NabuStack: s=17 pid=57 tid=1467 st=1 h=14 w=b013d039 pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=17 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1468 st=1 h=14 w=c664d413 pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=17 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=17 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1470 st=1 h=14 w=69dfc708 pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=17 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1471 st=1 h=14 w=754f34e pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=17 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1472 st=1 h=14 w=addd45d2 pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=17 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=17 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=17 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=57 tid=2079 st=1 h=15 w=6f6b0680 pc=1dcf128e8 lr=1eedf5580 sp=16ef6eb30 fp=16ef6eb50 n=1
+NabuStack: s=17 tid=2079 f0: 1eedf2ccc
+NabuStack: s=17 pid=57 tid=2163 st=1 h=15 w=c48f991f pc=1dcf128e8 lr=1eedf5580 sp=16ee62fc0 fp=16ee62fe0 n=1
+NabuStack: s=17 tid=2163 f0: 1eedf2ccc
+NabuStack: s=17 pid=57 tid=2164 st=1 h=15 w=150b32d9 pc=1dcf128e8 lr=1eedf5580 sp=16eee8b30 fp=16eee8b50 n=1
+NabuStack: s=17 tid=2164 f0: 1eedf2ccc
+NabuStack: s=17 pid=57 tid=2165 st=1 h=15 w=92e4386c pc=1dcf128e8 lr=1eedf5580 sp=16eff4b40 fp=16eff4b60 n=1
+NabuStack: s=17 tid=2165 f0: 1eedf2ccc
+NabuStack: s=17 chronod pid=97 threads=10/10 sr_base=180000000 sr_slide=11750000
+NabuStack: s=17 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=17 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=17 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=17 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=17 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=17 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=17 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=17 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=17 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=17 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=17 tid=577 f16: 1eedf2ccc
+NabuStack: s=17 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=17 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=17 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=17 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=17 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=17 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=17 pid=97 tid=1199 st=1 h=15 w=55b78a0c pc=1dcf128e8 lr=1eedf5580 sp=16f53efc0 fp=16f53efe0 n=1
+NabuStack: s=17 tid=1199 f0: 1eedf2ccc
+NabuStack: s=17 pid=97 tid=1363 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f5befe0 fp=16f5bf030 n=24
+NabuStack: s=17 tid=1363 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=17 tid=1363 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 1993f7490 1993f7210 1a31bf498
+NabuStack: s=17 tid=1363 f16: 1a3154190 1a3154088 1a31210a4 1a3120564 1e2f19700 1e2f18944 1e2ef8448 1a0d01c9c
+NabuStack: s=17 pid=97 tid=1364 st=1 h=15 w=9d81d52f pc=1dcf128e8 lr=1eedf5580 sp=16f64ab40 fp=16f64ab60 n=1
+NabuStack: s=17 tid=1364 f0: 1eedf2ccc
+NabuStack: s=17 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0b30 fp=16f6d0b50 n=1
+NabuStack: s=17 tid=1365 f0: 1eedf2ccc
+NabuStack: s=17 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=17 liveactivitiesd pid=100 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=17 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=17 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=17 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=17 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=17 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=17 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=17 tid=615 f16: 1eedf2ccc
+NabuStack: s=17 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=17 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=17 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=17 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=17 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=17 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=17 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=17 pid=100 tid=635 st=1 h=15 w=c3dd45b2 pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=17 tid=635 f0: 1eedf2ccc
+NabuStack: s=17 lsd pid=98 threads=12/12 sr_base=180000000 sr_slide=11750000
+NabuStack: s=17 pid=98 tid=562 st=1 h=16 w=abc254f pc=1dcf128c0 lr=1a0cef628 sp=16f93e590 fp=16f93e5f0 n=9
+NabuStack: s=17 tid=562 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 19950c84c 199505f70 1a0d02cc0 1a0cd40e4 1994ec094
+NabuStack: s=17 tid=562 f8: 1bab5f228
+NabuStack: s=17 pid=98 tid=569 st=41 h=10 w=e3fac02c pc=1dcf18bdc lr=1a0cd33ec sp=16f9c2650 fp=16f9c2670 n=10
+NabuStack: s=17 tid=569 f0: 1a0cd3784 199506518 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=17 tid=569 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=17 pid=98 tid=578 st=1 h=15 w=88bf4e55 pc=1dcf128e8 lr=1eedf5580 sp=16fa48fc0 fp=16fa48fe0 n=1
+NabuStack: s=17 tid=578 f0: 1eedf2ccc
+NabuStack: s=17 pid=98 tid=708 st=1 h=15 w=ff091791 pc=1dcf128e8 lr=1eedf5580 sp=16fb54fc0 fp=16fb54fe0 n=1
+NabuStack: s=17 tid=708 f0: 1eedf2ccc
+NabuStack: s=17 pid=98 tid=709 st=4 h=0 w=0 pc=191841cf0 lr=1993cb120 sp=16fbd7a80 fp=16fbd7ad0 n=0
+NabuStack: s=17 pid=98 tid=710 st=41 h=10 w=5fc08e63 pc=1dcf18bdc lr=1a0cd33ec sp=16fc5ffe0 fp=16fc60000 n=19
+NabuStack: s=17 tid=710 f0: 1a0cd3784 1994c3fd0 1994c3eec 1986184d0 1986174a0 198616824 198616700 1eee47ee8
+NabuStack: s=17 tid=710 f8: 1eee49978 1a0d02d74 1a0cd6894 1a0cde77c 1a0cd7434 1a0cde77c 1a0cdf374 1a0ce8a34
+NabuStack: s=17 tid=710 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=17 pid=98 tid=914 st=1 h=15 w=cf56c202 pc=1dcf128e8 lr=1eedf5580 sp=16fd6cfc0 fp=16fd6cfe0 n=1
+NabuStack: s=17 tid=914 f0: 1eedf2ccc
+NabuStack: s=17 pid=98 tid=978 st=1 h=15 w=de51f98 pc=1dcf128e8 lr=1eedf5580 sp=16fdf2fc0 fp=16fdf2fe0 n=1
+NabuStack: s=17 tid=978 f0: 1eedf2ccc
+NabuStack: s=17 pid=98 tid=979 st=1 h=15 w=aa97cc47 pc=1dcf128e8 lr=1eedf5580 sp=16fe78fc0 fp=16fe78fe0 n=1
+NabuStack: s=17 tid=979 f0: 1eedf2ccc
+NabuStack: s=17 pid=98 tid=980 st=1 h=15 w=5926be68 pc=1dcf128e8 lr=1eedf5580 sp=16fefefc0 fp=16fefefe0 n=1
+NabuStack: s=17 tid=980 f0: 1eedf2ccc
+NabuStack: s=17 pid=98 tid=1392 st=1 h=15 w=bb680281 pc=1dcf128e8 lr=1eedf5580 sp=16ff84fc0 fp=16ff84fe0 n=1
+NabuStack: s=17 tid=1392 f0: 1eedf2ccc
+NabuStack: s=17 pid=98 tid=1794 st=1 h=15 w=d0216fb pc=1dcf128e8 lr=1eedf5580 sp=16facefc0 fp=16facefe0 n=1
+NabuStack: s=17 tid=1794 f0: 1eedf2ccc
+NabuStack: s=19 SpringBoard pid=27 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=19 pid=27 tid=302 st=1 h=10 w=905d8439 pc=1dcf12970 lr=1eed3f0e0 sp=16f603950 fp=16f6039a0 n=24
+NabuStack: s=19 tid=302 f0: 1993d5084 1993d4d14 1993d4924 1993f7ac4 21255ece0 1a0e540e8 21255e6b8 21255e5b0
+NabuStack: s=19 tid=302 f8: 212566c68 212566a60 212566460 1a0d02cc0 1a0ce544c 21256641c 212566274 2125600a8
+NabuStack: s=19 tid=302 f16: 212560054 1a0d02cc0 1a0cd40e4 212560038 1e11e6214 1b87f8548 1e11c8d60 1bab5f228
+NabuStack: s=19 pid=27 tid=481 st=1 h=15 w=ad694f4f pc=1dcf128e8 lr=1eedf5580 sp=16f688fc0 fp=16f688fe0 n=1
+NabuStack: s=19 tid=481 f0: 1eedf2ccc
+NabuStack: s=19 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78ef90 fp=16f78efe0 n=24
+NabuStack: s=19 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=19 tid=1200 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 1993dafb0 1993daeec 19963df24
+NabuStack: s=19 tid=1200 f16: 1b87ed1ac 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=19 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=19 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=19 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=19 pid=27 tid=2287 st=1 h=15 w=8cd1f79d pc=1dcf128e8 lr=1eedf5580 sp=16f70eb30 fp=16f70eb50 n=1
+NabuStack: s=19 tid=2287 f0: 1eedf2ccc
+NabuStack: s=19 backboardd pid=57 threads=24/24 sr_base=180000000 sr_slide=11750000
+NabuStack: s=19 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=19 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=19 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=19 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=19 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=19 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=19 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=19 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=19 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=19 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=19 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=19 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=19 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=19 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=19 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=19 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=19 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=19 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=19 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=19 tid=1081 f8: 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=19 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=19 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=19 pid=57 tid=1181 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1701bc830 fp=1701bc880 n=24
+NabuStack: s=19 tid=1181 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=19 tid=1181 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 199403910 199402fcc 192e8287c
+NabuStack: s=19 tid=1181 f16: 192e86aec 192e854d4 192e850cc 1985e3874 19963e294 19963df24 22d85bbb4 1a0d01c9c
+NabuStack: s=19 pid=57 tid=1467 st=1 h=14 w=b013d039 pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=19 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1468 st=1 h=14 w=7e92b924 pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=19 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=19 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1470 st=1 h=14 w=d4e93fec pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=19 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1471 st=1 h=14 w=d1dd5ae6 pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=19 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1472 st=1 h=14 w=6d737227 pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=19 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=19 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=19 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=57 tid=2211 st=1 h=15 w=4ff78cc9 pc=1dcf128e8 lr=1eedf5580 sp=16ef6efc0 fp=16ef6efe0 n=1
+NabuStack: s=19 tid=2211 f0: 1eedf2ccc
+NabuStack: s=19 pid=57 tid=2282 st=1 h=15 w=c188d37b pc=1dcf128e8 lr=1eedf5580 sp=16ee62b30 fp=16ee62b50 n=1
+NabuStack: s=19 tid=2282 f0: 1eedf2ccc
+NabuStack: s=19 pid=57 tid=2283 st=1 h=15 w=3a569d3 pc=1dcf128e8 lr=1eedf5580 sp=16eee8b30 fp=16eee8b50 n=1
+NabuStack: s=19 tid=2283 f0: 1eedf2ccc
+NabuStack: s=19 pid=57 tid=2284 st=1 h=15 w=f1f89e71 pc=1dcf128e8 lr=1eedf5580 sp=16eff4b40 fp=16eff4b60 n=1
+NabuStack: s=19 tid=2284 f0: 1eedf2ccc
+NabuStack: s=19 chronod pid=97 threads=10/10 sr_base=180000000 sr_slide=11750000
+NabuStack: s=19 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=19 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=19 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=19 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=19 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=19 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=19 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=19 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=19 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=19 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=19 tid=577 f16: 1eedf2ccc
+NabuStack: s=19 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=19 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=19 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=19 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=19 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=19 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=19 pid=97 tid=1199 st=1 h=15 w=55b78a0c pc=1dcf128e8 lr=1eedf5580 sp=16f53eb40 fp=16f53eb60 n=1
+NabuStack: s=19 tid=1199 f0: 1eedf2ccc
+NabuStack: s=19 pid=97 tid=1363 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f5befe0 fp=16f5bf030 n=24
+NabuStack: s=19 tid=1363 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=19 tid=1363 f8: 19863480c 1994b0024 19941bb84 1993d5130 1993d4d14 1993f7490 1993f7210 1a31bf498
+NabuStack: s=19 tid=1363 f16: 1a3154190 1a3154088 1a31210a4 1a3120564 1e2f19700 1e2f18944 1e2ef8448 1a0d01c9c
+NabuStack: s=19 pid=97 tid=1364 st=1 h=15 w=9d81d52f pc=1dcf128e8 lr=1eedf5580 sp=16f64afc0 fp=16f64afe0 n=1
+NabuStack: s=19 tid=1364 f0: 1eedf2ccc
+NabuStack: s=19 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0b30 fp=16f6d0b50 n=1
+NabuStack: s=19 tid=1365 f0: 1eedf2ccc
+NabuStack: s=19 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=19 liveactivitiesd pid=100 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=19 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=19 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=19 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=19 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=19 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=19 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=19 tid=615 f16: 1eedf2ccc
+NabuStack: s=19 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=19 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=19 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=19 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=19 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=19 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=19 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=19 pid=100 tid=635 st=1 h=15 w=c3dd45b2 pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=19 tid=635 f0: 1eedf2ccc
+NabuStack: s=19 lsd pid=98 threads=12/12 sr_base=180000000 sr_slide=11750000
+NabuStack: s=19 pid=98 tid=562 st=1 h=16 w=abc254f pc=1dcf128c0 lr=1a0cef628 sp=16f93e590 fp=16f93e5f0 n=9
+NabuStack: s=19 tid=562 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 19950c84c 199505f70 1a0d02cc0 1a0cd40e4 1994ec094
+NabuStack: s=19 tid=562 f8: 1bab5f228
+NabuStack: s=19 pid=98 tid=569 st=41 h=10 w=e3fac02c pc=1dcf18bdc lr=1a0cd33ec sp=16f9c2650 fp=16f9c2670 n=10
+NabuStack: s=19 tid=569 f0: 1a0cd3784 199506518 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=19 tid=569 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=19 pid=98 tid=578 st=1 h=15 w=88bf4e55 pc=1dcf128e8 lr=1eedf5580 sp=16fa48b30 fp=16fa48b50 n=1
+NabuStack: s=19 tid=578 f0: 1eedf2ccc
+NabuStack: s=19 pid=98 tid=708 st=1 h=15 w=ff091791 pc=1dcf128e8 lr=1eedf5580 sp=16fb54fc0 fp=16fb54fe0 n=1
+NabuStack: s=19 tid=708 f0: 1eedf2ccc
+NabuStack: s=19 pid=98 tid=709 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fbd4780 fp=16fbd47d0 n=24
+NabuStack: s=19 tid=709 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1e03541e4 1e0353ff4 1e0353ea8
+NabuStack: s=19 tid=709 f8: 1e0367b5c 1b1e079b8 1e0367a5c 1c9bb5930 1c9ba1da4 1c9ba3600 1c9ba3314 1c9bcced8
+NabuStack: s=19 tid=709 f16: 1c9bcdd24 1c9bce384 1c9bcecb8 1c9b972fc 1c9bc49c8 1c9b847fc 1c9b83d4c 1c9bc48ec
+NabuStack: s=19 pid=98 tid=710 st=41 h=10 w=5fc08e63 pc=1dcf18bdc lr=1a0cd33ec sp=16fc5ffe0 fp=16fc60000 n=19
+NabuStack: s=19 tid=710 f0: 1a0cd3784 1994c3fd0 1994c3eec 1986184d0 1986174a0 198616824 198616700 1eee47ee8
+NabuStack: s=19 tid=710 f8: 1eee49978 1a0d02d74 1a0cd6894 1a0cde77c 1a0cd7434 1a0cde77c 1a0cdf374 1a0ce8a34
+NabuStack: s=19 tid=710 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=19 pid=98 tid=914 st=1 h=15 w=cf56c202 pc=1dcf128e8 lr=1eedf5580 sp=16fd6cfc0 fp=16fd6cfe0 n=1
+NabuStack: s=19 tid=914 f0: 1eedf2ccc
+NabuStack: s=19 pid=98 tid=978 st=1 h=15 w=de51f98 pc=1dcf128e8 lr=1eedf5580 sp=16fdf2fc0 fp=16fdf2fe0 n=1
+NabuStack: s=19 tid=978 f0: 1eedf2ccc
+NabuStack: s=19 pid=98 tid=979 st=1 h=15 w=aa97cc47 pc=1dcf128e8 lr=1eedf5580 sp=16fe78fc0 fp=16fe78fe0 n=1
+NabuStack: s=19 tid=979 f0: 1eedf2ccc
+NabuStack: s=19 pid=98 tid=980 st=1 h=15 w=5926be68 pc=1dcf128e8 lr=1eedf5580 sp=16fefefc0 fp=16fefefe0 n=1
+NabuStack: s=19 tid=980 f0: 1eedf2ccc
+NabuStack: s=19 pid=98 tid=1392 st=1 h=15 w=bb680281 pc=1dcf128e8 lr=1eedf5580 sp=16ff84b30 fp=16ff84b50 n=1
+NabuStack: s=19 tid=1392 f0: 1eedf2ccc
+NabuStack: s=19 pid=98 tid=1794 st=1 h=15 w=d0216fb pc=1dcf128e8 lr=1eedf5580 sp=16facefc0 fp=16facefe0 n=1
+NabuStack: s=19 tid=1794 f0: 1eedf2ccc
+NabuStack: s=21 SpringBoard pid=27 threads=12/12 sr_base=180000000 sr_slide=11750000
+NabuStack: s=21 pid=27 tid=302 st=4 h=0 w=0 pc=1eed3cc98 lr=1a8882d60 sp=16f601250 fp=16f601310 n=4
+NabuStack: s=21 tid=302 f0: 1f8461878 7c8 205f95cd8 205f957d8
+NabuStack: s=21 pid=27 tid=481 st=1 h=15 w=ad694f4f pc=1dcf128e8 lr=1eedf5580 sp=16f688860 fp=16f688880 n=1
+NabuStack: s=21 tid=481 f0: 1eedf2ccc
+NabuStack: s=21 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78f9e0 fp=16f78fa30 n=19
+NabuStack: s=21 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=21 tid=1200 f8: 19863480c 1b093e360 1b093e23c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34
+NabuStack: s=21 tid=1200 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=21 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=21 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=21 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=21 pid=27 tid=2439 st=1 h=15 w=58022e7 pc=1dcf128e8 lr=1eedf5580 sp=16f70eb30 fp=16f70eb50 n=1
+NabuStack: s=21 tid=2439 f0: 1eedf2ccc
+NabuStack: s=21 pid=27 tid=2445 st=1 h=15 w=b8d93835 pc=1dcf128e8 lr=1eedf5580 sp=16f81ab30 fp=16f81ab50 n=1
+NabuStack: s=21 tid=2445 f0: 1eedf2ccc
+NabuStack: s=21 pid=27 tid=2446 st=1 h=15 w=3ec5fc7a pc=1dcf128e8 lr=1eedf5580 sp=16f8a0b30 fp=16f8a0b50 n=1
+NabuStack: s=21 tid=2446 f0: 1eedf2ccc
+NabuStack: s=21 pid=27 tid=2493 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f925c80 fp=16f925cd0 n=11
+NabuStack: s=21 tid=2493 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=21 tid=2493 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=27 tid=2559 st=1 h=15 w=5b38a688 pc=1dcf128e8 lr=1eedf5580 sp=16fa32b30 fp=16fa32b50 n=1
+NabuStack: s=21 tid=2559 f0: 1eedf2ccc
+NabuStack: s=21 pid=27 tid=2576 st=49 h=0 w=bf64626a pc=1b9eaab08 lr=1b9ea8848 sp=16fab8dc0 fp=16fab8e40 n=11
+NabuStack: s=21 tid=2576 f0: 1b9ea8790 1a0d02cc0 1a0cd40e4 1b9ea8778 1b9e9ff48 1a0d01c9c 1a0d02cc0 1a0ce78e4
+NabuStack: s=21 tid=2576 f8: 1a0ce7ed0 1eedf54f8 1eedf2ccc
+NabuStack: s=21 pid=27 tid=2637 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fb3d800 fp=16fb3d850 n=9
+NabuStack: s=21 tid=2637 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=21 tid=2637 f8: 1eedf2cd8
+NabuStack: s=21 pid=27 tid=2727 st=1 h=15 w=d1c73814 pc=1dcf128e8 lr=1eedf5580 sp=16fbc4b30 fp=16fbc4b50 n=1
+NabuStack: s=21 tid=2727 f0: 1eedf2ccc
+NabuStack: s=21 backboardd pid=57 threads=26/26 sr_base=180000000 sr_slide=11750000
+NabuStack: s=21 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=21 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=21 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=21 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=21 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=21 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=21 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=21 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=21 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=21 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=21 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=21 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=21 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=21 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=21 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=21 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=21 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=21 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=21 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=21 tid=1081 f8: 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=21 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=21 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=21 pid=57 tid=1181 st=1 h=15 w=5f97ba49 pc=1dcf128e8 lr=1eedf5580 sp=1701c2b30 fp=1701c2b50 n=1
+NabuStack: s=21 tid=1181 f0: 1eedf2ccc
+NabuStack: s=21 pid=57 tid=1467 st=1 h=14 w=eeb6e267 pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=21 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1468 st=1 h=14 w=76e903c1 pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=21 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=21 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1470 st=1 h=14 w=d4e93fec pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=21 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1471 st=1 h=14 w=bf0a7812 pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=21 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1472 st=1 h=14 w=60598dd3 pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=21 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=21 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=21 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=57 tid=2359 st=1 h=15 w=c9b7e443 pc=1dcf128e8 lr=1eedf5580 sp=16eff4b30 fp=16eff4b50 n=1
+NabuStack: s=21 tid=2359 f0: 1eedf2ccc
+NabuStack: s=21 pid=57 tid=2465 st=1 h=15 w=bf17aa25 pc=1dcf128e8 lr=1eedf5580 sp=16ee62ad0 fp=16ee62af0 n=1
+NabuStack: s=21 tid=2465 f0: 1eedf2ccc
+NabuStack: s=21 pid=57 tid=2466 st=1 h=15 w=b3e830bb pc=1dcf128e8 lr=1eedf5580 sp=16eee8ad0 fp=16eee8af0 n=1
+NabuStack: s=21 tid=2466 f0: 1eedf2ccc
+NabuStack: s=21 pid=57 tid=2494 st=1 h=15 w=1ddef11 pc=1dcf128e8 lr=1eedf5580 sp=16ef6ea50 fp=16ef6ea70 n=1
+NabuStack: s=21 tid=2494 f0: 1eedf2ccc
+NabuStack: s=21 pid=57 tid=2741 st=1 h=15 w=f87986aa pc=1dcf128e8 lr=1eedf5580 sp=16f8b0b30 fp=16f8b0b50 n=1
+NabuStack: s=21 tid=2741 f0: 1eedf2ccc
+NabuStack: s=21 pid=57 tid=2759 st=1 h=15 w=1614f112 pc=1dcf128e8 lr=1eedf5580 sp=16f936b30 fp=16f936b50 n=1
+NabuStack: s=21 tid=2759 f0: 1eedf2ccc
+NabuStack: s=21 chronod pid=97 threads=10/10 sr_base=180000000 sr_slide=11750000
+NabuStack: s=21 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=21 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=21 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=21 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=21 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=21 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=21 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=21 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=21 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=21 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=21 tid=577 f16: 1eedf2ccc
+NabuStack: s=21 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=21 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=21 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=21 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=21 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=21 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=21 pid=97 tid=1199 st=1 h=15 w=55b78a0c pc=1dcf128e8 lr=1eedf5580 sp=16f53ea90 fp=16f53eab0 n=1
+NabuStack: s=21 tid=1199 f0: 1eedf2ccc
+NabuStack: s=21 pid=97 tid=1363 st=1 h=15 w=b8c764d2 pc=1dcf128e8 lr=1eedf5580 sp=16f5c4a70 fp=16f5c4a90 n=1
+NabuStack: s=21 tid=1363 f0: 1eedf2ccc
+NabuStack: s=21 pid=97 tid=1364 st=1 h=15 w=9d81d52f pc=1dcf128e8 lr=1eedf5580 sp=16f64ab30 fp=16f64ab50 n=1
+NabuStack: s=21 tid=1364 f0: 1eedf2ccc
+NabuStack: s=21 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0b30 fp=16f6d0b50 n=1
+NabuStack: s=21 tid=1365 f0: 1eedf2ccc
+NabuStack: s=21 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=21 liveactivitiesd pid=100 threads=6/6 sr_base=180000000 sr_slide=11750000
+NabuStack: s=21 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=21 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=21 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=21 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=21 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=21 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=21 tid=615 f16: 1eedf2ccc
+NabuStack: s=21 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=21 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=21 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=21 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=21 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=21 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=21 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=21 pid=100 tid=635 st=1 h=15 w=c3dd45b2 pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=21 tid=635 f0: 1eedf2ccc
+NabuStack: s=21 pid=100 tid=2608 st=1 h=15 w=e7a468e6 pc=1dcf128e8 lr=1eedf5580 sp=16ef31b30 fp=16ef31b50 n=1
+NabuStack: s=21 tid=2608 f0: 1eedf2ccc
+NabuStack: s=21 lsd pid=98 threads=10/10 sr_base=180000000 sr_slide=11750000
+NabuStack: s=21 pid=98 tid=562 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f93d860 fp=16f93d8b0 n=9
+NabuStack: s=21 tid=562 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1994ec210 1994ec144
+NabuStack: s=21 tid=562 f8: 1bab5f228
+NabuStack: s=21 pid=98 tid=569 st=1 h=15 w=fe1d2977 pc=1dcf128e8 lr=1eedf5580 sp=16f9c2ac0 fp=16f9c2ae0 n=1
+NabuStack: s=21 tid=569 f0: 1eedf2ccc
+NabuStack: s=21 pid=98 tid=708 st=1 h=15 w=ff091791 pc=1dcf128e8 lr=1eedf5580 sp=16fb549c0 fp=16fb549e0 n=1
+NabuStack: s=21 tid=708 f0: 1eedf2ccc
+NabuStack: s=21 pid=98 tid=709 st=1 h=15 w=8b3ca220 pc=1dcf128e8 lr=1eedf5580 sp=16fbda9a0 fp=16fbda9c0 n=1
+NabuStack: s=21 tid=709 f0: 1eedf2ccc
+NabuStack: s=21 pid=98 tid=710 st=1 h=15 w=d3224f75 pc=1dcf128e8 lr=1eedf5580 sp=16fc60b30 fp=16fc60b50 n=1
+NabuStack: s=21 tid=710 f0: 1eedf2ccc
+NabuStack: s=21 pid=98 tid=914 st=1 h=15 w=cf56c202 pc=1dcf128e8 lr=1eedf5580 sp=16fd6cb30 fp=16fd6cb50 n=1
+NabuStack: s=21 tid=914 f0: 1eedf2ccc
+NabuStack: s=21 pid=98 tid=979 st=1 h=15 w=aa97cc47 pc=1dcf128e8 lr=1eedf5580 sp=16fe789a0 fp=16fe789c0 n=1
+NabuStack: s=21 tid=979 f0: 1eedf2ccc
+NabuStack: s=21 pid=98 tid=980 st=1 h=15 w=5926be68 pc=1dcf128e8 lr=1eedf5580 sp=16fefefc0 fp=16fefefe0 n=1
+NabuStack: s=21 tid=980 f0: 1eedf2ccc
+NabuStack: s=21 pid=98 tid=1392 st=1 h=15 w=bb680281 pc=1dcf128e8 lr=1eedf5580 sp=16ff84b30 fp=16ff84b50 n=1
+NabuStack: s=21 tid=1392 f0: 1eedf2ccc
+NabuStack: s=21 pid=98 tid=1794 st=49 h=0 w=9bda36ef pc=19183c8cc lr=19183b000 sp=16facd6f0 fp=16facd750 n=21
+NabuStack: s=21 tid=1794 f0: 19183b000 19944bfd8 19944bec8 19943f958 19944bd58 19943e1dc 199606374 199606298
+NabuStack: s=21 tid=1794 f8: 1996061e4 199604838 19859673c 1b495ed4c 1c24c844c 1a0ce5028 1a0d02cc0 1a0cde8f8
+NabuStack: s=21 tid=1794 f16: 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=23 SpringBoard pid=27 threads=9/9 sr_base=180000000 sr_slide=11750000
+NabuStack: s=23 pid=27 tid=302 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f5fca80 fp=16f5fcad0 n=24
+NabuStack: s=23 tid=302 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=23 tid=302 f8: 1a5edef18 1a0d02cc0 1a0ce544c 1a5edee24 1a5ee70e0 1a5ee6b04 1a5ee670c 1a5ec0800
+NabuStack: s=23 tid=302 f16: 1a5ecdf70 1e0cb6284 1e132d018 1e132c984 1e1203f30 1e1137468 1e11eae4c 1e172c3a0
+NabuStack: s=23 pid=27 tid=481 st=41 h=14 w=94778a6c pc=1dcf181a4 lr=1eedfd03c sp=16f687c40 fp=16f687cd0 n=13
+NabuStack: s=23 tid=481 f0: 19861b014 199604878 19859673c 1b495ed4c 1c24c844c 1a0ce5028 1a0d02cc0 1a0cde8f8
+NabuStack: s=23 tid=481 f8: 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=23 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78f9e0 fp=16f78fa30 n=19
+NabuStack: s=23 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=23 tid=1200 f8: 19863480c 1b093e360 1b093e23c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34
+NabuStack: s=23 tid=1200 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=23 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=23 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=23 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=23 pid=27 tid=2439 st=1 h=15 w=58022e7 pc=1dcf128e8 lr=1eedf5580 sp=16f70efc0 fp=16f70efe0 n=1
+NabuStack: s=23 tid=2439 f0: 1eedf2ccc
+NabuStack: s=23 pid=27 tid=2445 st=41 h=10 w=3a55da28 pc=1dcf18bdc lr=1a0cd33ec sp=16f81a9b0 fp=16f81a9d0 n=21
+NabuStack: s=23 tid=2445 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 2161960ec 216195f7c 21618d994 1a0d02cc0 1a0ce544c
+NabuStack: s=23 tid=2445 f8: 21618d30c 216195e2c 1a0d02cc0 1a0cd40e4 216195ddc 1e16961a0 1a0d01c9c 1a0d02cc0
+NabuStack: s=23 tid=2445 f16: 1a0cdacec 1a0ce7714 1a0ce7ed0 1eedf54f8 1eedf2ccc
+NabuStack: s=23 pid=27 tid=2493 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f925c80 fp=16f925cd0 n=11
+NabuStack: s=23 tid=2493 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=23 tid=2493 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=27 tid=2637 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fb3d800 fp=16fb3d850 n=9
+NabuStack: s=23 tid=2637 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=23 tid=2637 f8: 1eedf2cd8
+NabuStack: s=23 pid=27 tid=3000 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fd55c90 fp=16fd55ce0 n=11
+NabuStack: s=23 tid=3000 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623294 1e130b478
+NabuStack: s=23 tid=3000 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=23 backboardd pid=57 threads=20/20 sr_base=180000000 sr_slide=11750000
+NabuStack: s=23 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=23 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=23 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=23 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=23 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=23 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=23 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=23 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=23 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=23 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=23 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=23 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=23 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=23 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=23 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=23 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=23 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=23 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=23 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=23 tid=1081 f8: 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=23 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=23 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=23 pid=57 tid=1181 st=1 h=15 w=5f97ba49 pc=1dcf128e8 lr=1eedf5580 sp=1701c2b40 fp=1701c2b60 n=1
+NabuStack: s=23 tid=1181 f0: 1eedf2ccc
+NabuStack: s=23 pid=57 tid=1467 st=1 h=14 w=d206ca50 pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=23 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1468 st=1 h=14 w=c664d413 pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=23 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=23 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1470 st=1 h=14 w=54001605 pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=23 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1471 st=1 h=14 w=5a531403 pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=23 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1472 st=1 h=14 w=3a13431f pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=23 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=23 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=23 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=23 chronod pid=97 threads=9/9 sr_base=180000000 sr_slide=11750000
+NabuStack: s=23 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=23 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=23 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=23 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=23 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=23 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=23 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=23 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=23 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=23 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=23 tid=577 f16: 1eedf2ccc
+NabuStack: s=23 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=23 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=23 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=23 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=23 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=23 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=23 pid=97 tid=1199 st=1 h=15 w=55b78a0c pc=1dcf128e8 lr=1eedf5580 sp=16f53eb40 fp=16f53eb60 n=1
+NabuStack: s=23 tid=1199 f0: 1eedf2ccc
+NabuStack: s=23 pid=97 tid=1363 st=1 h=15 w=b8c764d2 pc=1dcf128e8 lr=1eedf5580 sp=16f5c4fc0 fp=16f5c4fe0 n=1
+NabuStack: s=23 tid=1363 f0: 1eedf2ccc
+NabuStack: s=23 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0b30 fp=16f6d0b50 n=1
+NabuStack: s=23 tid=1365 f0: 1eedf2ccc
+NabuStack: s=23 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=23 liveactivitiesd pid=100 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=23 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=23 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=23 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=23 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=23 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=23 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=23 tid=615 f16: 1eedf2ccc
+NabuStack: s=23 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=23 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=23 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=23 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=23 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=23 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=23 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=23 pid=100 tid=3038 st=1 h=15 w=ec052f0d pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=23 tid=3038 f0: 1eedf2ccc
+NabuStack: s=23 lsd pid=98 threads=4/4 sr_base=180000000 sr_slide=11750000
+NabuStack: s=23 pid=98 tid=562 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f93d860 fp=16f93d8b0 n=9
+NabuStack: s=23 tid=562 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1994ec210 1994ec144
+NabuStack: s=23 tid=562 f8: 1bab5f228
+NabuStack: s=23 pid=98 tid=979 st=1 h=15 w=aa97cc47 pc=1dcf128e8 lr=1eedf5580 sp=16fe789c0 fp=16fe789e0 n=1
+NabuStack: s=23 tid=979 f0: 1eedf2ccc
+NabuStack: s=23 pid=98 tid=980 st=1 h=15 w=5926be68 pc=1dcf128e8 lr=1eedf5580 sp=16fefefc0 fp=16fefefe0 n=1
+NabuStack: s=23 tid=980 f0: 1eedf2ccc
+NabuStack: s=23 pid=98 tid=1794 st=1 h=15 w=d0216fb pc=1dcf128e8 lr=1eedf5580 sp=16faceac0 fp=16faceae0 n=1
+NabuStack: s=23 tid=1794 f0: 1eedf2ccc
+NabuStack: s=25 SpringBoard pid=27 threads=9/9 sr_base=180000000 sr_slide=11750000
+NabuStack: s=25 pid=27 tid=302 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f5fca80 fp=16f5fcad0 n=24
+NabuStack: s=25 tid=302 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=25 tid=302 f8: 1a5edef18 1a0d02cc0 1a0ce544c 1a5edee24 1a5ee70e0 1a5ee6b04 1a5ee670c 1a5ec0800
+NabuStack: s=25 tid=302 f16: 1a5ecdf70 1e0cb6284 1e132d018 1e132c984 1e1203f30 1e1137468 1e11eae4c 1e172c3a0
+NabuStack: s=25 pid=27 tid=481 st=41 h=14 w=94778a6c pc=1dcf181a4 lr=1eedfd03c sp=16f687c40 fp=16f687cd0 n=13
+NabuStack: s=25 tid=481 f0: 19861b014 199604878 19859673c 1b495ed4c 1c24c844c 1a0ce5028 1a0d02cc0 1a0cde8f8
+NabuStack: s=25 tid=481 f8: 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=25 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78f9e0 fp=16f78fa30 n=19
+NabuStack: s=25 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=25 tid=1200 f8: 19863480c 1b093e360 1b093e23c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34
+NabuStack: s=25 tid=1200 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=25 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=25 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=25 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=25 pid=27 tid=2439 st=1 h=15 w=58022e7 pc=1dcf128e8 lr=1eedf5580 sp=16f70efc0 fp=16f70efe0 n=1
+NabuStack: s=25 tid=2439 f0: 1eedf2ccc
+NabuStack: s=25 pid=27 tid=2445 st=41 h=10 w=3a55da28 pc=1dcf18bdc lr=1a0cd33ec sp=16f81a9b0 fp=16f81a9d0 n=21
+NabuStack: s=25 tid=2445 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 2161960ec 216195f7c 21618d994 1a0d02cc0 1a0ce544c
+NabuStack: s=25 tid=2445 f8: 21618d30c 216195e2c 1a0d02cc0 1a0cd40e4 216195ddc 1e16961a0 1a0d01c9c 1a0d02cc0
+NabuStack: s=25 tid=2445 f16: 1a0cdacec 1a0ce7714 1a0ce7ed0 1eedf54f8 1eedf2ccc
+NabuStack: s=25 pid=27 tid=2493 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f925c80 fp=16f925cd0 n=11
+NabuStack: s=25 tid=2493 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=25 tid=2493 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=27 tid=2637 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fb3d800 fp=16fb3d850 n=9
+NabuStack: s=25 tid=2637 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=25 tid=2637 f8: 1eedf2cd8
+NabuStack: s=25 pid=27 tid=3000 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fd55c90 fp=16fd55ce0 n=11
+NabuStack: s=25 tid=3000 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623294 1e130b478
+NabuStack: s=25 tid=3000 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=25 backboardd pid=57 threads=20/20 sr_base=180000000 sr_slide=11750000
+NabuStack: s=25 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=25 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=25 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=25 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=25 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=25 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=25 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=25 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=25 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=25 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=25 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=25 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=25 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=25 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=25 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=25 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=25 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=25 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=25 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=25 tid=1081 f8: 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=25 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=25 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=25 pid=57 tid=1467 st=1 h=14 w=b013d039 pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=25 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1468 st=1 h=14 w=c664d413 pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=25 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=25 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1470 st=1 h=14 w=69dfc708 pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=25 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1471 st=1 h=14 w=d1dd5ae6 pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=25 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1472 st=1 h=14 w=60598dd3 pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=25 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=25 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=25 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=57 tid=3365 st=1 h=15 w=35dcc515 pc=1dcf128e8 lr=1eedf5580 sp=16eff4b40 fp=16eff4b60 n=1
+NabuStack: s=25 tid=3365 f0: 1eedf2ccc
+NabuStack: s=25 chronod pid=97 threads=8/8 sr_base=180000000 sr_slide=11750000
+NabuStack: s=25 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=25 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=25 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=25 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=25 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=25 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=25 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=25 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=25 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=25 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=25 tid=577 f16: 1eedf2ccc
+NabuStack: s=25 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=25 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=25 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=25 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=25 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=25 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=25 pid=97 tid=1363 st=1 h=15 w=b8c764d2 pc=1dcf128e8 lr=1eedf5580 sp=16f5c4b40 fp=16f5c4b60 n=1
+NabuStack: s=25 tid=1363 f0: 1eedf2ccc
+NabuStack: s=25 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0fc0 fp=16f6d0fe0 n=1
+NabuStack: s=25 tid=1365 f0: 1eedf2ccc
+NabuStack: s=25 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=25 liveactivitiesd pid=100 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=25 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=25 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=25 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=25 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=25 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=25 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=25 tid=615 f16: 1eedf2ccc
+NabuStack: s=25 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=25 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=25 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=25 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=25 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=25 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=25 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=25 pid=100 tid=3038 st=1 h=15 w=ec052f0d pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=25 tid=3038 f0: 1eedf2ccc
+NabuStack: s=25 lsd pid=98 threads=2/2 sr_base=180000000 sr_slide=11750000
+NabuStack: s=25 pid=98 tid=562 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f93d860 fp=16f93d8b0 n=9
+NabuStack: s=25 tid=562 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1994ec210 1994ec144
+NabuStack: s=25 tid=562 f8: 1bab5f228
+NabuStack: s=25 pid=98 tid=3363 st=1 h=15 w=3f222466 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=27 SpringBoard pid=27 threads=9/9 sr_base=180000000 sr_slide=11750000
+NabuStack: s=27 pid=27 tid=302 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f5fca80 fp=16f5fcad0 n=24
+NabuStack: s=27 tid=302 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=27 tid=302 f8: 1a5edef18 1a0d02cc0 1a0ce544c 1a5edee24 1a5ee70e0 1a5ee6b04 1a5ee670c 1a5ec0800
+NabuStack: s=27 tid=302 f16: 1a5ecdf70 1e0cb6284 1e132d018 1e132c984 1e1203f30 1e1137468 1e11eae4c 1e172c3a0
+NabuStack: s=27 pid=27 tid=481 st=41 h=14 w=94778a6c pc=1dcf181a4 lr=1eedfd03c sp=16f687c40 fp=16f687cd0 n=13
+NabuStack: s=27 tid=481 f0: 19861b014 199604878 19859673c 1b495ed4c 1c24c844c 1a0ce5028 1a0d02cc0 1a0cde8f8
+NabuStack: s=27 tid=481 f8: 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=27 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78f9e0 fp=16f78fa30 n=19
+NabuStack: s=27 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=27 tid=1200 f8: 19863480c 1b093e360 1b093e23c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34
+NabuStack: s=27 tid=1200 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=27 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=27 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=27 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=27 pid=27 tid=2445 st=41 h=10 w=3a55da28 pc=1dcf18bdc lr=1a0cd33ec sp=16f81a9b0 fp=16f81a9d0 n=21
+NabuStack: s=27 tid=2445 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 2161960ec 216195f7c 21618d994 1a0d02cc0 1a0ce544c
+NabuStack: s=27 tid=2445 f8: 21618d30c 216195e2c 1a0d02cc0 1a0cd40e4 216195ddc 1e16961a0 1a0d01c9c 1a0d02cc0
+NabuStack: s=27 tid=2445 f16: 1a0cdacec 1a0ce7714 1a0ce7ed0 1eedf54f8 1eedf2ccc
+NabuStack: s=27 pid=27 tid=2493 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f925c80 fp=16f925cd0 n=11
+NabuStack: s=27 tid=2493 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=27 tid=2493 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=27 tid=2637 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fb3d800 fp=16fb3d850 n=9
+NabuStack: s=27 tid=2637 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=27 tid=2637 f8: 1eedf2cd8
+NabuStack: s=27 pid=27 tid=3000 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fd55c90 fp=16fd55ce0 n=11
+NabuStack: s=27 tid=3000 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623294 1e130b478
+NabuStack: s=27 tid=3000 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=27 tid=3448 st=1 h=15 w=18fbe703 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=27 backboardd pid=57 threads=21/21 sr_base=180000000 sr_slide=11750000
+NabuStack: s=27 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=27 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=27 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=27 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=27 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=27 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=27 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=27 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=27 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=27 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=27 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=27 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=27 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=27 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=27 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=27 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=27 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=27 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=27 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=27 tid=1081 f8: 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=27 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=27 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=27 pid=57 tid=1467 st=1 h=14 w=eeb6e267 pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=27 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1468 st=1 h=14 w=a81a4d83 pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=27 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=27 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1470 st=1 h=14 w=4b94432c pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=27 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1471 st=1 h=14 w=2bf04726 pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=27 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1472 st=1 h=14 w=60598dd3 pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=27 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=27 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=27 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=57 tid=3484 st=1 h=15 w=1e5b67d9 pc=1dcf128e8 lr=1eedf5580 sp=16ee62b30 fp=16ee62b50 n=1
+NabuStack: s=27 tid=3484 f0: 1eedf2ccc
+NabuStack: s=27 pid=57 tid=3486 st=1 h=15 w=a2f3c1e5 pc=1dcf128e8 lr=1eedf5580 sp=16ef6ea20 fp=16ef6ea40 n=1
+NabuStack: s=27 tid=3486 f0: 1eedf2ccc
+NabuStack: s=27 chronod pid=97 threads=8/8 sr_base=180000000 sr_slide=11750000
+NabuStack: s=27 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=27 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=27 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=27 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=27 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=27 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=27 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=27 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=27 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=27 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=27 tid=577 f16: 1eedf2ccc
+NabuStack: s=27 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=27 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=27 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=27 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=27 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=27 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=27 pid=97 tid=1363 st=1 h=15 w=b8c764d2 pc=1dcf128e8 lr=1eedf5580 sp=16f5c4b40 fp=16f5c4b60 n=1
+NabuStack: s=27 tid=1363 f0: 1eedf2ccc
+NabuStack: s=27 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0fc0 fp=16f6d0fe0 n=1
+NabuStack: s=27 tid=1365 f0: 1eedf2ccc
+NabuStack: s=27 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=27 liveactivitiesd pid=100 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=27 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=27 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=27 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=27 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=27 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=27 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=27 tid=615 f16: 1eedf2ccc
+NabuStack: s=27 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=27 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=27 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=27 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=27 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=27 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=27 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=27 pid=100 tid=3038 st=1 h=15 w=ec052f0d pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=27 tid=3038 f0: 1eedf2ccc
+NabuStack: s=27 lsd pid=98 threads=2/2 sr_base=180000000 sr_slide=11750000
+NabuStack: s=27 pid=98 tid=562 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f93d860 fp=16f93d8b0 n=9
+NabuStack: s=27 tid=562 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1994ec210 1994ec144
+NabuStack: s=27 tid=562 f8: 1bab5f228
+NabuStack: s=27 pid=98 tid=3363 st=1 h=15 w=3f222466 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=29 SpringBoard pid=27 threads=9/9 sr_base=180000000 sr_slide=11750000
+NabuStack: s=29 pid=27 tid=302 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f5fca80 fp=16f5fcad0 n=24
+NabuStack: s=29 tid=302 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=29 tid=302 f8: 1a5edef18 1a0d02cc0 1a0ce544c 1a5edee24 1a5ee70e0 1a5ee6b04 1a5ee670c 1a5ec0800
+NabuStack: s=29 tid=302 f16: 1a5ecdf70 1e0cb6284 1e132d018 1e132c984 1e1203f30 1e1137468 1e11eae4c 1e172c3a0
+NabuStack: s=29 pid=27 tid=481 st=41 h=14 w=94778a6c pc=1dcf181a4 lr=1eedfd03c sp=16f687c40 fp=16f687cd0 n=13
+NabuStack: s=29 tid=481 f0: 19861b014 199604878 19859673c 1b495ed4c 1c24c844c 1a0ce5028 1a0d02cc0 1a0cde8f8
+NabuStack: s=29 tid=481 f8: 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=29 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78f9e0 fp=16f78fa30 n=19
+NabuStack: s=29 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=29 tid=1200 f8: 19863480c 1b093e360 1b093e23c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34
+NabuStack: s=29 tid=1200 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=29 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=29 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=29 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=29 pid=27 tid=2445 st=41 h=10 w=3a55da28 pc=1dcf18bdc lr=1a0cd33ec sp=16f81a9b0 fp=16f81a9d0 n=21
+NabuStack: s=29 tid=2445 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 2161960ec 216195f7c 21618d994 1a0d02cc0 1a0ce544c
+NabuStack: s=29 tid=2445 f8: 21618d30c 216195e2c 1a0d02cc0 1a0cd40e4 216195ddc 1e16961a0 1a0d01c9c 1a0d02cc0
+NabuStack: s=29 tid=2445 f16: 1a0cdacec 1a0ce7714 1a0ce7ed0 1eedf54f8 1eedf2ccc
+NabuStack: s=29 pid=27 tid=2493 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f925c80 fp=16f925cd0 n=11
+NabuStack: s=29 tid=2493 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=29 tid=2493 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=27 tid=2637 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fb3d800 fp=16fb3d850 n=9
+NabuStack: s=29 tid=2637 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=29 tid=2637 f8: 1eedf2cd8
+NabuStack: s=29 pid=27 tid=3000 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fd55c90 fp=16fd55ce0 n=11
+NabuStack: s=29 tid=3000 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623294 1e130b478
+NabuStack: s=29 tid=3000 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=27 tid=3448 st=1 h=15 w=18fbe703 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=29 backboardd pid=57 threads=23/23 sr_base=180000000 sr_slide=11750000
+NabuStack: s=29 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=29 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=29 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=29 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=29 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=29 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=29 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=29 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=29 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=29 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=29 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=29 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=29 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=29 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=29 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=29 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=29 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=29 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=29 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=29 tid=1081 f8: 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=29 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=29 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=29 pid=57 tid=1467 st=1 h=14 w=fedaba4 pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=29 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1468 st=1 h=14 w=c664d413 pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=29 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=29 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1470 st=1 h=14 w=767c3bfb pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=29 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1471 st=1 h=14 w=757ed9c pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=29 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1472 st=1 h=14 w=860f9c6 pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=29 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=29 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=29 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=57 tid=3484 st=1 h=15 w=1e5b67d9 pc=1dcf128e8 lr=1eedf5580 sp=16ee62b30 fp=16ee62b50 n=1
+NabuStack: s=29 tid=3484 f0: 1eedf2ccc
+NabuStack: s=29 pid=57 tid=3578 st=1 h=15 w=68bb159e pc=1dcf128e8 lr=1eedf5580 sp=16eee8fc0 fp=16eee8fe0 n=1
+NabuStack: s=29 tid=3578 f0: 1eedf2ccc
+NabuStack: s=29 pid=57 tid=3579 st=1 h=15 w=b180f918 pc=1dcf128e8 lr=1eedf5580 sp=16ef6eb30 fp=16ef6eb50 n=1
+NabuStack: s=29 tid=3579 f0: 1eedf2ccc
+NabuStack: s=29 pid=57 tid=3580 st=1 h=15 w=5746606c pc=1dcf128e8 lr=1eedf5580 sp=16eff4b40 fp=16eff4b60 n=1
+NabuStack: s=29 tid=3580 f0: 1eedf2ccc
+NabuStack: s=29 chronod pid=97 threads=8/8 sr_base=180000000 sr_slide=11750000
+NabuStack: s=29 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=29 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=29 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=29 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=29 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=29 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=29 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=29 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=29 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=29 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=29 tid=577 f16: 1eedf2ccc
+NabuStack: s=29 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=29 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=29 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=29 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=29 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=29 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=29 pid=97 tid=1363 st=1 h=15 w=b8c764d2 pc=1dcf128e8 lr=1eedf5580 sp=16f5c4b40 fp=16f5c4b60 n=1
+NabuStack: s=29 tid=1363 f0: 1eedf2ccc
+NabuStack: s=29 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0fc0 fp=16f6d0fe0 n=1
+NabuStack: s=29 tid=1365 f0: 1eedf2ccc
+NabuStack: s=29 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=29 liveactivitiesd pid=100 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=29 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=29 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=29 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=29 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=29 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=29 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=29 tid=615 f16: 1eedf2ccc
+NabuStack: s=29 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=29 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=29 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=29 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=29 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=29 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=29 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=29 pid=100 tid=3038 st=1 h=15 w=ec052f0d pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=29 tid=3038 f0: 1eedf2ccc
+NabuStack: s=29 lsd pid=98 threads=2/2 sr_base=180000000 sr_slide=11750000
+NabuStack: s=29 pid=98 tid=562 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f93d860 fp=16f93d8b0 n=9
+NabuStack: s=29 tid=562 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1994ec210 1994ec144
+NabuStack: s=29 tid=562 f8: 1bab5f228
+NabuStack: s=29 pid=98 tid=3363 st=1 h=15 w=3f222466 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=31 SpringBoard pid=27 threads=9/9 sr_base=180000000 sr_slide=11750000
+NabuStack: s=31 pid=27 tid=302 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f5fca80 fp=16f5fcad0 n=24
+NabuStack: s=31 tid=302 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=31 tid=302 f8: 1a5edef18 1a0d02cc0 1a0ce544c 1a5edee24 1a5ee70e0 1a5ee6b04 1a5ee670c 1a5ec0800
+NabuStack: s=31 tid=302 f16: 1a5ecdf70 1e0cb6284 1e132d018 1e132c984 1e1203f30 1e1137468 1e11eae4c 1e172c3a0
+NabuStack: s=31 pid=27 tid=481 st=41 h=14 w=94778a6c pc=1dcf181a4 lr=1eedfd03c sp=16f687c40 fp=16f687cd0 n=13
+NabuStack: s=31 tid=481 f0: 19861b014 199604878 19859673c 1b495ed4c 1c24c844c 1a0ce5028 1a0d02cc0 1a0cde8f8
+NabuStack: s=31 tid=481 f8: 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=31 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78f9e0 fp=16f78fa30 n=19
+NabuStack: s=31 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=31 tid=1200 f8: 19863480c 1b093e360 1b093e23c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34
+NabuStack: s=31 tid=1200 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=31 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=31 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=31 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=31 pid=27 tid=2445 st=41 h=10 w=3a55da28 pc=1dcf18bdc lr=1a0cd33ec sp=16f81a9b0 fp=16f81a9d0 n=21
+NabuStack: s=31 tid=2445 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 2161960ec 216195f7c 21618d994 1a0d02cc0 1a0ce544c
+NabuStack: s=31 tid=2445 f8: 21618d30c 216195e2c 1a0d02cc0 1a0cd40e4 216195ddc 1e16961a0 1a0d01c9c 1a0d02cc0
+NabuStack: s=31 tid=2445 f16: 1a0cdacec 1a0ce7714 1a0ce7ed0 1eedf54f8 1eedf2ccc
+NabuStack: s=31 pid=27 tid=2493 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f925c80 fp=16f925cd0 n=11
+NabuStack: s=31 tid=2493 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=31 tid=2493 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=27 tid=2637 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fb3d800 fp=16fb3d850 n=9
+NabuStack: s=31 tid=2637 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=31 tid=2637 f8: 1eedf2cd8
+NabuStack: s=31 pid=27 tid=3000 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fd55c90 fp=16fd55ce0 n=11
+NabuStack: s=31 tid=3000 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623294 1e130b478
+NabuStack: s=31 tid=3000 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=27 tid=3448 st=1 h=15 w=18fbe703 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=31 backboardd pid=57 threads=23/23 sr_base=180000000 sr_slide=11750000
+NabuStack: s=31 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=31 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=31 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=31 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=31 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=31 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=31 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=31 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=31 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=31 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=31 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=31 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=31 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=31 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=31 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=31 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=31 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=31 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=31 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=31 tid=1081 f8: 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=31 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=31 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=31 pid=57 tid=1467 st=1 h=14 w=7bfb6fa0 pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=31 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1468 st=1 h=14 w=1c1d6c59 pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=31 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=31 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1470 st=1 h=14 w=1f721c37 pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=31 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1471 st=1 h=14 w=754f34e pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=31 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1472 st=1 h=14 w=ca80ba6c pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=31 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=31 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=31 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=57 tid=3484 st=1 h=15 w=1e5b67d9 pc=1dcf128e8 lr=1eedf5580 sp=16ee62fc0 fp=16ee62fe0 n=1
+NabuStack: s=31 tid=3484 f0: 1eedf2ccc
+NabuStack: s=31 pid=57 tid=3635 st=1 h=15 w=395e82bd pc=1dcf128e8 lr=1eedf5580 sp=16eee8b30 fp=16eee8b50 n=1
+NabuStack: s=31 tid=3635 f0: 1eedf2ccc
+NabuStack: s=31 pid=57 tid=3636 st=1 h=15 w=3ab4aa98 pc=1dcf128e8 lr=1eedf5580 sp=16ef6eb30 fp=16ef6eb50 n=1
+NabuStack: s=31 tid=3636 f0: 1eedf2ccc
+NabuStack: s=31 pid=57 tid=3637 st=1 h=15 w=e0126223 pc=1dcf128e8 lr=1eedf5580 sp=16eff4b40 fp=16eff4b60 n=1
+NabuStack: s=31 tid=3637 f0: 1eedf2ccc
+NabuStack: s=31 chronod pid=97 threads=8/8 sr_base=180000000 sr_slide=11750000
+NabuStack: s=31 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=31 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=31 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=31 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=31 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=31 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=31 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=31 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=31 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=31 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=31 tid=577 f16: 1eedf2ccc
+NabuStack: s=31 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=31 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=31 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=31 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=31 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=31 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=31 pid=97 tid=1363 st=1 h=15 w=b8c764d2 pc=1dcf128e8 lr=1eedf5580 sp=16f5c4b40 fp=16f5c4b60 n=1
+NabuStack: s=31 tid=1363 f0: 1eedf2ccc
+NabuStack: s=31 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0fc0 fp=16f6d0fe0 n=1
+NabuStack: s=31 tid=1365 f0: 1eedf2ccc
+NabuStack: s=31 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=31 liveactivitiesd pid=100 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=31 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=31 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=31 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=31 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=31 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=31 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=31 tid=615 f16: 1eedf2ccc
+NabuStack: s=31 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=31 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=31 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=31 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=31 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=31 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=31 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=31 pid=100 tid=3038 st=1 h=15 w=ec052f0d pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=31 tid=3038 f0: 1eedf2ccc
+NabuStack: s=31 lsd pid=98 threads=2/2 sr_base=180000000 sr_slide=11750000
+NabuStack: s=31 pid=98 tid=562 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f93d860 fp=16f93d8b0 n=9
+NabuStack: s=31 tid=562 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1994ec210 1994ec144
+NabuStack: s=31 tid=562 f8: 1bab5f228
+NabuStack: s=31 pid=98 tid=3363 st=1 h=15 w=3f222466 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=33 SpringBoard pid=27 threads=9/9 sr_base=180000000 sr_slide=11750000
+NabuStack: s=33 pid=27 tid=302 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f5fca80 fp=16f5fcad0 n=24
+NabuStack: s=33 tid=302 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=33 tid=302 f8: 1a5edef18 1a0d02cc0 1a0ce544c 1a5edee24 1a5ee70e0 1a5ee6b04 1a5ee670c 1a5ec0800
+NabuStack: s=33 tid=302 f16: 1a5ecdf70 1e0cb6284 1e132d018 1e132c984 1e1203f30 1e1137468 1e11eae4c 1e172c3a0
+NabuStack: s=33 pid=27 tid=481 st=41 h=14 w=94778a6c pc=1dcf181a4 lr=1eedfd03c sp=16f687c40 fp=16f687cd0 n=13
+NabuStack: s=33 tid=481 f0: 19861b014 199604878 19859673c 1b495ed4c 1c24c844c 1a0ce5028 1a0d02cc0 1a0cde8f8
+NabuStack: s=33 tid=481 f8: 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=33 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78f9e0 fp=16f78fa30 n=19
+NabuStack: s=33 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=33 tid=1200 f8: 19863480c 1b093e360 1b093e23c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34
+NabuStack: s=33 tid=1200 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=33 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=33 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=33 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=33 pid=27 tid=2445 st=41 h=10 w=3a55da28 pc=1dcf18bdc lr=1a0cd33ec sp=16f81a9b0 fp=16f81a9d0 n=21
+NabuStack: s=33 tid=2445 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 2161960ec 216195f7c 21618d994 1a0d02cc0 1a0ce544c
+NabuStack: s=33 tid=2445 f8: 21618d30c 216195e2c 1a0d02cc0 1a0cd40e4 216195ddc 1e16961a0 1a0d01c9c 1a0d02cc0
+NabuStack: s=33 tid=2445 f16: 1a0cdacec 1a0ce7714 1a0ce7ed0 1eedf54f8 1eedf2ccc
+NabuStack: s=33 pid=27 tid=2493 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f925c80 fp=16f925cd0 n=11
+NabuStack: s=33 tid=2493 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=33 tid=2493 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=27 tid=2637 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fb3d800 fp=16fb3d850 n=9
+NabuStack: s=33 tid=2637 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=33 tid=2637 f8: 1eedf2cd8
+NabuStack: s=33 pid=27 tid=3000 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fd55c90 fp=16fd55ce0 n=11
+NabuStack: s=33 tid=3000 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623294 1e130b478
+NabuStack: s=33 tid=3000 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=27 tid=3448 st=1 h=15 w=18fbe703 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=33 backboardd pid=57 threads=23/23 sr_base=180000000 sr_slide=11750000
+NabuStack: s=33 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=33 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=33 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=33 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=33 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=33 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=33 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=33 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=33 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=33 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=33 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=33 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=33 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=33 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=33 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=33 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=33 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=33 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=33 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=33 tid=1081 f8: 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=33 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=33 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=33 pid=57 tid=1467 st=1 h=14 w=610fd65c pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=33 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1468 st=1 h=14 w=a81a4d83 pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=33 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=33 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1470 st=1 h=14 w=b7d1552d pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=33 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1471 st=1 h=14 w=1cff7212 pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=33 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1472 st=1 h=14 w=60598dd3 pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=33 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=33 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=33 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=57 tid=3670 st=1 h=15 w=3bd85025 pc=1dcf128e8 lr=1eedf5580 sp=16eee8b30 fp=16eee8b50 n=1
+NabuStack: s=33 tid=3670 f0: 1eedf2ccc
+NabuStack: s=33 pid=57 tid=3697 st=1 h=15 w=a24554e5 pc=1dcf128e8 lr=1eedf5580 sp=16ee62fc0 fp=16ee62fe0 n=1
+NabuStack: s=33 tid=3697 f0: 1eedf2ccc
+NabuStack: s=33 pid=57 tid=3698 st=1 h=15 w=71cbfcc0 pc=1dcf128e8 lr=1eedf5580 sp=16ef6eb30 fp=16ef6eb50 n=1
+NabuStack: s=33 tid=3698 f0: 1eedf2ccc
+NabuStack: s=33 pid=57 tid=3699 st=1 h=15 w=6cba0ab4 pc=1dcf128e8 lr=1eedf5580 sp=16eff4b40 fp=16eff4b60 n=1
+NabuStack: s=33 tid=3699 f0: 1eedf2ccc
+NabuStack: s=33 chronod pid=97 threads=8/8 sr_base=180000000 sr_slide=11750000
+NabuStack: s=33 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=33 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=33 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=33 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=33 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=33 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=33 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=33 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=33 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=33 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=33 tid=577 f16: 1eedf2ccc
+NabuStack: s=33 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=33 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=33 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=33 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=33 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=33 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=33 pid=97 tid=1363 st=1 h=15 w=b8c764d2 pc=1dcf128e8 lr=1eedf5580 sp=16f5c4b40 fp=16f5c4b60 n=1
+NabuStack: s=33 tid=1363 f0: 1eedf2ccc
+NabuStack: s=33 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0fc0 fp=16f6d0fe0 n=1
+NabuStack: s=33 tid=1365 f0: 1eedf2ccc
+NabuStack: s=33 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=33 liveactivitiesd pid=100 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=33 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=33 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=33 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=33 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=33 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=33 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=33 tid=615 f16: 1eedf2ccc
+NabuStack: s=33 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=33 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=33 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=33 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=33 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=33 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=33 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=33 pid=100 tid=3038 st=1 h=15 w=ec052f0d pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=33 tid=3038 f0: 1eedf2ccc
+NabuStack: s=33 lsd pid=98 threads=2/2 sr_base=180000000 sr_slide=11750000
+NabuStack: s=33 pid=98 tid=562 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f93d860 fp=16f93d8b0 n=9
+NabuStack: s=33 tid=562 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1994ec210 1994ec144
+NabuStack: s=33 tid=562 f8: 1bab5f228
+NabuStack: s=33 pid=98 tid=3363 st=1 h=15 w=3f222466 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=35 SpringBoard pid=27 threads=9/9 sr_base=180000000 sr_slide=11750000
+NabuStack: s=35 pid=27 tid=302 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f5fca80 fp=16f5fcad0 n=24
+NabuStack: s=35 tid=302 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=35 tid=302 f8: 1a5edef18 1a0d02cc0 1a0ce544c 1a5edee24 1a5ee70e0 1a5ee6b04 1a5ee670c 1a5ec0800
+NabuStack: s=35 tid=302 f16: 1a5ecdf70 1e0cb6284 1e132d018 1e132c984 1e1203f30 1e1137468 1e11eae4c 1e172c3a0
+NabuStack: s=35 pid=27 tid=481 st=41 h=14 w=94778a6c pc=1dcf181a4 lr=1eedfd03c sp=16f687c40 fp=16f687cd0 n=13
+NabuStack: s=35 tid=481 f0: 19861b014 199604878 19859673c 1b495ed4c 1c24c844c 1a0ce5028 1a0d02cc0 1a0cde8f8
+NabuStack: s=35 tid=481 f8: 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=35 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78f9e0 fp=16f78fa30 n=19
+NabuStack: s=35 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=35 tid=1200 f8: 19863480c 1b093e360 1b093e23c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34
+NabuStack: s=35 tid=1200 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=35 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=35 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=35 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=35 pid=27 tid=2445 st=41 h=10 w=3a55da28 pc=1dcf18bdc lr=1a0cd33ec sp=16f81a9b0 fp=16f81a9d0 n=21
+NabuStack: s=35 tid=2445 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 2161960ec 216195f7c 21618d994 1a0d02cc0 1a0ce544c
+NabuStack: s=35 tid=2445 f8: 21618d30c 216195e2c 1a0d02cc0 1a0cd40e4 216195ddc 1e16961a0 1a0d01c9c 1a0d02cc0
+NabuStack: s=35 tid=2445 f16: 1a0cdacec 1a0ce7714 1a0ce7ed0 1eedf54f8 1eedf2ccc
+NabuStack: s=35 pid=27 tid=2493 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f925c80 fp=16f925cd0 n=11
+NabuStack: s=35 tid=2493 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=35 tid=2493 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=27 tid=2637 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fb3d800 fp=16fb3d850 n=9
+NabuStack: s=35 tid=2637 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=35 tid=2637 f8: 1eedf2cd8
+NabuStack: s=35 pid=27 tid=3000 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fd55c90 fp=16fd55ce0 n=11
+NabuStack: s=35 tid=3000 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623294 1e130b478
+NabuStack: s=35 tid=3000 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=27 tid=3448 st=1 h=15 w=18fbe703 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=35 backboardd pid=57 threads=23/23 sr_base=180000000 sr_slide=11750000
+NabuStack: s=35 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=35 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=35 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=35 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=35 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=35 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=35 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=35 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=35 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=35 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=35 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=35 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=35 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=35 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=35 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=35 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=35 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=35 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=35 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=35 tid=1081 f8: 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=35 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=35 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=35 pid=57 tid=1467 st=1 h=14 w=2f98d3b0 pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=35 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1468 st=1 h=14 w=76e903c1 pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=35 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=35 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1470 st=1 h=14 w=4b94432c pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=35 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1471 st=1 h=14 w=6d131987 pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=35 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1472 st=1 h=14 w=ca80ba6c pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=35 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=35 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=35 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=57 tid=3727 st=1 h=15 w=cda704fb pc=1dcf128e8 lr=1eedf5580 sp=16ef6eb30 fp=16ef6eb50 n=1
+NabuStack: s=35 tid=3727 f0: 1eedf2ccc
+NabuStack: s=35 pid=57 tid=3774 st=1 h=15 w=df77ee94 pc=1dcf128e8 lr=1eedf5580 sp=16ee62fc0 fp=16ee62fe0 n=1
+NabuStack: s=35 tid=3774 f0: 1eedf2ccc
+NabuStack: s=35 pid=57 tid=3775 st=1 h=15 w=5e7ad813 pc=1dcf128e8 lr=1eedf5580 sp=16eee8b30 fp=16eee8b50 n=1
+NabuStack: s=35 tid=3775 f0: 1eedf2ccc
+NabuStack: s=35 pid=57 tid=3776 st=1 h=15 w=1b9f4059 pc=1dcf128e8 lr=1eedf5580 sp=16eff4b40 fp=16eff4b60 n=1
+NabuStack: s=35 tid=3776 f0: 1eedf2ccc
+NabuStack: s=35 chronod pid=97 threads=8/8 sr_base=180000000 sr_slide=11750000
+NabuStack: s=35 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=35 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=35 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=35 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=35 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=35 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=35 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=35 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=35 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=35 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=35 tid=577 f16: 1eedf2ccc
+NabuStack: s=35 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=35 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=35 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=35 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=35 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=35 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=35 pid=97 tid=1363 st=1 h=15 w=b8c764d2 pc=1dcf128e8 lr=1eedf5580 sp=16f5c4b40 fp=16f5c4b60 n=1
+NabuStack: s=35 tid=1363 f0: 1eedf2ccc
+NabuStack: s=35 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0fc0 fp=16f6d0fe0 n=1
+NabuStack: s=35 tid=1365 f0: 1eedf2ccc
+NabuStack: s=35 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=35 liveactivitiesd pid=100 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=35 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=35 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=35 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=35 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=35 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=35 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=35 tid=615 f16: 1eedf2ccc
+NabuStack: s=35 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=35 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=35 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=35 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=35 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=35 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=35 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=35 pid=100 tid=3038 st=1 h=15 w=ec052f0d pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=35 tid=3038 f0: 1eedf2ccc
+NabuStack: s=35 lsd pid=98 threads=2/2 sr_base=180000000 sr_slide=11750000
+NabuStack: s=35 pid=98 tid=562 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f93d860 fp=16f93d8b0 n=9
+NabuStack: s=35 tid=562 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1994ec210 1994ec144
+NabuStack: s=35 tid=562 f8: 1bab5f228
+NabuStack: s=35 pid=98 tid=3363 st=1 h=15 w=3f222466 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=37 SpringBoard pid=27 threads=9/9 sr_base=180000000 sr_slide=11750000
+NabuStack: s=37 pid=27 tid=302 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f5fca80 fp=16f5fcad0 n=24
+NabuStack: s=37 tid=302 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=37 tid=302 f8: 1a5edef18 1a0d02cc0 1a0ce544c 1a5edee24 1a5ee70e0 1a5ee6b04 1a5ee670c 1a5ec0800
+NabuStack: s=37 tid=302 f16: 1a5ecdf70 1e0cb6284 1e132d018 1e132c984 1e1203f30 1e1137468 1e11eae4c 1e172c3a0
+NabuStack: s=37 pid=27 tid=481 st=41 h=14 w=94778a6c pc=1dcf181a4 lr=1eedfd03c sp=16f687c40 fp=16f687cd0 n=13
+NabuStack: s=37 tid=481 f0: 19861b014 199604878 19859673c 1b495ed4c 1c24c844c 1a0ce5028 1a0d02cc0 1a0cde8f8
+NabuStack: s=37 tid=481 f8: 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=37 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78f9e0 fp=16f78fa30 n=19
+NabuStack: s=37 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=37 tid=1200 f8: 19863480c 1b093e360 1b093e23c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34
+NabuStack: s=37 tid=1200 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=37 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=37 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=37 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=37 pid=27 tid=2445 st=41 h=10 w=3a55da28 pc=1dcf18bdc lr=1a0cd33ec sp=16f81a9b0 fp=16f81a9d0 n=21
+NabuStack: s=37 tid=2445 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 2161960ec 216195f7c 21618d994 1a0d02cc0 1a0ce544c
+NabuStack: s=37 tid=2445 f8: 21618d30c 216195e2c 1a0d02cc0 1a0cd40e4 216195ddc 1e16961a0 1a0d01c9c 1a0d02cc0
+NabuStack: s=37 tid=2445 f16: 1a0cdacec 1a0ce7714 1a0ce7ed0 1eedf54f8 1eedf2ccc
+NabuStack: s=37 pid=27 tid=2493 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f925c80 fp=16f925cd0 n=11
+NabuStack: s=37 tid=2493 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=37 tid=2493 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=27 tid=2637 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fb3d800 fp=16fb3d850 n=9
+NabuStack: s=37 tid=2637 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=37 tid=2637 f8: 1eedf2cd8
+NabuStack: s=37 pid=27 tid=3000 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fd55c90 fp=16fd55ce0 n=11
+NabuStack: s=37 tid=3000 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623294 1e130b478
+NabuStack: s=37 tid=3000 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=27 tid=3448 st=1 h=15 w=18fbe703 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=37 backboardd pid=57 threads=20/20 sr_base=180000000 sr_slide=11750000
+NabuStack: s=37 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=37 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=37 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=37 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=37 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=37 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=37 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=37 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=37 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=37 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=37 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=37 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=37 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=37 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=37 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=37 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=37 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=37 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=37 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=37 tid=1081 f8: 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=37 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=37 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=37 pid=57 tid=1467 st=1 h=14 w=89c44719 pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=37 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1468 st=1 h=14 w=a81a4d83 pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=37 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=37 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1470 st=1 h=14 w=21374017 pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=37 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1471 st=1 h=14 w=2bf04726 pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=37 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1472 st=1 h=14 w=fb0bf8e6 pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=37 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=37 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=37 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=57 tid=3815 st=1 h=15 w=178cd15 pc=1dcf128e8 lr=1eedf5580 sp=16eff4b40 fp=16eff4b60 n=1
+NabuStack: s=37 tid=3815 f0: 1eedf2ccc
+NabuStack: s=37 chronod pid=97 threads=8/8 sr_base=180000000 sr_slide=11750000
+NabuStack: s=37 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=37 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=37 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=37 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=37 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=37 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=37 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=37 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=37 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=37 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=37 tid=577 f16: 1eedf2ccc
+NabuStack: s=37 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=37 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=37 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=37 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=37 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=37 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=37 pid=97 tid=1363 st=1 h=15 w=b8c764d2 pc=1dcf128e8 lr=1eedf5580 sp=16f5c4b40 fp=16f5c4b60 n=1
+NabuStack: s=37 tid=1363 f0: 1eedf2ccc
+NabuStack: s=37 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0fc0 fp=16f6d0fe0 n=1
+NabuStack: s=37 tid=1365 f0: 1eedf2ccc
+NabuStack: s=37 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=37 liveactivitiesd pid=100 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=37 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=37 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=37 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=37 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=37 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=37 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=37 tid=615 f16: 1eedf2ccc
+NabuStack: s=37 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=37 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=37 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=37 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=37 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=37 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=37 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=37 pid=100 tid=3038 st=1 h=15 w=ec052f0d pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=37 tid=3038 f0: 1eedf2ccc
+NabuStack: s=37 lsd pid=98 threads=2/2 sr_base=180000000 sr_slide=11750000
+NabuStack: s=37 pid=98 tid=562 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f93d860 fp=16f93d8b0 n=9
+NabuStack: s=37 tid=562 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1994ec210 1994ec144
+NabuStack: s=37 tid=562 f8: 1bab5f228
+NabuStack: s=37 pid=98 tid=3363 st=1 h=15 w=3f222466 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=39 SpringBoard pid=27 threads=9/9 sr_base=180000000 sr_slide=11750000
+NabuStack: s=39 pid=27 tid=302 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f5fca80 fp=16f5fcad0 n=24
+NabuStack: s=39 tid=302 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=39 tid=302 f8: 1a5edef18 1a0d02cc0 1a0ce544c 1a5edee24 1a5ee70e0 1a5ee6b04 1a5ee670c 1a5ec0800
+NabuStack: s=39 tid=302 f16: 1a5ecdf70 1e0cb6284 1e132d018 1e132c984 1e1203f30 1e1137468 1e11eae4c 1e172c3a0
+NabuStack: s=39 pid=27 tid=481 st=41 h=14 w=94778a6c pc=1dcf181a4 lr=1eedfd03c sp=16f687c40 fp=16f687cd0 n=13
+NabuStack: s=39 tid=481 f0: 19861b014 199604878 19859673c 1b495ed4c 1c24c844c 1a0ce5028 1a0d02cc0 1a0cde8f8
+NabuStack: s=39 tid=481 f8: 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=39 pid=27 tid=1200 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f78f9e0 fp=16f78fa30 n=19
+NabuStack: s=39 tid=1200 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634b50
+NabuStack: s=39 tid=1200 f8: 19863480c 1b093e360 1b093e23c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34
+NabuStack: s=39 tid=1200 f16: 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=39 pid=27 tid=1209 st=41 h=10 w=33b9b901 pc=1dcf18bdc lr=1a0cd33ec sp=16f9ac650 fp=16f9ac670 n=12
+NabuStack: s=39 tid=1209 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=39 tid=1209 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=39 pid=27 tid=2445 st=41 h=10 w=3a55da28 pc=1dcf18bdc lr=1a0cd33ec sp=16f81a9b0 fp=16f81a9d0 n=21
+NabuStack: s=39 tid=2445 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 2161960ec 216195f7c 21618d994 1a0d02cc0 1a0ce544c
+NabuStack: s=39 tid=2445 f8: 21618d30c 216195e2c 1a0d02cc0 1a0cd40e4 216195ddc 1e16961a0 1a0d01c9c 1a0d02cc0
+NabuStack: s=39 tid=2445 f16: 1a0cdacec 1a0ce7714 1a0ce7ed0 1eedf54f8 1eedf2ccc
+NabuStack: s=39 pid=27 tid=2493 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f925c80 fp=16f925cd0 n=11
+NabuStack: s=39 tid=2493 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=39 tid=2493 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=27 tid=2637 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fb3d800 fp=16fb3d850 n=9
+NabuStack: s=39 tid=2637 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=39 tid=2637 f8: 1eedf2cd8
+NabuStack: s=39 pid=27 tid=3000 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16fd55c90 fp=16fd55ce0 n=11
+NabuStack: s=39 tid=3000 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623294 1e130b478
+NabuStack: s=39 tid=3000 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=27 tid=3448 st=1 h=15 w=18fbe703 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=39 backboardd pid=57 threads=21/21 sr_base=180000000 sr_slide=11750000
+NabuStack: s=39 pid=57 tid=383 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16eddd8b0 fp=16eddd900 n=7
+NabuStack: s=39 tid=383 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 101044288 1bab5f228
+NabuStack: s=39 pid=57 tid=1047 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0f69c0 fp=16f0f6a10 n=6
+NabuStack: s=39 tid=1047 f0: 1dcf161b0 1dcf15fb8 19ab8fba8 19ae0ae28 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1067 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f30bda0 fp=16f30bdf0 n=10
+NabuStack: s=39 tid=1067 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=39 tid=1067 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1072 st=1 h=0 w=c2916bd pc=1dcf12b58 lr=1dcf16224 sp=16f17f040 fp=16f17f090 n=10
+NabuStack: s=39 tid=1072 f0: 1a16f2504 1a16fdb1c 1a16fda28 104e7ed30 104e7e948 104e7e3e8 104e84ed8 104e84544
+NabuStack: s=39 tid=1072 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1074 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f411da0 fp=16f411df0 n=10
+NabuStack: s=39 tid=1074 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=39 tid=1074 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1075 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f517da0 fp=16f517df0 n=10
+NabuStack: s=39 tid=1075 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=39 tid=1075 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1076 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f61dda0 fp=16f61ddf0 n=10
+NabuStack: s=39 tid=1076 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=39 tid=1076 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1077 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f723da0 fp=16f723df0 n=10
+NabuStack: s=39 tid=1077 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=39 tid=1077 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1078 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f829da0 fp=16f829df0 n=10
+NabuStack: s=39 tid=1078 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 19ae01bac 19ae0ae28
+NabuStack: s=39 tid=1078 f8: 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1081 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=1700b5800 fp=1700b5850 n=9
+NabuStack: s=39 tid=1081 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1a55cc7a0 1eedf682c
+NabuStack: s=39 tid=1081 f8: 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1083 st=41 h=10 w=23a11c4c pc=1dcf18bdc lr=1a0cd33ec sp=17013c820 fp=17013c840 n=10
+NabuStack: s=39 tid=1083 f0: 1a0cd3784 1010513e4 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=39 tid=1083 f8: 1eedf5534 1eedf2ccc
+NabuStack: s=39 pid=57 tid=1467 st=1 h=14 w=89c44719 pc=1dcf181a4 lr=1eedfd03c sp=16f206580 fp=16f206610 n=3
+NabuStack: s=39 tid=1467 f0: 1061247f8 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1468 st=1 h=14 w=3bb5de41 pc=1dcf181a4 lr=1eedfd03c sp=170243150 fp=1702431e0 n=3
+NabuStack: s=39 tid=1468 f0: 106125298 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1469 st=1 h=14 w=2ab9d20e pc=1dcf181a4 lr=1eedfd03c sp=1702cee00 fp=1702cee90 n=5
+NabuStack: s=39 tid=1469 f0: 1062eea3c 1062bae18 1062eecc0 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1470 st=1 h=14 w=517434bf pc=1dcf181a4 lr=1eedfd068 sp=1703dad30 fp=1703dadc0 n=5
+NabuStack: s=39 tid=1470 f0: 105732dd4 105732a20 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1471 st=1 h=14 w=db78f6d3 pc=1dcf181a4 lr=1eedfd068 sp=1705e0c40 fp=1705e0cd0 n=5
+NabuStack: s=39 tid=1471 f0: 1057e27f4 105c3e65c 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1472 st=1 h=14 w=d17ff305 pc=1dcf181a4 lr=1eedfd068 sp=1707e6a90 fp=1707e6b20 n=7
+NabuStack: s=39 tid=1472 f0: 105cc22e0 105b874e8 105b86f30 105c3e4e4 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1475 st=1 h=14 w=55814ae4 pc=1dcf181a4 lr=1eedfd03c sp=1709ecda0 fp=1709ece30 n=5
+NabuStack: s=39 tid=1475 f0: 105bd9a78 105c3b008 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=1541 st=1 h=14 w=e120bd60 pc=1dcf181a4 lr=1eedfd03c sp=171190da0 fp=171190e30 n=5
+NabuStack: s=39 tid=1541 f0: 1057bc5a8 1057bc370 105cc2904 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=57 tid=3867 st=1 h=15 w=ad7fa8cd pc=1dcf128e8 lr=1eedf5580 sp=16eff4b40 fp=16eff4b60 n=1
+NabuStack: s=39 tid=3867 f0: 1eedf2ccc
+NabuStack: s=39 pid=57 tid=3897 st=1 h=15 w=c428baf9 pc=1dcf128e8 lr=1eedf5580 sp=16ee62ab0 fp=16ee62ad0 n=1
+NabuStack: s=39 tid=3897 f0: 1eedf2ccc
+NabuStack: s=39 chronod pid=97 threads=8/8 sr_base=180000000 sr_slide=11750000
+NabuStack: s=39 pid=97 tid=558 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f29c700 fp=16f29c750 n=24
+NabuStack: s=39 tid=558 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1b0b7c498 1b0b965a4 1b0b7ba60
+NabuStack: s=39 tid=558 f8: 22e136a1c 22e131d78 22e131ce0 1a0d02cc0 1a0ce544c 22e13c9b4 22e140000 22e133604
+NabuStack: s=39 tid=558 f16: 1a0d02cc0 1a0cd40e4 22e1352a8 22e136bf8 1a0d02cc0 1a0cd40e4 22e19386c 1a0d02cc0
+NabuStack: s=39 pid=97 tid=572 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f3222f0 fp=16f322340 n=16
+NabuStack: s=39 tid=572 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=39 tid=572 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=39 pid=97 tid=577 st=41 h=16 w=71076da0 pc=1dcf128c0 lr=1a0cef628 sp=16f3abf80 fp=16f3abfe0 n=17
+NabuStack: s=39 tid=577 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=39 tid=577 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=39 tid=577 f16: 1eedf2ccc
+NabuStack: s=39 pid=97 tid=620 st=41 h=10 w=6f05625f pc=1dcf18bdc lr=1a0cd33ec sp=16f432650 fp=16f432670 n=12
+NabuStack: s=39 tid=620 f0: 1a0cd31d4 1a0ce56f8 1a0ce52f8 1b1e0d408 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374
+NabuStack: s=39 tid=620 f8: 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=39 pid=97 tid=1198 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f4b7c80 fp=16f4b7cd0 n=11
+NabuStack: s=39 tid=1198 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 1986233a8 198623224 19bb16e28
+NabuStack: s=39 tid=1198 f8: 198637d44 1eedf682c 1eedf2cd8
+NabuStack: s=39 pid=97 tid=1363 st=1 h=15 w=b8c764d2 pc=1dcf128e8 lr=1eedf5580 sp=16f5c4b40 fp=16f5c4b60 n=1
+NabuStack: s=39 tid=1363 f0: 1eedf2ccc
+NabuStack: s=39 pid=97 tid=1365 st=1 h=15 w=f745020c pc=1dcf128e8 lr=1eedf5580 sp=16f6d0fc0 fp=16f6d0fe0 n=1
+NabuStack: s=39 tid=1365 f0: 1eedf2ccc
+NabuStack: s=39 pid=97 tid=1366 st=1 h=15 w=d01f8ab3 pc=0 lr=0 sp=0 fp=0 n=0
+NabuStack: s=39 liveactivitiesd pid=100 threads=5/5 sr_base=180000000 sr_slide=11750000
+NabuStack: s=39 pid=100 tid=607 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16ee22470 fp=16ee224c0 n=16
+NabuStack: s=39 tid=607 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1985c8d50 1985c5568 198634c04
+NabuStack: s=39 tid=607 f8: 1986349cc 1a44cae50 1a44caafc 1d30e448c 1d30e41e4 1d31d4d08 100fdafc4 1bab5f228
+NabuStack: s=39 pid=100 tid=615 st=41 h=16 w=9a5645ef pc=1dcf128c0 lr=1a0cef628 sp=16eeaaf80 fp=16eeaafe0 n=17
+NabuStack: s=39 tid=615 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a68b6b74 1a68b64e8 1a68ba560 1a68b62f8
+NabuStack: s=39 tid=615 f8: 1a68b1c1c 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534
+NabuStack: s=39 tid=615 f16: 1eedf2ccc
+NabuStack: s=39 pid=100 tid=633 st=41 h=16 w=5bc66489 pc=1dcf128c0 lr=1a0cef628 sp=16efb72f0 fp=16efb7350 n=18
+NabuStack: s=39 tid=633 f0: 1a0cefff8 1a0ce56dc 1a0ce52f8 1a68bc314 1a6928d00 1d3096aa8 1d3091e0c 1d30aac08
+NabuStack: s=39 tid=633 f8: 1b9750d68 1b9750c90 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338
+NabuStack: s=39 tid=633 f16: 1eedf5534 1eedf2ccc
+NabuStack: s=39 pid=100 tid=634 st=41 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f0392f0 fp=16f039340 n=16
+NabuStack: s=39 tid=634 f0: 1dcf161b0 1dcf15fb8 1a0cd5538 1a0cd58d4 1eee46df0 1a68b4b08 1a68b48e4 1a68c013c
+NabuStack: s=39 tid=634 f8: 1a0d01c9c 1a0d02cc0 1a0cde8f8 1a0cdf374 1a0ce8a34 1a0ce8338 1eedf5534 1eedf2ccc
+NabuStack: s=39 pid=100 tid=3038 st=1 h=15 w=ec052f0d pc=1dcf128e8 lr=1eedf5580 sp=16f0c3b30 fp=16f0c3b50 n=1
+NabuStack: s=39 tid=3038 f0: 1eedf2ccc
+NabuStack: s=39 lsd pid=98 threads=2/2 sr_base=180000000 sr_slide=11750000
+NabuStack: s=39 pid=98 tid=562 st=1 h=2 w=0 pc=1dcf12b58 lr=1dcf16224 sp=16f93d860 fp=16f93d8b0 n=9
+NabuStack: s=39 tid=562 f0: 1dcf161b0 1dcf15fb8 199608a74 1996080e4 1996077d8 199671358 1994ec210 1994ec144
+NabuStack: s=39 tid=562 f8: 1bab5f228
+NabuStack: s=39 pid=98 tid=3363 st=1 h=15 w=3f222466 pc=0 lr=0 sp=0 fp=0 n=0
