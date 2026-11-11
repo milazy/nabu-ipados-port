@@ -11,7 +11,7 @@ permissions:
 jobs:
   symbolize:
     # macOS mounts the APFS system image natively (no apfs-fuse, no apt).
-    runs-on: macos-14
+    runs-on: macos-latest
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
