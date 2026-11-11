@@ -13,6 +13,10 @@ values of the target identity of this IPSW (iPad7,11, J171AP):
                effective-security-mode-sep 1             (mobileactivationd takes its native activated branch)
   /buttons     hold, voldown, volup; home-button-type 2  (no mechanical Home button: gestures)
   /product     iPad identity, idiom pad, thin bezel      (home indicator UI)
+               product-id of J171AP                      (MGGetProductType; from the 21H16 J171AP device tree)
+  /defaults    kern.maxvnodes, sleep-disabled            (UniXNU ipados-17.7.11 profile / sheng: the kernel is built with
+               CONFIG_VNODES=1024; iPadOS keeps ~1950 vnodes live and vnode jetsam killed 207 processes in seq 2987,
+               Settings among them. XNU reads /defaults before it clips. Value = owned memory / 64 KiB + 1024.)
 Every other node and property is copied unchanged; the output is re-parsed and compared.
 
 usage: adt_ipad_identity.py IN.adt OUT.adt [--subtype 2160] [--product-name "..."]
@@ -94,6 +98,9 @@ def main():
     ap.add_argument('--product-name', default='iPad (7th generation)')
     ap.add_argument('--subtype', type=int, default=2160)
     ap.add_argument('--fallback', default='iPad7,5')
+    ap.add_argument('--product-id', default='4d013e8fae976e61a7b3b69cdb5a015fa7ff04bb')
+    ap.add_argument('--maxvnodes', type=int, default=None,
+                    help='default: /chosen darwinboot-memory-size / 64 KiB + 1024')
     a = ap.parse_args()
 
     raw = open(a.input, 'rb').read()
@@ -123,6 +130,15 @@ def main():
     product.set('artwork-display-gamut', b'sRGB\0')
     product.set('compatible-device-fallback', a.fallback.encode() + b'\0')
     product.set('thin-bezel', u32(1))
+    product.set('product-id', bytes.fromhex(a.product_id))
+
+    defaults = root.child('defaults')
+    if defaults is None:
+        sys.exit('STOP: no /defaults')
+    owned = chosen.get('darwinboot-memory-size')
+    maxv = a.maxvnodes if a.maxvnodes else (struct.unpack('<Q', owned)[0] // 65536 + 1024 if owned else 33792)
+    defaults.set('kern.maxvnodes', u32(maxv))
+    defaults.set('sleep-disabled', u32(1))
 
     buttons = root.child('buttons')
     if buttons is None:
@@ -143,7 +159,7 @@ def main():
     print('in ', hashlib.sha256(raw).hexdigest(), len(raw))
     print('out', hashlib.sha256(out).hexdigest(), len(out))
     print('root model', check.get('model'), 'target-type', check.get('target-type'))
-    for n in ('product', 'buttons'):
+    for n in ('product', 'buttons', 'defaults'):
         c = check.child(n)
         print('/' + n, {p[0]: p[2] for p in c.props if p[0] != 'name'})
     print('chosen', {k: check.child('chosen').get(k) for k in ('certificate-production-status', 'effective-production-status-ap',
