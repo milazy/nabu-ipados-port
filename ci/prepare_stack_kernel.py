@@ -22,7 +22,7 @@ def main():
                    b'NABU DISPLAY iomfb-mode block=0x40',b'nabu-ui-watch',
                    b'NabuStack: s=%u %s pid=%d threads=%u/%u sr_base=%llx sr_slide=%llx',
                    b'NabuStack: s=%u pid=%d tid=%llu st=%x h=%u w=%llx pc=%llx lr=%llx sp=%llx fp=%llx n=%u',
-                   b'liveactivitiesd',b'chronod',b'nabu ram-data'):
+                   b'liveactivitiesd',b'chronod',b'nabu ram-data',b'launchd override disables watchdogd chronod liveactivitiesd'):
         need(raw.count(marker)>=1,'Compiled marker missing: '+marker.decode())
     backend=verify(a.kernel)
     public=b'5c5a956febabc8c8f3fc7b2cc48ae22bcab9ae25a9853c7cd0baadc9ec406882'
@@ -31,7 +31,7 @@ def main():
     final=raw.replace(public,owner)
     need(len(final)==len(raw) and final.count(owner)==1 and public not in final,'Owner ZAP replacement invalid')
     a.out.mkdir(parents=True,exist_ok=True)
-    kernel=a.out/'kernel-aks-keywrap.macho';report=a.out/'kernel-preparation.json'
+    kernel=a.out/'kernel-widget-off.macho';report=a.out/'kernel-preparation.json'
     need(not kernel.exists() and not report.exists(),'Prepared output already exists')
     kernel.write_bytes(final);transport=audit(kernel,a.addon,a.trustcache)
     result={'status':'STACK_SAMPLER_KERNEL_HOST_PASS','source_run':a.run_id,'raw_kernel_sha256':sha(raw),
