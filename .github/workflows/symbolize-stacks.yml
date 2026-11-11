@@ -20,7 +20,7 @@ jobs:
         run: |
           set -euxo pipefail
           gh release view --repo blacktop/ipsw --json assets --jq '.assets[].name' | tee /tmp/assets.txt
-          ASSET="$(grep -iE 'linux' /tmp/assets.txt | grep -iE 'x86_64|amd64' | grep -iE '\.tar\.gz$' | grep -viE 'extras|sbom|\.sig' | head -1)"
+          ASSET="$(grep -E '^ipsw_' /tmp/assets.txt | grep -iE 'linux' | grep -iE 'x86_64|amd64' | grep -iE '\.tar\.gz$' | grep -viE 'extras|sbom|\.sig' | head -1)"
           test -n "$ASSET"
           mkdir -p /tmp/ipsw
           gh release download --repo blacktop/ipsw --pattern "$ASSET" --dir /tmp/ipsw
