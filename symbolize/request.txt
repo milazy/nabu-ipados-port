@@ -1,2 +1,2 @@
-# probe: a 0-slide lookup at the cache base validates the pipeline
+# probe 2
 0 0x180001000 probe

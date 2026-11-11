@@ -19,8 +19,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euxo pipefail
-          gh release download --repo blacktop/ipsw --pattern '*_Linux_x86_64.tar.gz' --dir /tmp/ipsw
-          tar -xzf /tmp/ipsw/*_Linux_x86_64.tar.gz -C /tmp/ipsw
+          gh release view --repo blacktop/ipsw --json assets --jq '.assets[].name' | tee /tmp/assets.txt
+          ASSET="$(grep -iE 'linux' /tmp/assets.txt | grep -iE 'x86_64|amd64' | grep -iE '\.tar\.gz$' | grep -viE 'extras|sbom|\.sig' | head -1)"
+          test -n "$ASSET"
+          mkdir -p /tmp/ipsw
+          gh release download --repo blacktop/ipsw --pattern "$ASSET" --dir /tmp/ipsw
+          tar -xzf "/tmp/ipsw/$ASSET" -C /tmp/ipsw
           sudo install -m 0755 "$(find /tmp/ipsw -type f -name ipsw | head -1)" /usr/local/bin/ipsw
           ipsw version
       - name: Fetch the dyld shared cache for iPad7,11 21H16
