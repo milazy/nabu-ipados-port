@@ -96,7 +96,7 @@ jobs:
           if [ -f symbolize/strings.txt ]; then
             grep -v '^#' symbolize/strings.txt | while read -r str; do
               [ -n "$str" ] || continue
-              { echo "== str $str"; timeout 600 ipsw dyld str "$DSC" "$str" 2>&1 | grep -v 'parsing\|objc\|symbol cache' | head -40; } | tee -a out/strings.txt
+              { echo "== str $str"; ipsw dyld str "$DSC" "$str" 2>&1 | grep -v 'parsing\|objc\|symbol cache' | head -40; } | tee -a out/strings.txt
             done
           fi
           ipsw extract --files --pattern '(OpenGLES\.framework|GLEngine|GLRenderer|AppleMetalOpenGLRenderer|libGLProgrammability|libGLImage|libCoreVMClient).*' --output out/gl ipswfile/fw.ipsw 2>&1 | tail -5 || true
