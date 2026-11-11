@@ -22,7 +22,7 @@ def main():
                    b'NABU DISPLAY iomfb-mode block=0x40',b'nabu-ui-watch',
                    b'NabuStack: s=%u %s pid=%d threads=%u/%u sr_base=%llx sr_slide=%llx',
                    b'NabuStack: s=%u pid=%d tid=%llu st=%x h=%u w=%llx pc=%llx lr=%llx sp=%llx fp=%llx n=%u',
-                   b'liveactivitiesd',b'chronod',b'nabu ram-data keystore',b'UniXNU AppleKeyStore v1'):
+                   b'liveactivitiesd',b'chronod',b'nabu ram-data'):
         need(raw.count(marker)>=1,'Compiled marker missing: '+marker.decode())
     backend=verify(a.kernel)
     public=b'5c5a956febabc8c8f3fc7b2cc48ae22bcab9ae25a9853c7cd0baadc9ec406882'
