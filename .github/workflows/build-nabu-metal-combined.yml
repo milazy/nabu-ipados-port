@@ -1,4 +1,4 @@
-name: Build nabu combined async + GPU completion repair
+name: Build nabu combined async + GPU completion repair (frontend handler-wait checks on this branch)
 on:
   workflow_dispatch:
 permissions:
@@ -43,12 +43,12 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p output
-          python3 ci/build_combined_metal_reuse.py --device nabu-source --work runtime-work --output output/runtime 2>&1 | tee output/runtime-build.log
+          python3 ci/build_combined_metal_checkfix.py --device nabu-source --work runtime-work --output output/runtime 2>&1 | tee output/runtime-build.log
       - name: Upload runtime and exact-method qualification evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: nabu-metal-combined-repair
+          name: nabu-metal-combined-checkfix
           retention-days: 7
           if-no-files-found: error
           path: |
