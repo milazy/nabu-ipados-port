@@ -27,6 +27,17 @@ jobs:
           tar -xzf "/tmp/ipsw/$ASSET" -C /tmp/ipsw
           sudo install -m 0755 "$(find /tmp/ipsw -type f -name ipsw | head -1)" /usr/local/bin/ipsw
           ipsw version
+      - name: Build apfs-fuse (ipsw mounts the system DMG with it)
+        run: |
+          set -euxo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fuse3 libfuse3-dev bzip2 libbz2-dev cmake g++ git libattr1-dev zlib1g-dev
+          git clone --recursive --depth 1 https://github.com/sgan81/apfs-fuse.git /tmp/apfs-fuse
+          cmake -S /tmp/apfs-fuse -B /tmp/apfs-fuse/build -DCMAKE_BUILD_TYPE=Release
+          cmake --build /tmp/apfs-fuse/build -j4
+          sudo install -m 0755 /tmp/apfs-fuse/build/apfs-fuse /usr/local/bin/apfs-fuse
+          echo 'user_allow_other' | sudo tee -a /etc/fuse.conf
+          apfs-fuse 2>&1 | head -3 || true
       - name: Fetch the iPadOS 17.7 21H16 IPSW for iPad7,11 and extract its dyld shared cache
         run: |
           set -euxo pipefail
@@ -37,7 +48,8 @@ jobs:
           SHA1="$(python3 -c 'import json;print(json.load(open("meta.json"))["sha1sum"])')"
           curl -fL --retry 5 --retry-delay 10 -o ipswfile/fw.ipsw "$URL"
           echo "$SHA1  ipswfile/fw.ipsw" | sha1sum -c -
-          ipsw extract --dyld --output dsc ipswfile/fw.ipsw
+          sudo -E env "PATH=$PATH" ipsw extract --dyld --output dsc ipswfile/fw.ipsw
+          sudo chown -R "$(id -u):$(id -g)" dsc
           rm -f ipswfile/fw.ipsw
           find dsc -type f | head -50
           du -sh dsc
