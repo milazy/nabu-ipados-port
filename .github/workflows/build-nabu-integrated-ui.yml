@@ -92,13 +92,15 @@ jobs:
           python3 ci/apply_ui_targets_chronod.py --source nabu-source
           python3 ci/apply_aks_keywrap.py --source nabu-source
           python3 ci/apply_disable_widget_daemons.py --source nabu-source
+          python3 ci/apply_nabu_cpufreq.py --source nabu-source
+          grep -F 'NABU_CPUFREQ_V1' nabu-source/scripts/nabu_ui_watch_source.py
           grep -F 'NABU_DISABLE_WIDGET_DAEMONS_V1' nabu-source/source-ci/nabu_data_skeleton.py
           grep -F 'NABU_AKS_KEYWRAP_V1' nabu-source/platform/NabuKeybagNotifications.cpp
           grep -F 'NABU_UI_STACK_V1' nabu-source/scripts/nabu_ui_watch_source.py
           grep -F 'NABU_UI_TARGETS_V2' nabu-source/scripts/nabu_ui_watch_source.py
           grep -F 'NABU DISPLAY iomfb-modes published' nabu-source/platform/NabuLegacyCpuPresent.cpp
           grep -F 'NABU DISPLAY iomfb-mode block=0x40' nabu-source/platform/NabuLegacyDisplayProbe.cpp
-          python3 -m py_compile ci/apply_iomfb_compat.py ci/apply_iomfb_modes.py ci/apply_ui_stack_sampler.py ci/apply_ui_targets_chronod.py ci/apply_aks_keywrap.py ci/apply_disable_widget_daemons.py nabu-source/scripts/nabu_display_bindings.py nabu-source/scripts/nabu_ui_watch_source.py nabu-source/source-ci/nabu_data_skeleton.py
+          python3 -m py_compile ci/apply_iomfb_compat.py ci/apply_iomfb_modes.py ci/apply_ui_stack_sampler.py ci/apply_ui_targets_chronod.py ci/apply_aks_keywrap.py ci/apply_disable_widget_daemons.py ci/apply_nabu_cpufreq.py nabu-source/scripts/nabu_display_bindings.py nabu-source/scripts/nabu_ui_watch_source.py nabu-source/source-ci/nabu_data_skeleton.py
           grep -F 'sheng-vsync' nabu-source/platform/NabuLegacyCpuPresent.cpp
           grep -F 'VSYNC_NOTIFY = 0xfffffff005cd9720' nabu-source/scripts/nabu_display_bindings.py
           test -z "$(git -C nabu-source diff --check)"
@@ -212,6 +214,8 @@ jobs:
           git -C unixnu-final apply "$GITHUB_WORKSPACE/ci/nabu-standard-addon-diagnostics.patch"
           UNIXNU_DEVICE="$GITHUB_WORKSPACE/nabu-final"           python3 nabu-source/source-ci/prepare_source.py             --upstream "$GITHUB_WORKSPACE/unixnu-final"             --device "$GITHUB_WORKSPACE/nabu-final"             --profile nabu_ufs_gpu_metal_defconfig             --capture-logs --gpu-userprobe --ui-watch             --report "$GITHUB_WORKSPACE/output/final-source-prepare.json"
 
+          # UniXNU 2c2e69f (f6e4012/47ec6a5): no-lc=1 skips AMFI launch constraints, which refuse WebKit's WebContent extension.
+          cp "$GITHUB_WORKSPACE/ci/zzyc-owner-skip-launch-constraints.patch" "$GITHUB_WORKSPACE/unixnu-final/patches/xnu/"
           python3 ci/rebase_owner_trust_patch.py             --patch "$GITHUB_WORKSPACE/nabu-final/patches/xnu/nabu-master-second-trust-cache.patch"
           python3 ci/merge_xnu_patches.py             --upstream "$GITHUB_WORKSPACE/unixnu-final/patches/xnu"             --device "$GITHUB_WORKSPACE/nabu-final/patches/xnu"             --report "$GITHUB_WORKSPACE/output/final-xnu-patch-manifest.json"             --owner-root
 
