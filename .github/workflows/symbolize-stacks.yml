@@ -57,20 +57,7 @@ jobs:
           find out/dt -type f | head
           for f in $(find out/dt -type f -iname '*j171*' -o -type f -iname '*j172*' | head -4); do
             echo "== $f"; ipsw dtree --json "$f" > "$f.json" 2>/dev/null || true
-            python3 - "$f.json" <<'PY' || true
-import json,sys
-t=json.load(open(sys.argv[1]))
-def find(n,name,path=''):
-    if not isinstance(n,dict): return
-    for k,v in n.items():
-        if k==name: print(path+'/'+k, json.dumps(v)[:3000])
-        if isinstance(v,dict): find(v,name,path+'/'+k)
-        if isinstance(v,list):
-            for i in v: find(i,name,path+'/'+k)
-root=t.get('device-tree',t)
-print('ROOT', {k:v for k,v in root.items() if not isinstance(v,(dict,list))})
-for n in ('product','buttons','chosen'): find(t,n)
-PY
+            python3 ci/dump_dt_json.py "$f.json" || true
           done 2>&1 | tee out/dt-summary.txt
       - name: Symbolize
         run: |
