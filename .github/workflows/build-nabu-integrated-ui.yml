@@ -90,11 +90,13 @@ jobs:
           python3 ci/apply_iomfb_modes.py --source nabu-source
           python3 ci/apply_ui_stack_sampler.py --source nabu-source
           python3 ci/apply_ui_targets_chronod.py --source nabu-source
+          python3 ci/apply_aks_keywrap.py --source nabu-source
+          grep -F 'NABU_AKS_KEYWRAP_V1' nabu-source/platform/NabuKeybagNotifications.cpp
           grep -F 'NABU_UI_STACK_V1' nabu-source/scripts/nabu_ui_watch_source.py
           grep -F 'NABU_UI_TARGETS_V2' nabu-source/scripts/nabu_ui_watch_source.py
           grep -F 'NABU DISPLAY iomfb-modes published' nabu-source/platform/NabuLegacyCpuPresent.cpp
           grep -F 'NABU DISPLAY iomfb-mode block=0x40' nabu-source/platform/NabuLegacyDisplayProbe.cpp
-          python3 -m py_compile ci/apply_iomfb_compat.py ci/apply_iomfb_modes.py ci/apply_ui_stack_sampler.py ci/apply_ui_targets_chronod.py nabu-source/scripts/nabu_display_bindings.py nabu-source/scripts/nabu_ui_watch_source.py nabu-source/source-ci/nabu_data_skeleton.py
+          python3 -m py_compile ci/apply_iomfb_compat.py ci/apply_iomfb_modes.py ci/apply_ui_stack_sampler.py ci/apply_ui_targets_chronod.py ci/apply_aks_keywrap.py nabu-source/scripts/nabu_display_bindings.py nabu-source/scripts/nabu_ui_watch_source.py nabu-source/source-ci/nabu_data_skeleton.py
           grep -F 'sheng-vsync' nabu-source/platform/NabuLegacyCpuPresent.cpp
           grep -F 'VSYNC_NOTIFY = 0xfffffff005cd9720' nabu-source/scripts/nabu_display_bindings.py
           test -z "$(git -C nabu-source diff --check)"
