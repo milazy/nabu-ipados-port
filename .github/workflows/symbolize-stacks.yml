@@ -81,6 +81,10 @@ jobs:
             un="$(printf '0x%x' $(( 0x${addr#0x} - 0x${slide#0x} )))"
             sym="$(ipsw dyld a2s "$DSC" "$un" 2>&1 | tail -2 | tr '\n' ' ')"
             printf '%s %s %s => %s\n' "$addr" "$un" "${label:-}" "$sym" | tee -a out/symbols.txt
+            case "${label:-}" in D:*)
+              start="$(printf '0x%x' $(( un - 0x80 )))"
+              { echo "== disass $label $start"; ipsw dyld disass "$DSC" --vaddr "$start" --count 64 2>&1 | tail -70; } | tee -a out/disass.txt || true;;
+            esac
           done < symbolize/request.txt
       - uses: actions/upload-artifact@v4
         if: always()

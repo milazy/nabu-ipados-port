@@ -1,3 +1,3 @@
-# no stack request this run
-# dt dump
-# staged size
+# iconservicesagent SIGSEGV pc=0 (call through NULL) x14, seq 3328; lr is the return address after the blr
+0xeafc000 0x1a61eaac4 D:iconservicesagent-lr
+0xeafc000 0x1a61eaac0 iconservicesagent-blr
