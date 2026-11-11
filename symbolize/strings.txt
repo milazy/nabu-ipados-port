@@ -1,4 +1,5 @@
-# dyld shared cache strings to locate (ipsw dyld str)
-FORCE_SOFTWARE_RENDERER
-CI_ENABLE_METAL_GPU
-# rerun
+# CoreImage / OpenGL ES decision strings
+Metal disabled
+supportsFamily
+MTLGPUFamily
+CIContext not

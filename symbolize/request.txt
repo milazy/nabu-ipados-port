@@ -1,1 +1,3 @@
-# no new stack request; strings + iconservices plist run
+# CoreImage: who decides Metal vs GL (strings found in run 43119000453)
+0x0 0x19783c6c1 X:CoreImage
+0x0 0x1977b7fcb X:CoreImage

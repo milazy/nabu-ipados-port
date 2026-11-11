@@ -82,6 +82,9 @@ jobs:
             un="$(printf '0x%x' $(( 0x${addr#0x} - 0x${slide#0x} )))"
             sym="$(ipsw dyld a2s "$DSC" "$un" 2>&1 | tail -2 | tr '\n' ' ')"
             printf '%s %s %s => %s\n' "$addr" "$un" "${label:-}" "$sym" | tee -a out/symbols.txt
+            case "${label:-}" in X:*)
+              { echo "== xref $label $un"; ipsw dyld xref "$DSC" "$un" --image "${label#X:}" 2>&1 | grep -v 'parsing\|objc\|symbol cache' | head -40; } | tee -a out/xref.txt || true;;
+            esac
             case "${label:-}" in D:*)
               start="$(printf '0x%x' $(( un - 0x80 )))"
               { echo "== disass $label $start"; ipsw dyld disass "$DSC" --vaddr "$start" --count 64 2>&1 | tail -70; } | tee -a out/disass.txt || true;;
