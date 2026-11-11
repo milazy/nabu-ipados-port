@@ -5,3 +5,4 @@ contextstore
 coreduet
 identityservices
 ScreenTime
+iconservices

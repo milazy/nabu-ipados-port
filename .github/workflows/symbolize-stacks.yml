@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - symbolize/request.txt
+      - symbolize/strings.txt
 
 permissions:
   contents: read
@@ -86,6 +87,22 @@ jobs:
               { echo "== disass $label $start"; ipsw dyld disass "$DSC" --vaddr "$start" --count 64 2>&1 | tail -70; } | tee -a out/disass.txt || true;;
             esac
           done < symbolize/request.txt
+      - name: Locate strings and OpenGL ES renderer bundles
+        if: always()
+        run: |
+          set -uxo pipefail
+          DSC="$(find dsc -type f -name 'dyld_shared_cache_arm64*' ! -name '*.*' | head -1)"
+          mkdir -p out/gl
+          if [ -f symbolize/strings.txt ]; then
+            grep -v '^#' symbolize/strings.txt | while read -r str; do
+              [ -n "$str" ] || continue
+              { echo "== str $str"; timeout 600 ipsw dyld str "$DSC" "$str" 2>&1 | grep -v 'parsing\|objc\|symbol cache' | head -40; } | tee -a out/strings.txt
+            done
+          fi
+          ipsw extract --files --pattern '(OpenGLES\.framework|GLEngine|GLRenderer|AppleMetalOpenGLRenderer|libGLProgrammability|libGLImage|libCoreVMClient).*' --output out/gl ipswfile/fw.ipsw 2>&1 | tail -5 || true
+          find out/gl -type f | sed 's#^out/gl/##' | sort | tee out/gl-files.txt
+          find out/gl -name Info.plist -exec plutil -p {} \; 2>&1 | head -200 | tee out/gl-plists.txt
+          rm -rf out/gl
       - uses: actions/upload-artifact@v4
         if: always()
         with:
