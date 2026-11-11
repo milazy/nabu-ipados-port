@@ -1,0 +1,52 @@
+name: Symbolize nabu user stacks against iPadOS 17.7 (21H16) dyld shared cache
+
+on:
+  push:
+    paths:
+      - symbolize/request.txt
+
+permissions:
+  contents: read
+
+jobs:
+  symbolize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ipsw
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euxo pipefail
+          gh release download --repo blacktop/ipsw --pattern '*_Linux_x86_64.tar.gz' --dir /tmp/ipsw
+          tar -xzf /tmp/ipsw/*_Linux_x86_64.tar.gz -C /tmp/ipsw
+          sudo install -m 0755 "$(find /tmp/ipsw -type f -name ipsw | head -1)" /usr/local/bin/ipsw
+          ipsw version
+      - name: Fetch the dyld shared cache for iPad7,11 21H16
+        run: |
+          set -euxo pipefail
+          mkdir -p dsc && cd dsc
+          ipsw download ipsw --device iPad7,11 --build 21H16 --dyld --dyld-arch arm64e --confirm 2>&1 | tail -20 || \
+          ipsw download ipsw --device iPad7,11 --build 21H16 --dyld --confirm 2>&1 | tail -20
+          find . -maxdepth 4 -type f | head -50
+          du -sh .
+      - name: Symbolize
+        run: |
+          set -euo pipefail
+          DSC="$(find dsc -type f -name 'dyld_shared_cache_arm64*' ! -name '*.*' | head -1)"
+          echo "cache: $DSC"
+          mkdir -p out
+          ipsw dyld info "$DSC" 2>&1 | head -30 | tee out/cache-info.txt
+          # request.txt: "<slide-hex> <addr-hex> [label]" per line; '#' comments
+          while read -r slide addr label; do
+            case "$slide" in ''|\#*) continue;; esac
+            sym="$(ipsw dyld a2s "$DSC" --slide "0x${slide#0x}" "0x${addr#0x}" 2>&1 | tail -1)"
+            printf '%s %s %s => %s\n' "$slide" "$addr" "${label:-}" "$sym" | tee -a out/symbols.txt
+          done < symbolize/request.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nabu-stack-symbols
+          path: out/
+          retention-days: 7
