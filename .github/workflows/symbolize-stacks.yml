@@ -59,6 +59,15 @@ jobs:
             echo "== $f"; ipsw dtree --json "$f" > "$f.json" 2>/dev/null || true
             python3 ci/dump_dt_json.py "$f.json" || true
           done 2>&1 | tee out/dt-summary.txt
+      - name: Measure /private/var/staged_system_apps of 21H16
+        run: |
+          set -uxo pipefail
+          mkdir -p out/staged
+          ipsw extract --files --pattern 'private/var/staged_system_apps/.*' --output out/staged ipswfile/fw.ipsw 2>&1 | tail -3 || true
+          { du -sh out/staged; find out/staged -maxdepth 6 -name '*.app' -type d | sed 's#.*/##' | sort | uniq; \
+            find out/staged -maxdepth 6 -name '*.app' -type d -exec du -sk {} + | sort -n | tail -40; \
+            echo files $(find out/staged -type f | wc -l) dirs $(find out/staged -type d | wc -l); } 2>&1 | tee out/staged-size.txt
+          rm -rf out/staged
       - name: Symbolize
         run: |
           set -euo pipefail
