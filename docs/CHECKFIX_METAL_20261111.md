@@ -52,3 +52,19 @@ Booted with `fastboot boot MiPad5.UEFI-v2608.03_nSB.img` (RAM only).
 ## Still open
 If scanout now starts, `client-calls=0` (backboardd never called the IOMFB user client) and the QuartzCore
 `TileAttachments` compile failures are the next leads. Persistent Data, Wi-Fi, audio and power remain unimplemented.
+
+## Result on hardware (XNU2LOG seq 1872, CRC ok, 0 bytes lost)
+The fix worked for what it targeted; the screen still showed the frozen DarwinBoot/menu text.
+- Frontend verdict `M s0 c0 r0 i0 q167 k4/11 p15/8 F0` (was `F1 6607`); scanout client `P4 e0` = serving.
+- backboardd (pid 73) now opens IOMFB: `client-calls=5`, notifications `subscriptions=86`, VSYNC `armed=1 sent=8301` (all 0 before).
+- Still `swaps accepted=0`, `validation-calls=0`, scanout `offered=0`: backboardd never submits a frame.
+- Before stopping, backboardd calls 12 IOMFB selectors the legacy framebuffer does not implement
+  (`previous=e00002c7`, selector 15 `e00002bc`): 57, 15, 22, 29, 33, 79 (out 1580 B), 74, 12, 79 (44 B), 27 (3084 B), 84, 50.
+  `nabu-iomfb-compat=1` answers them with placeholder data. After selector 50 nothing more is called.
+- Ruled out: tile-shading kernels. The plugin offers only Apple1-3 families and `supportsTileShaders` = NO, so the
+  `tile_downsample_* NeedsInput(TileAttachments)` rows are self-test-only.
+
+## Next blocker
+Real answers for the iPadOS 17.7 IOMobileFramebuffer selectors above (structure layouts of selectors 27/79/74 in
+particular), so CoreAnimation accepts the display and starts swap_begin/swap_submit. This needs reverse engineering of
+the 21H16 IOMobileFramebuffer user-client ABI and several boot iterations; it is not a one-step change.
