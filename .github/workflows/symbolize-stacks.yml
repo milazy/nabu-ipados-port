@@ -79,6 +79,11 @@ jobs:
           # request.txt: "<slide-hex> <addr-hex> [label]" per line; '#' comments
           while read -r slide addr label; do
             case "$slide" in ''|\#*) continue;; esac
+            if [ "$slide" = SYM ]; then
+              { echo "== sym $label in $addr"; ipsw dyld symaddr "$DSC" "$label" --image "$addr" 2>&1 | grep -v 'parsing\|objc\|symbol cache' | tail -3;
+                ipsw dyld disass "$DSC" --symbol "$label" --image "$addr" 2>&1 | grep -v 'parsing\|objc\|symbol cache' | head -160; } | tee -a out/disass.txt || true
+              continue
+            fi
             un="$(printf '0x%x' $(( 0x${addr#0x} - 0x${slide#0x} )))"
             sym="$(ipsw dyld a2s "$DSC" "$un" 2>&1 | tail -2 | tr '\n' ' ')"
             printf '%s %s %s => %s\n' "$addr" "$un" "${label:-}" "$sym" | tee -a out/symbols.txt

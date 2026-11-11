@@ -1,3 +1,3 @@
-# CoreImage: who decides Metal vs GL (strings found in run 43119000453)
-0x0 0x19783c6c1 X:CoreImage
-0x0 0x1977b7fcb X:CoreImage
+# CoreImage's Metal decision (xref run 43119735133)
+SYM CoreImage ___can_use_metal_block_invoke
+SYM CoreImage __ZN2CI9GLContext4initEv

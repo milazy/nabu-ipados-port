@@ -1,5 +1,1 @@
-# CoreImage / OpenGL ES decision strings
-Metal disabled
-supportsFamily
-MTLGPUFamily
-CIContext not
+# none
