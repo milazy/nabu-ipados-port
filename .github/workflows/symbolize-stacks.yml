@@ -11,7 +11,7 @@ permissions:
 jobs:
   symbolize:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - name: Install ipsw
@@ -27,14 +27,20 @@ jobs:
           tar -xzf "/tmp/ipsw/$ASSET" -C /tmp/ipsw
           sudo install -m 0755 "$(find /tmp/ipsw -type f -name ipsw | head -1)" /usr/local/bin/ipsw
           ipsw version
-      - name: Fetch the dyld shared cache for iPad7,11 21H16
+      - name: Fetch the iPadOS 17.7 21H16 IPSW for iPad7,11 and extract its dyld shared cache
         run: |
           set -euxo pipefail
-          mkdir -p dsc && cd dsc
-          ipsw download ipsw --device iPad7,11 --build 21H16 --dyld --dyld-arch arm64e --confirm 2>&1 | tail -20 || \
-          ipsw download ipsw --device iPad7,11 --build 21H16 --dyld --confirm 2>&1 | tail -20
-          find . -maxdepth 4 -type f | head -50
-          du -sh .
+          mkdir -p dsc ipswfile
+          curl -fsSL https://api.ipsw.me/v4/ipsw/iPad7,11/21H16 -o meta.json
+          cat meta.json
+          URL="$(python3 -c 'import json;print(json.load(open("meta.json"))["url"])')"
+          SHA1="$(python3 -c 'import json;print(json.load(open("meta.json"))["sha1sum"])')"
+          curl -fL --retry 5 --retry-delay 10 -o ipswfile/fw.ipsw "$URL"
+          echo "$SHA1  ipswfile/fw.ipsw" | sha1sum -c -
+          ipsw extract --dyld --output dsc ipswfile/fw.ipsw
+          rm -f ipswfile/fw.ipsw
+          find dsc -type f | head -50
+          du -sh dsc
       - name: Symbolize
         run: |
           set -euo pipefail
@@ -45,7 +51,8 @@ jobs:
           # request.txt: "<slide-hex> <addr-hex> [label]" per line; '#' comments
           while read -r slide addr label; do
             case "$slide" in ''|\#*) continue;; esac
-            sym="$(ipsw dyld a2s "$DSC" --slide "0x${slide#0x}" "0x${addr#0x}" 2>&1 | tail -1)"
+            un="$(printf '0x%x' $(( 0x${addr#0x} - 0x${slide#0x} )))"
+            sym="$(ipsw dyld a2s "$DSC" "$un" 2>&1 | tail -2 | tr '\n' ' ')"
             printf '%s %s %s => %s\n' "$slide" "$addr" "${label:-}" "$sym" | tee -a out/symbols.txt
           done < symbolize/request.txt
       - uses: actions/upload-artifact@v4
