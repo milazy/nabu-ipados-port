@@ -39,9 +39,16 @@ jobs:
           curl -fL --retry 5 --retry-delay 10 -o ipswfile/fw.ipsw "$URL"
           echo "$SHA1  ipswfile/fw.ipsw" | shasum -a 1 -c -
           ipsw extract --dyld --output dsc ipswfile/fw.ipsw
-          rm -f ipswfile/fw.ipsw
           find dsc -type f | head -50
           du -sh dsc
+      - name: Inspect launchd jobs named in symbolize/inspect.txt
+        if: hashFiles('symbolize/inspect.txt') != ''
+        run: |
+          set -uxo pipefail
+          mkdir -p out/launchd
+          PAT="$(grep -v '^#' symbolize/inspect.txt | paste -sd'|' -)"
+          ipsw extract --files --pattern "(LaunchDaemons|LaunchAgents)/.*(${PAT}).*\.plist$" --output out/launchd ipswfile/fw.ipsw 2>&1 | tail -20 || true
+          find out/launchd -name '*.plist' | while read -r f; do echo "== $f"; plutil -p "$f"; done | tee out/launchd-jobs.txt
       - name: Symbolize
         run: |
           set -euo pipefail

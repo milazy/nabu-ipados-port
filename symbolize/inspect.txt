@@ -1,0 +1,7 @@
+# job name fragments
+chrono
+liveactiv
+contextstore
+coreduet
+identityservices
+ScreenTime
