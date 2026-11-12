@@ -38,7 +38,7 @@ jobs:
           import plistlib,sys
           d=plistlib.load(open(sys.argv[1],'rb'))
           print('keys',sorted(d)); print('VersionNumber',d.get('VersionNumber'))
-          for k,j in sorted(d['LaunchDaemons'].items()): print(j.get('Label'),k,j.get('ProgramArguments',[j.get('Program')])[0] if j.get('ProgramArguments') or j.get('Program') else '')
+          for k,j in sorted(d['LaunchDaemons'].items()): print(j.get('Label'),k,j.get('Program') or (j.get('ProgramArguments') or [''])[0])
           PY
           grep -i iconservices out/os-launchd-labels.txt || true
           python3 ci/build_launchd_cache.py --source "$OS/System/Library/xpc/launchd.plist" \
