@@ -3,6 +3,10 @@ name: Build nabu integrated UI kernel (two-pass)
 on:
   workflow_dispatch:
     inputs:
+      unixnu_sha:
+        description: "Optional UniXNU commit (default: the qualified pin 245aca1a)"
+        required: false
+        default: ""
       appsync:
         description: "Include the AppSync kernel parts (appsync=1 boot-arg still required)"
         type: boolean
@@ -52,7 +56,7 @@ jobs:
       HOMEBREW_NO_ENV_HINTS: "1"
       UNIXNU_IPSW: ${{ github.workspace }}/ipsw-21h16-small.zip
       NABU_SOURCE_SHA: "54b4f98457f8e9e232cc0a077c20d08d0b2f0ac9"
-      UNIXNU_SOURCE_SHA: "245aca1a9ec5b730b1cad80fade295800d2981f1"
+      UNIXNU_SOURCE_SHA: ${{ inputs.unixnu_sha || '245aca1a9ec5b730b1cad80fade295800d2981f1' }}
 
     steps:
       - name: Checkout private build helpers
