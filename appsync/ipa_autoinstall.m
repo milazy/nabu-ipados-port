@@ -44,6 +44,7 @@ static NSString *digest(NSString *path) {
 
 int main(void) {
     @autoreleasepool {
+        say(@"started; waiting 45 s for SpringBoard and installd");
         sleep(45);  // let SpringBoard, installd and LaunchServices come up
         dlopen("/System/Library/Frameworks/CoreServices.framework/CoreServices", RTLD_NOW);
         Class cls = objc_getClass("LSApplicationWorkspace");

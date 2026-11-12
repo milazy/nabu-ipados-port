@@ -781,17 +781,27 @@ static int net(unsigned secs)
 /* everything `up` does, from a fresh boot */
 static int up(unsigned secs)
 {
+	/* nabu: one line before every stage, so a stall shows where it is (batch 4 stopped silently here). */
+	printf("up: stage smmu (apps SMMU 0x15000000, WLAN SID 0x640/1)\n");
 	if (smmu_wlan_identity())
 		printf("up: no WLAN SMMU stream: the radio will not start\n");
-	if (wlan_power() || smp2p_create())
+	printf("up: stage power (RPMh VRM votes)\n");
+	if (wlan_power())
+		return 1;
+	printf("up: stage smp2p\n");
+	if (smp2p_create())
 		return 1;
 	/* Pre-allocate GLINK rings, rmtfs 2 MB buffer + EFS fds, and TFTP dir BEFORE
 	 * PAS-booting MPSS so the modem never waits on HFS+/SMC after GLINK comes up. */
+	printf("up: stage glink+rmtfs prepare\n");
 	if (glink_prepare() || rmtfs_prepare())
 		return 1;
+	printf("up: stage tftp prepare\n");
 	tftp_prepare();
+	printf("up: stage modem boot (PAS 4, MPSS 0x8e000000)\n");
 	if (boot_modem())
 		return 1;
+	printf("up: stage net\n");
 	return net(secs) ? 1 : 0;
 }
 

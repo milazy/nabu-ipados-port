@@ -21,6 +21,7 @@ def main():
     p.add_argument('--source', type=Path, required=True)
     p.add_argument('--job', type=Path, action='append', default=[])
     p.add_argument('--env', action='append', default=[])
+    p.add_argument('--program', action='append', default=[], help='LABEL=PATH: run this OS job from PATH (a signed copy)')
     p.add_argument('--out', type=Path, required=True)
     a = p.parse_args()
     raw = a.source.read_bytes()
@@ -47,6 +48,17 @@ def main():
         assert len(keys) == 1, f'{label}: {len(keys)} jobs'
         jobs[keys[0]].setdefault('EnvironmentVariables', {}).update(env)
         changed.append(keys[0])
+    for spec in a.program:
+        label, _, path = spec.partition('=')
+        keys = [k for k, j in original['LaunchDaemons'].items() if j.get('Label') == label]
+        assert len(keys) == 1 and path.startswith('/usr/bin/'), spec
+        job = jobs[keys[0]]
+        if 'ProgramArguments' in job:
+            job['ProgramArguments'] = [path] + list(job['ProgramArguments'][1:])
+        if 'Program' in job or 'ProgramArguments' not in job:
+            job['Program'] = path
+        if keys[0] not in changed:
+            changed.append(keys[0])
     for k, v in original.items():
         if k != 'LaunchDaemons':
             assert merged[k] == v

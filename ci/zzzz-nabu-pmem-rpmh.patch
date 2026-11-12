@@ -16,7 +16,7 @@ new file mode 100644
 index 0000000..e74758b
 --- /dev/null
 +++ b/bsd/dev/nabu_pmem.c
-@@ -0,0 +1,386 @@
+@@ -0,0 +1,388 @@
 +/*
 + * /dev/pmem: physical memory for userland hardware experiments (the GPU
 + * bring-up in work/userland/gpu runs on it over SSH, no reboot per try).
@@ -136,8 +136,10 @@ index 0000000..e74758b
 +	if (pm_map[i].va) {
 +		ml_io_unmap(pm_map[i].va, PMEM_WIN);
 +	}
++	printf("NABU PMEM: map window %llx for %llx\n", (unsigned long long)win, (unsigned long long)pa);
 +	pm_map[i].va = ml_io_map_unmappable((vm_offset_t)win, PMEM_WIN, VM_WIMG_IO);
 +	pm_map[i].win = win;
++	printf("NABU PMEM: window %llx -> va %lx\n", (unsigned long long)win, (unsigned long)pm_map[i].va);
 +	return pm_map[i].va ? (volatile uint32_t *)(pm_map[i].va + (pa - win)) : NULL;
 +}
 +

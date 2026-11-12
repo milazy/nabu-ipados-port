@@ -53,10 +53,10 @@ jobs:
           grep -i iconservices out/os-launchd-labels.txt || true
           python3 appsync/build.py --os-root "$OS" --output appsync-out/appsync 2>&1 | tee appsync-build.log || echo APPSYNC_BUILD_FAILED
           du -sh appsync-out/appsync/* || true
+          (cd appsync && python3 build_iconfix.py --os-root "$OS" --output ../appsync-out/iconfix)
           python3 ci/build_launchd_cache.py --source "$OS/System/Library/xpc/launchd.plist" \
             --job wifi/org.nabu.wland.plist --job appsync/org.nabu.ipa-autoinstall.plist \
-            --env com.apple.iconservices.iconservicesagent:FORCE_SOFTWARE_RENDERER=0 \
-            --env com.apple.iconservices.iconservicesagent:CI_ENABLE_METAL_GPU=0 \
+            --program com.apple.iconservices.iconservicesagent=/usr/bin/iconservicesagent \
             --out out/cache-iconfix-appsync
           python3 ci/build_launchd_cache.py --source "$OS/System/Library/xpc/launchd.plist" \
             --job wifi/org.nabu.wland.plist \

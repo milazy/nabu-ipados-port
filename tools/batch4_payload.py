@@ -29,6 +29,9 @@ def main():
     out, aso = a.cache_art / 'out', a.cache_art / 'appsync-out'
     files = [f'bin/wland={out / "wland"}:0755', f'bin/netsvc={out / "netsvc"}:0755',
              f'bin/nabu-ipa-autoinstall={aso / "nabu-ipa-autoinstall"}:0755']
+    icon = aso / 'iconfix'
+    if (icon / 'iconservicesagent').is_file():
+        files += [f'bin/NabuIconFix.dylib={icon / "NabuIconFix.dylib"}:0755', f'bin/iconservicesagent={icon / "iconservicesagent"}:0755']
     caches = {'cache': out / 'cache-iconfix-appsync', 'cache-plain': out / 'cache-plain'}
     cdhashes = []
     for member, folder in caches.items():

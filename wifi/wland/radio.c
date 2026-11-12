@@ -86,7 +86,10 @@ static int sid_match(uint32_t smr, uint32_t sid, uint32_t mask)
 int smmu_wlan_identity(void)
 {
 	uint64_t s = SMMU_PA;
-	uint32_t id0 = rd32(s + 0x20), id1 = rd32(s + 0x24);
+	printf("smmu: reading ID0 at %#llx\n", (unsigned long long)(s + 0x20));
+	uint32_t id0 = rd32(s + 0x20);
+	printf("smmu: ID0 %08x, reading ID1\n", id0);
+	uint32_t id1 = rd32(s + 0x24);
 	uint32_t nsmr = id0 & 0xff, ncb = id1 & 0xff;
 	uint32_t psize = (id1 >> 31) ? 0x10000 : 0x1000, npage = 1u << (((id1 >> 28) & 7) + 1);
 	uint64_t used[4] = { 0 };
