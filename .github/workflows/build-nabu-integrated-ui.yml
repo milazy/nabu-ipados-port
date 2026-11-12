@@ -3,6 +3,11 @@ name: Build nabu integrated UI kernel (two-pass)
 on:
   workflow_dispatch:
     inputs:
+      appsync:
+        description: "Include the AppSync kernel parts (appsync=1 boot-arg still required)"
+        type: boolean
+        required: false
+        default: true
       metal_async_only:
         description: "Build and qualify the asynchronous Metal frontend repair without rebuilding XNU"
         type: boolean
@@ -219,15 +224,17 @@ jobs:
           git -C unixnu-final apply --check "$GITHUB_WORKSPACE/ci/nabu-standard-addon-diagnostics.patch"
           git -C unixnu-final apply "$GITHUB_WORKSPACE/ci/nabu-standard-addon-diagnostics.patch"
           python3 ci/apply_launchd_cache_mount.py --tree unixnu-final
-          python3 ci/apply_appsync_runtime_mount.py --tree unixnu-final
-          grep -F NABU_APPSYNC_RUNTIME_V1 unixnu-final/patches/xnu/zzy-native-gpu-addon-mount.patch
+          if [ "${{ inputs.appsync }}" != "false" ]; then
+            python3 ci/apply_appsync_runtime_mount.py --tree unixnu-final
+            grep -F NABU_APPSYNC_RUNTIME_V1 unixnu-final/patches/xnu/zzy-native-gpu-addon-mount.patch
+          fi
           grep -F NABU_LAUNCHD_CACHE_V1 unixnu-final/patches/xnu/zzy-native-gpu-addon-mount.patch
           UNIXNU_DEVICE="$GITHUB_WORKSPACE/nabu-final"           python3 nabu-source/source-ci/prepare_source.py             --upstream "$GITHUB_WORKSPACE/unixnu-final"             --device "$GITHUB_WORKSPACE/nabu-final"             --profile nabu_ufs_gpu_metal_defconfig             --capture-logs --gpu-userprobe --ui-watch             --report "$GITHUB_WORKSPACE/output/final-source-prepare.json"
 
           # UniXNU 2c2e69f (f6e4012/47ec6a5): no-lc=1 skips AMFI launch constraints, which refuse WebKit's WebContent extension.
           cp "$GITHUB_WORKSPACE/ci/zzyc-owner-skip-launch-constraints.patch" "$GITHUB_WORKSPACE/unixnu-final/patches/xnu/"
           cp "$GITHUB_WORKSPACE/ci/zzzz-nabu-pmem-rpmh.patch" "$GITHUB_WORKSPACE/unixnu-final/patches/xnu/"
-          cp "$GITHUB_WORKSPACE/ci/zzzz-nabu-appsync-user-trust.patch" "$GITHUB_WORKSPACE/unixnu-final/patches/xnu/"
+          if [ "${{ inputs.appsync }}" != "false" ]; then cp "$GITHUB_WORKSPACE/ci/zzzz-nabu-appsync-user-trust.patch" "$GITHUB_WORKSPACE/unixnu-final/patches/xnu/"; fi
           python3 ci/rebase_owner_trust_patch.py             --patch "$GITHUB_WORKSPACE/nabu-final/patches/xnu/nabu-master-second-trust-cache.patch"
           python3 ci/merge_xnu_patches.py             --upstream "$GITHUB_WORKSPACE/unixnu-final/patches/xnu"             --device "$GITHUB_WORKSPACE/nabu-final/patches/xnu"             --report "$GITHUB_WORKSPACE/output/final-xnu-patch-manifest.json"             --owner-root
 

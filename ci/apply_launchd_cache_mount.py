@@ -21,10 +21,10 @@ f = a.tree / 'patches/xnu/zzy-native-gpu-addon-mount.patch'
 s = f.read_text()
 if 'NABU_LAUNCHD_CACHE_V1' in s:
     raise SystemExit('already applied')
-anchor = ('+	    "7570.iPadOS_17_Flat_Background-1024w-1366h@2x~ipad.ca/J120.png", &native_gpu_addon3_stage, &native_gpu_addon3_status);\n'
-          '+}\n')
+# Before the wallpaper mount: zzy-staged-system-apps.patch uses the wallpaper mount's end and the closing brace as context.
+anchor = "+	/* The default iPadOS 17 wallpaper's layered animation with PNG images in place of its HEIC ones (no hardware HEVC decoder here).\n"
 if s.count(anchor) != 1:
-    raise SystemExit('anchor drift: wallpaper mount end (count %d)' % s.count(anchor))
+    raise SystemExit('anchor drift: wallpaper comment (count %d)' % s.count(anchor))
 code = r'''	/* NABU_LAUNCHD_CACHE_V1 (ci/apply_launchd_cache_mount.py): owner jobs through launchd's verified cache. */
 	uint32_t nabu_launchd_cache = 0;
 	if (PE_parse_boot_argn("nabu-launchd-cache", &nabu_launchd_cache, sizeof(nabu_launchd_cache)) &&
@@ -62,7 +62,7 @@ code = r'''	/* NABU_LAUNCHD_CACHE_V1 (ci/apply_launchd_cache_mount.py): owner jo
 '''
 lines = ['+' + l for l in code.splitlines()]
 insert = '\n'.join(lines) + '\n'
-s = s.replace(anchor, anchor[:-len('+}\n')] + insert + '+}\n', 1)
+s = s.replace(anchor, insert + anchor, 1)
 # Fix the kern_exec.c hunk header (the hunk that holds the anchor is the first new-file hunk of kern_exec.c).
 m = re.search(r'@@ -7193,6 \+7193,(\d+) @@', s)
 if not m:
