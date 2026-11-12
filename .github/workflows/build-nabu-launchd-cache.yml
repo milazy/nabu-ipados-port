@@ -1,0 +1,61 @@
+name: Build nabu owner launchd cache + Wi-Fi userland
+# Batch 4: wland/netsvc plus the original 21H16 launchd cache with org.nabu.wland merged in and the
+# iconservicesagent CoreImage override (UniXNU sheng board.toml), signed detached ad hoc. The CDHash goes into the
+# owner trust module on the PC (tools/addon_add_payload.py --cdhash). Artifacts are kept 3 days only.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'wifi/**'
+      - 'ci/build_launchd_cache.py'
+      - 'ci/fetch_os_image.py'
+      - '.github/workflows/build-nabu-launchd-cache.yml'
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build wland + netsvc
+        run: |
+          set -euxo pipefail
+          sh wifi/build-ios.sh 2>&1 | tee wifi-build.log
+      - name: Fetch the 21H16 root OS image (range requests)
+        run: |
+          set -euxo pipefail
+          df -h .
+          python3 ci/fetch_os_image.py "$RUNNER_TEMP/os.dmg" | tail -5
+      - name: Merge + sign launchd cache
+        run: |
+          set -euxo pipefail
+          mkdir -p "$RUNNER_TEMP/os" out
+          hdiutil attach -readonly -nobrowse -mountpoint "$RUNNER_TEMP/os" "$RUNNER_TEMP/os.dmg"
+          OS="$RUNNER_TEMP/os"
+          test -f "$OS/System/Library/xpc/launchd.plist"
+          ls "$OS/usr/bin" > out/os-usr-bin.txt
+          ls "$OS/System/Library/xpc" > out/os-xpc.txt
+          python3 - "$OS/System/Library/xpc/launchd.plist" > out/os-launchd-labels.txt <<'PY'
+          import plistlib,sys
+          d=plistlib.load(open(sys.argv[1],'rb'))
+          print('keys',sorted(d)); print('VersionNumber',d.get('VersionNumber'))
+          for k,j in sorted(d['LaunchDaemons'].items()): print(j.get('Label'),k,j.get('ProgramArguments',[j.get('Program')])[0] if j.get('ProgramArguments') or j.get('Program') else '')
+          PY
+          grep -i iconservices out/os-launchd-labels.txt || true
+          python3 ci/build_launchd_cache.py --source "$OS/System/Library/xpc/launchd.plist" \
+            --job wifi/org.nabu.wland.plist \
+            --env com.apple.iconservices.iconservicesagent:FORCE_SOFTWARE_RENDERER=0 \
+            --env com.apple.iconservices.iconservicesagent:CI_ENABLE_METAL_GPU=0 \
+            --out out/cache-iconfix
+          python3 ci/build_launchd_cache.py --source "$OS/System/Library/xpc/launchd.plist" \
+            --job wifi/org.nabu.wland.plist --out out/cache-plain
+          test -f "$OS/usr/bin/IOMFB_FDR_Loader" && echo visible-ok || echo "IOMFB_FDR_Loader missing (bin stage stops at 3/4)"
+          hdiutil detach "$OS"
+          cp wifi/out/wland wifi/out/netsvc out/
+          shasum -a 256 out/wland out/netsvc out/cache-*/launchd.plist*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nabu-launchd-cache
+          retention-days: 3
+          path: |
+            out/
+            wifi-build.log

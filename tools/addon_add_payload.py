@@ -2,7 +2,7 @@
 """Add files to an NGPUADD2 GPU addon and append a trust-cache module with the CDHashes of the new executables.
 
 usage: addon_add_payload.py --addon IN --trustcache IN --out DIR --label TEXT
-                            --file NAME=PATH[:MODE] [--file ...]
+                            --file NAME=PATH[:MODE] [--file ...] [--cdhash HEX ...]
 
 NAME is the member path below /private/var/ngpu (for example bin/wland, daemons/org.nabu.wland.plist,
 wifi/fw/modem/modem.mdt); MODE is octal (0755 for executables, default 0644). Existing members are kept byte for byte
@@ -56,6 +56,8 @@ def main():
     p.add_argument('--out', type=Path, required=True)
     p.add_argument('--label', required=True)
     p.add_argument('--file', action='append', default=[])
+    p.add_argument('--cdhash', action='append', default=[],
+                   help='extra 40-hex CDHash to trust (e.g. the detached launchd cache signature)')
     a = p.parse_args()
     old_addon = a.addon.read_bytes()
     files = read_addon(old_addon)
@@ -78,6 +80,9 @@ def main():
         files.append((name, mode, data))
         names.add(name)
         added.append({'name': name, 'mode': oct(mode), 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()})
+    for h in a.cdhash:
+        need(len(h) == 40 and all(c in '0123456789abcdef' for c in h), 'bad --cdhash ' + h)
+        new_hashes.add(bytes.fromhex(h))
     addon = write_addon(files)
     old = a.trustcache.read_bytes()
     count = struct.unpack_from('<I', old)[0]

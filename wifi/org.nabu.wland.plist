@@ -6,7 +6,7 @@
 	<string>org.nabu.wland</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/private/var/ngpu/bin/wland</string>
+		<string>/usr/bin/wland</string>
 		<string>auto</string>
 	</array>
 	<key>RunAtLoad</key>

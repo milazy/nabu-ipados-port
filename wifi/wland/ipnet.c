@@ -32,7 +32,7 @@ struct sockaddr_ctl { uint8_t sc_len, sc_family; uint16_t ss_sysaddr; uint32_t s
 #define CTLIOCGINFO		_IOWR('N', 3, struct ctl_info)
 #define UTUN_OPT_IFNAME		2
 
-#define NETSVC		"/private/var/ngpu/wifi/bin/netsvc"
+#define NETSVC		"/usr/bin/netsvc"
 
 static int tun = -1;
 static char tun_name[IFNAMSIZ];
