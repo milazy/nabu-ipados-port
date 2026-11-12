@@ -220,6 +220,7 @@ jobs:
 
           # UniXNU 2c2e69f (f6e4012/47ec6a5): no-lc=1 skips AMFI launch constraints, which refuse WebKit's WebContent extension.
           cp "$GITHUB_WORKSPACE/ci/zzyc-owner-skip-launch-constraints.patch" "$GITHUB_WORKSPACE/unixnu-final/patches/xnu/"
+          cp "$GITHUB_WORKSPACE/ci/zzzz-nabu-pmem-rpmh.patch" "$GITHUB_WORKSPACE/unixnu-final/patches/xnu/"
           python3 ci/rebase_owner_trust_patch.py             --patch "$GITHUB_WORKSPACE/nabu-final/patches/xnu/nabu-master-second-trust-cache.patch"
           python3 ci/merge_xnu_patches.py             --upstream "$GITHUB_WORKSPACE/unixnu-final/patches/xnu"             --device "$GITHUB_WORKSPACE/nabu-final/patches/xnu"             --report "$GITHUB_WORKSPACE/output/final-xnu-patch-manifest.json"             --owner-root
 

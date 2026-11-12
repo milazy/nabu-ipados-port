@@ -1,0 +1,23 @@
+name: Build nabu Wi-Fi userland (wland)
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'wifi/**'
+      - '.github/workflows/build-nabu-wifi.yml'
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: |
+          set -euxo pipefail
+          sh wifi/build-ios.sh 2>&1 | tee wifi-build.log
+          cp wifi/org.nabu.wland.plist wifi/out/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nabu-wifi-userland
+          path: |
+            wifi/out/
+            wifi-build.log
