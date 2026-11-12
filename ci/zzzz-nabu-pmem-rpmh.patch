@@ -16,7 +16,7 @@ new file mode 100644
 index 0000000..e74758b
 --- /dev/null
 +++ b/bsd/dev/nabu_pmem.c
-@@ -0,0 +1,388 @@
+@@ -0,0 +1,395 @@
 +/*
 + * /dev/pmem: physical memory for userland hardware experiments (the GPU
 + * bring-up in work/userland/gpu runs on it over SSH, no reboot per try).
@@ -161,6 +161,13 @@ index 0000000..e74758b
 +		}
 +		if ((pa | n) & 3) {
 +			err = EINVAL;
++			break;
++		}
++		/* nabu: a read of the apps SMMU (0x15000000, 1 MiB) from here stalls the bus and wedges the CPU
++		 * (batch-5 log, and UniXNU nabu's NabuUsbProbe SMR note). Refuse it instead of hanging. */
++		if (pa >= 0x15000000ull && pa < 0x15100000ull) {
++			printf("NABU PMEM: refused apps-SMMU access %llx\n", (unsigned long long)pa);
++			err = EPERM;
 +			break;
 +		}
 +		volatile uint32_t *r = pm_io(pa);

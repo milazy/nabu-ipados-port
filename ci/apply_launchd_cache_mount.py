@@ -56,8 +56,14 @@ code = r'''	/* NABU_LAUNCHD_CACHE_V1 (ci/apply_launchd_cache_mount.py): owner jo
 			    "/System/Library/xpc/foreground_user_endpoints.plist", "/System/Library/xpc/launchd.plist.sig",
 			    &nabu_cache_stage, &nabu_cache_status);
 		}
-		printf("NABU LAUNCHD cache mode=%u have=%d bin=%d/%d cache=%d/%d\n", nabu_launchd_cache, nabu_have, nabu_bin_stage, nabu_bin_status,
-		    nabu_cache_stage, nabu_cache_status);
+		/* Owner libraries (NabuIconFix.dylib): the platform sandbox maps executable code from /usr/lib, not /usr/bin
+		 * (batch 5: dyld errno 1 for /usr/bin/NabuIconFix.dylib). Scratch 0xa00 again (the bin mount is done with it). */
+		static volatile int nabu_lib_stage = 0, nabu_lib_status = -1;
+		static const char lib_source[] = "/private/var/ngpu/lib", lib_point[] = "/usr/lib";
+		native_gpu_addon_mount(p, scratch, 0xa00, lib_source, sizeof(lib_source), lib_point, sizeof(lib_point),
+		    "/usr/lib/dyld", "/usr/lib/NabuIconFix.dylib", &nabu_lib_stage, &nabu_lib_status);
+		printf("NABU LAUNCHD cache mode=%u have=%d bin=%d/%d cache=%d/%d lib=%d/%d\n", nabu_launchd_cache, nabu_have,
+		    nabu_bin_stage, nabu_bin_status, nabu_cache_stage, nabu_cache_status, nabu_lib_stage, nabu_lib_status);
 	}
 '''
 lines = ['+' + l for l in code.splitlines()]

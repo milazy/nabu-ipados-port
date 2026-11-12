@@ -2,7 +2,7 @@
 """Build the nabu icon fix: NabuIconFix.dylib and a signed iconservicesagent copy that loads it (macOS, Xcode).
 
 usage: build_iconfix.py --os-root MOUNTED_21H16_OS --output DIR
-Outputs DIR/NabuIconFix.dylib and DIR/iconservicesagent (to addon bin/, shown at /usr/bin through the owner union),
+Outputs DIR/NabuIconFix.dylib (addon lib/, shown at /usr/lib) and DIR/iconservicesagent (addon bin/, /usr/bin),
 and DIR/report.json. The launchd cache points the iconservicesagent job at /usr/bin/iconservicesagent
 (ci/build_launchd_cache.py --program). Same technique as appsync/build.py: the copy's Foundation dependency is renamed
 to the library, which re-exports Foundation.
@@ -13,7 +13,7 @@ from macho import add_dylib
 
 ROOT = Path(__file__).resolve().parent
 SOURCE = 'System/Library/CoreServices/iconservicesagent'
-DYLIB = '/usr/bin/NabuIconFix.dylib'
+DYLIB = '/usr/lib/NabuIconFix.dylib'
 
 
 def run(*a, capture=False):

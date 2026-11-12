@@ -20,8 +20,7 @@ f = a.tree / 'patches/xnu/zzy-native-gpu-addon-mount.patch'
 s = f.read_text()
 if 'NABU_APPSYNC_RUNTIME_V1' in s:
     raise SystemExit('already applied')
-anchor = ('+		printf("NABU LAUNCHD cache mode=%u have=%d bin=%d/%d cache=%d/%d\\n", nabu_launchd_cache, nabu_have, nabu_bin_stage, nabu_bin_status,\n'
-          '+		    nabu_cache_stage, nabu_cache_status);\n'
+anchor = ('+		    nabu_bin_stage, nabu_bin_status, nabu_cache_stage, nabu_cache_status, nabu_lib_stage, nabu_lib_status);\n'
           '+	}\n')
 if s.count(anchor) != 1:
     raise SystemExit('anchor drift: launchd cache block (count %d)' % s.count(anchor))

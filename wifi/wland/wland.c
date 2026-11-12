@@ -782,9 +782,16 @@ static int net(unsigned secs)
 static int up(unsigned secs)
 {
 	/* nabu: one line before every stage, so a stall shows where it is (batch 4 stopped silently here). */
-	printf("up: stage smmu (apps SMMU 0x15000000, WLAN SID 0x640/1)\n");
-	if (smmu_wlan_identity())
-		printf("up: no WLAN SMMU stream: the radio will not start\n");
+	/* nabu: reading the apps SMMU (0x15000000) from XNU stalls the bus (batch 5: wland froze on the first ID
+	 * register read and wedged a CPU). Leave the WLAN stream as the boot firmware set it; the kernel refuses the
+	 * window anyway. /private/var/ngpu/wifi/smmu.try re-enables the old Pixel 4 path for experiments. */
+	if (!access("/private/var/ngpu/wifi/smmu.try", F_OK)) {
+		printf("up: stage smmu (apps SMMU 0x15000000, WLAN SID 0x640/1)\n");
+		if (smmu_wlan_identity())
+			printf("up: no WLAN SMMU stream: the radio will not start\n");
+	} else {
+		printf("up: stage smmu skipped on nabu (boot-firmware stream state for SID 0x640)\n");
+	}
 	printf("up: stage power (RPMh VRM votes)\n");
 	if (wlan_power())
 		return 1;
