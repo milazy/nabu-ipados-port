@@ -112,7 +112,7 @@ index 0000000..e74758b
 +	uint64_t win;
 +} pm_map[PMEM_MAPS];
 +static unsigned pm_map_next;
-+static uint32_t pm_bounce[PAGE_SIZE / 4];
++static uint32_t pm_bounce[16384 / 4];   /* PAGE_SIZE is not a constant on this kernel; 16 KiB covers 4K and 16K pages */
 +
 +static LCK_GRP_DECLARE(nabu_pmem_grp, "nabu_pmem");
 +static LCK_MTX_DECLARE(nabu_pmem_lock, &nabu_pmem_grp);
