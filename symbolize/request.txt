@@ -1,3 +1,21 @@
-# CoreImage's Metal decision (xref run 43119735133)
-SYM CoreImage ___can_use_metal_block_invoke
-SYM CoreImage __ZN2CI9GLContext4initEv
+# Batch 6 Preferences main thread, sample 22; ASLR slide from device log.
+1a798000 1e5f5a8c0 Preferences-main-0
+1a798000 1a9d37628 Preferences-main-1
+1a798000 1a9d37ff8 Preferences-main-2
+1a798000 1a9d2d6dc Preferences-main-3
+1a798000 1a9d2d2f8 Preferences-main-4
+1a798000 1c1a0f3f4 Preferences-main-5
+1a798000 1c1a0f218 Preferences-main-6
+1a798000 1c1a11cf8 Preferences-main-7
+1a798000 232788c2c Preferences-main-8
+1a798000 1a9d49c9c Preferences-main-9
+1a798000 1a9d4acc0 Preferences-main-10
+1a798000 1a9d2c870 Preferences-main-11
+1a798000 1a9d2c4a8 Preferences-main-12
+1a798000 1a2653008 Preferences-main-13
+1a798000 1a2650450 Preferences-main-14
+1a798000 1a264f7d8 Preferences-main-15
+1a798000 1e20a4814 Preferences-main-16
+1a798000 1a4b4c268 Preferences-main-17
+1a798000 1a4bf690c Preferences-main-18
+1a798000 1c3ba7228 Preferences-main-19

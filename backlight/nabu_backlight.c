@@ -17,6 +17,7 @@
 #include <dlfcn.h>
 #include <errno.h>
 #include <fcntl.h>
+#include <math.h>
 #include <stdarg.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -31,6 +32,19 @@ struct pmem_log { char text[240]; };
 #define PMEM_LOG _IOW('P', 6, struct pmem_log)
 
 static int fd = -1;
+static int v2;
+
+static int bootarg(const char *args, const char *wanted)
+{
+	size_t len = strlen(wanted);
+	for (const char *p = args; *p;) {
+		while (*p == ' ' || *p == '\t') p++;
+		const char *end = p + strcspn(p, " \t");
+		if ((size_t)(end - p) == len && !memcmp(p, wanted, len)) return 1;
+		p = end;
+	}
+	return 0;
+}
 
 static void say(const char *fmt, ...)
 {
@@ -49,15 +63,19 @@ static void say(const char *fmt, ...)
 static uint32_t rd(uint64_t pa)
 {
 	uint32_t v = 0xdeadbeef;
-	if (pread(fd, &v, 4, (off_t)pa) != 4)
+	if (pread(fd, &v, 4, (off_t)pa) != 4) {
 		say("read %llx failed: %s", (unsigned long long)pa, strerror(errno));
+		if (v2) exit(1);
+	}
 	return v;
 }
 
 static void wr(uint64_t pa, uint32_t v)
 {
-	if (pwrite(fd, &v, 4, (off_t)pa) != 4)
+	if (pwrite(fd, &v, 4, (off_t)pa) != 4) {
 		say("write %llx failed: %s", (unsigned long long)pa, strerror(errno));
+		if (v2) exit(1);
+	}
 }
 
 /* SM8150 GCC (as Linux gcc-sm8150.c): QUPv3 wrapper 0 branch clocks and their APCS vote bits. */
@@ -70,10 +88,18 @@ static const struct { const char *name; uint32_t halt, bit; } clk[] = {
 static int clocks_on(void)
 {
 	int all = 1;
+	uint32_t votes = v2 ? rd(VOTE) : 0;
 	for (unsigned i = 0; i < 3; i++) {
-		uint32_t cbcr = rd(GCC + clk[i].halt);
+		/* SM8150 SE0 CBCR is 0x17144, not 0x17030. Only s-ahb
+		 * has HWCG bit 1; in that mode halt=1 means idle, not disabled.
+		 * Match Linux clk_branch_wait, but also require our enable vote. */
+		uint32_t off_reg = v2 && i == 2 ? 0x17144 : clk[i].halt;
+		uint32_t cbcr = rd(GCC + off_reg);
 		int off = (cbcr >> 31) & 1;
-		say("clock %s cbcr %08x %s", clk[i].name, cbcr, off ? "OFF" : "on");
+		if (v2) off = !(votes & (1u << clk[i].bit)) ||
+		    (off && !(i == 1 && (cbcr & 2)));
+		say("clock %s reg %x cbcr %08x vote %08x %s", clk[i].name, off_reg, cbcr, votes,
+		    off ? "OFF" : "ready");
 		all &= !off;
 	}
 	return all;
@@ -95,6 +121,8 @@ static int clocks_on(void)
 #define M_CMD_DONE		(1u << 0)
 #define M_CMD_ABORT		(1u << 5)
 #define M_GP_IRQ_NACK		(1u << 10)
+#define M_ERRORS ((1u << 1) | (1u << 2) | (1u << 4) | M_CMD_ABORT | \
+                  (1u << 9) | M_GP_IRQ_NACK | (1u << 12) | (1u << 13))
 #define M_TX_FIFO_WM		(1u << 30)
 #define I2C_WRITE		1u
 
@@ -111,6 +139,10 @@ static int i2c_write(uint8_t addr, const uint8_t *data, unsigned len)
 	wr(SE + TX_FIFO, word);
 	for (int i = 0; i < 200; i++) {
 		uint32_t st = rd(SE + M_IRQ_STATUS);
+		if (v2 && (st & M_ERRORS)) {
+			say("v2 I2C error irq %08x: stop without issuing another command", st);
+			exit(1);
+		}
 		if (st & M_CMD_DONE) {
 			wr(SE + M_IRQ_CLEAR, st);
 			return (st & (M_GP_IRQ_NACK | M_CMD_ABORT)) ? -1 : 0;
@@ -118,13 +150,15 @@ static int i2c_write(uint8_t addr, const uint8_t *data, unsigned len)
 		usleep(500);
 	}
 	say("i2c write to %#x timed out (irq %08x status %08x)", addr, rd(SE + M_IRQ_STATUS), rd(SE + GENI_STATUS));
+	if (v2) exit(1);
 	return -1;
 }
 
 static int set_level(unsigned level)	/* 0..2047 */
 {
 	uint8_t lsb[2] = { 0x04, (uint8_t)(level & 7) }, msb[2] = { 0x05, (uint8_t)(level >> 3) };
-	return i2c_write(0x11, lsb, 2) | i2c_write(0x11, msb, 2);
+	int rc = i2c_write(0x11, lsb, 2);
+	return rc ? rc : i2c_write(0x11, msb, 2);
 }
 
 int main(void)
@@ -132,8 +166,9 @@ int main(void)
 	char args[1024] = "";
 	size_t n = sizeof(args) - 1;
 	sysctlbyname("kern.bootargs", args, &n, NULL, 0);
+	v2 = bootarg(args, "nabu-backlight-v2=1");
 	fd = open("/dev/pmem", O_RDWR);
-	if (!strstr(args, "nabu-backlight=1")) {
+	if (!bootarg(args, "nabu-backlight=1") && !v2) {
 		say("off (no nabu-backlight=1)");
 		return 0;
 	}
@@ -142,6 +177,7 @@ int main(void)
 		return 1;
 	}
 	say("start: KTZ8866 at 0x11 on QUP0 SE0 (0x880000)");
+	if (v2) say("NABU_BACKLIGHT_V2: SM8150 clock offsets and HWCG-aware vote validation");
 	if (!clocks_on()) {
 		say("voting QUP0 m-ahb, s-ahb, s0 clocks on (vote reg %llx)", (unsigned long long)VOTE);
 		wr(VOTE, rd(VOTE) | (1u << 6) | (1u << 7) | (1u << 10));
@@ -170,9 +206,14 @@ int main(void)
 	void *bks = dlopen("/System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices", RTLD_NOW);
 	float (*current)(void) = bks ? (float (*)(void))dlsym(bks, "BKSDisplayBrightnessGetCurrent") : NULL;
 	say("BKSDisplayBrightnessGetCurrent %s", current ? "found" : "missing: fixed 60%");
+	if (v2 && !current) {
+		say("v2 no brightness source: preserving current panel brightness");
+		return 1;
+	}
 	int last = -1, fails = 0;
 	for (;;) {
 		float b = current ? current() : 0.6f;
+		if (!isfinite(b)) { say("invalid brightness sample: stop"); return 1; }
 		if (b < 0) b = 0;
 		if (b > 1) b = 1;
 		unsigned level = 24 + (unsigned)(b * b * (2047 - 24));	/* perceptual curve, never fully dark */
