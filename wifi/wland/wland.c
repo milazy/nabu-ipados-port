@@ -791,6 +791,10 @@ static int up(unsigned secs)
 			printf("up: no WLAN SMMU stream: the radio will not start\n");
 	} else {
 		printf("up: stage smmu skipped on nabu (boot-firmware stream state for SID 0x640)\n");
+		if (access("/private/var/ngpu/wifi/dma.off", F_OK)) {
+			smmu_assume_identity();
+			printf("up: WLAN DMA with physical addresses (unmatched-stream bypass assumed; dma.off disables)\n");
+		}
 	}
 	printf("up: stage power (RPMh VRM votes)\n");
 	if (wlan_power())

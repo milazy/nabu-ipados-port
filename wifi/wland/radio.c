@@ -77,6 +77,15 @@ static void mem_wr(uint64_t pa, const void *buf, uint32_t len)
 
 static int smmu_done;
 
+/* nabu: the apps SMMU cannot be read from XNU (bus stall), so the WLAN stream (SID 0x640) cannot be checked or
+ * programmed. Its boot-firmware state is used as is: descriptors carry physical addresses, which is what the
+ * Pixel 4 path also produces (stage 1 off in the bank). If the stream faults instead, the firmware reports CE
+ * errors and the radio stays down; the rest of the system is not affected. */
+void smmu_assume_identity(void)
+{
+	smmu_done = 1;
+}
+
 static int sid_match(uint32_t smr, uint32_t sid, uint32_t mask)
 {
 	uint32_t id = smr & 0x7fff, m = (smr >> 16) & 0x7fff;

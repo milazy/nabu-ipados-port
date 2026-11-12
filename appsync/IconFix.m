@@ -46,6 +46,11 @@ static void replace(Class cls, BOOL meta, const char *name, IMP imp, IMP *orig) 
     NSLog(@"[nabu iconfix] %s%s -> software", meta ? "+" : "-", name);
 }
 
+// Batch 6 showed iconservicesagent still crashing at pc 0 (NULL GL dispatch) through a path these CIContext hooks
+// do not cover. Refusing every EAGLContext makes CoreImage's GL path fail cleanly instead of calling a NULL table.
+static id eaglInitAPI(id self, SEL cmd, NSUInteger api) { return nil; }
+static id eaglInitAPIShare(id self, SEL cmd, NSUInteger api, id group) { return nil; }
+
 __attribute__((constructor)) static void start(void) {
     @autoreleasepool {
         dlopen("/System/Library/Frameworks/CoreImage.framework/CoreImage", RTLD_NOW);
@@ -57,6 +62,12 @@ __attribute__((constructor)) static void start(void) {
         replace(ci, YES, "contextWithEAGLContext:options:", (IMP)contextWithEAGLOptions, NULL);
         replace(ci, YES, "contextWithMTLDevice:", (IMP)contextWithMTL, NULL);
         replace(ci, YES, "contextWithMTLDevice:options:", (IMP)contextWithMTLOptions, NULL);
+        dlopen("/System/Library/Frameworks/OpenGLES.framework/OpenGLES", RTLD_NOW);
+        Class eagl = objc_getClass("EAGLContext");
+        if (eagl) {
+            replace(eagl, NO, "initWithAPI:", (IMP)eaglInitAPI, NULL);
+            replace(eagl, NO, "initWithAPI:sharegroup:", (IMP)eaglInitAPIShare, NULL);
+        }
         NSLog(@"[nabu iconfix] CoreImage contexts forced to software in %s", getprogname());
     }
 }

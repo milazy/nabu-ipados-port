@@ -72,8 +72,11 @@ static int clocks_on(void)
 	int all = 1;
 	for (unsigned i = 0; i < 3; i++) {
 		uint32_t cbcr = rd(GCC + clk[i].halt);
-		int off = (cbcr >> 31) & 1;
-		say("clock %s cbcr %08x %s", clk[i].name, cbcr, off ? "OFF" : "on");
+		/* Bit 1 (HW_CTL): hardware clock gating. Such a branch reads CLK_OFF while idle and runs on demand
+		 * (batch 6: s-ahb 80000002), as Linux's BRANCH_HALT_VOTED/hwcg handling assumes. */
+		int hwctl = (cbcr >> 1) & 1;
+		int off = ((cbcr >> 31) & 1) && !hwctl;
+		say("clock %s cbcr %08x %s", clk[i].name, cbcr, off ? "OFF" : hwctl ? "hw-gated (ok)" : "on");
 		all &= !off;
 	}
 	return all;

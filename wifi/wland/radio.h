@@ -4,6 +4,7 @@
 
 /* The WLAN DMA stream (apps SMMU 0x640/0x1) through a translation-off bank; before the modem boots. 0 = ok. */
 int smmu_wlan_identity(void);
+void smmu_assume_identity(void);
 int radio_start(void);		/* after WLFW mission mode: copy engines, HTC, then WMI/HTT/scan from radio_poll */
 void radio_poll(void);		/* called from the link's idle loop */
 void radio_summary(void);	/* the networks heard so far */
