@@ -272,6 +272,14 @@ jobs:
           }, indent=2)+"\n")
           PY
 
+      - name: Show compiler errors from the full XNU logs
+        if: failure()
+        run: |
+          for f in unixnu-final/out/nabu/logs/*.log pass1-logs/*.log; do
+            [ -f "$f" ] || continue
+            echo "== $f"; grep -n -B3 -A6 -E ' error: |error generated|errors generated|Undefined symbols' "$f" | head -120 || true
+          done
+          mkdir -p output/xnu-logs; cp unixnu-final/out/nabu/logs/*.log output/xnu-logs/ 2>/dev/null || true
       - name: Upload integrated kernel and build evidence
         if: always()
         uses: actions/upload-artifact@v4
