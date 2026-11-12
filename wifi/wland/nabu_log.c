@@ -6,6 +6,11 @@
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <sys/ioccom.h>
+/* -include nabu_log.h already defined the redirections for this file too: undo them here */
+#undef printf
+#undef fprintf
+#undef puts
+#undef putchar
 
 struct pmem_log { char text[240]; };
 #define PMEM_LOG _IOW('P', 6, struct pmem_log)
