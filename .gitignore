@@ -24,3 +24,12 @@
 __pycache__/
 *.part
 ipsw-21h16-small.json
+# Owner-local hardware evidence and payloads can contain EFS, MACs and credentials.
+/host-setup/
+/work/
+**/wifi-secret/
+**/wlan.conf
+XNU2LOG.BIN
+*.gpuaddon
+*.trustcache
+*.dtb

@@ -19,3 +19,27 @@
 1a798000 1a4b4c268 Preferences-main-17
 1a798000 1a4bf690c Preferences-main-18
 1a798000 1c3ba7228 Preferences-main-19
+# Batch 6 Settings icon worker, sample 22.
+1a798000 1e5f5e1b0 Preferences-worker-0
+1a798000 1e5f5dfb8 Preferences-worker-1
+1a798000 1a9d1d538 Preferences-worker-2
+1a798000 1a9d1d8d4 Preferences-worker-3
+1a798000 1f7e8edf0 Preferences-worker-4
+1a798000 1a1610d50 Preferences-worker-5
+1a798000 1a160d568 Preferences-worker-6
+1a798000 1a167cc04 Preferences-worker-7
+1a798000 1a167c9cc Preferences-worker-8
+1a798000 1c7a09a9c Preferences-worker-9
+1a798000 1c7a09914 Preferences-worker-10
+1a798000 1c7a09848 Preferences-worker-11
+1a798000 1c7a0a0a0 Preferences-worker-12
+1a798000 1c79f816c Preferences-worker-13
+1a798000 1c1a82528 Preferences-worker-14
+1a798000 1a9d4acfc Preferences-worker-15
+1a798000 1a9d31e50 Preferences-worker-16
+1a798000 1a9d1c0e4 Preferences-worker-17
+1a798000 1a9d324b8 Preferences-worker-18
+1a798000 1a9d31588 Preferences-worker-19
+1a798000 1a9d31750 Preferences-worker-20
+1a798000 1c1a0f80c Preferences-worker-21
+1a798000 1bae55408 Preferences-worker-22

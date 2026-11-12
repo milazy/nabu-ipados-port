@@ -102,10 +102,11 @@ jobs:
           DSC="$(find dsc -type f -name 'dyld_shared_cache_arm64*' ! -name '*.*' | head -1)"
           mkdir -p out/gl
           if [ -f symbolize/strings.txt ]; then
-            grep -v '^#' symbolize/strings.txt | while read -r str; do
+            while IFS= read -r str; do
+              case "$str" in ''|\#*) continue;; esac
               [ -n "$str" ] || continue
               { echo "== str $str"; ipsw dyld str "$DSC" "$str" 2>&1 | grep -v 'parsing\|objc\|symbol cache' | head -40; } | tee -a out/strings.txt
-            done
+            done < symbolize/strings.txt
           fi
           ipsw extract --files --pattern '(OpenGLES\.framework|GLEngine|GLRenderer|AppleMetalOpenGLRenderer|libGLProgrammability|libGLImage|libCoreVMClient).*' --output out/gl ipswfile/fw.ipsw 2>&1 | tail -5 || true
           find out/gl -type f | sed 's#^out/gl/##' | sort | tee out/gl-files.txt
