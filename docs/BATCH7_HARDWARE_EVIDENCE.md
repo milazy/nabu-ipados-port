@@ -102,6 +102,56 @@ message alone does not identify the original blocking service.
 `symbolize/request.txt` contains only the shared-cache addresses and the
 captured slide `0x1a798000`, for symbolication against the exact 21H16 cache.
 
+Run `43251838284` successfully symbolized the main thread:
+`kevent_id -> dispatch wait for queue -> dispatch_sync_f_slow ->
+PKIconImageCache imageForKey: -> pk_updateSpecifiers:withIconsFromCache: ->
+PSUIPrefsListController specifiers`. Its final optional string-search step
+failed because the search file contained only comments; the symbolication
+artifact is valid. The workflow now handles a comment-only file without
+turning a successful symbolication into a failure.
+
+Iconservicesagent repeatedly crashes at PC zero, LR `0x1b1e86ac4`, slide
+`0x1a798000`: unslid LR `0x1976eeac4`. Prior exact-21H16 symbolication
+`43118114216` identifies this as `CI::GLContext::init + 220` immediately
+after a null indirect call. The installed cache points at the signed
+`/usr/bin/iconservicesagent` and the addon contains `NabuIconFix.dylib`.
+This establishes that GL is still reached for some requests; it does not
+prove which initializer bypasses the shim. Further worker symbolication is
+requested in run `43253208976`.
+
+## Candidate build and current qualification
+
+Userland source `7fda7f73fe5c939c845ee9623ea6dac69cda3a44`, successful
+macOS/Xcode workflow `43251838244`. Installer/evidence source
+`dc343df8f99193a6353d71e497fb0fecf8e94cee`.
+
+| Candidate item | SHA-256 |
+|---|---|
+| Signed backlight daemon | `2fb96b8c5934833d489940728f10e16c8565fc6c6b73acdb61faa7f417a09d44` |
+| Candidate addon | `4a528ce9c72ee5dc2656a059df6bc1ba4bf7ded190488ab748716d66ea5a2df1` |
+| Candidate trust cache | `9ff833b2db4fa4452d344f56dc1059ee6c3186cb76d5dd09e33fdab6a2661e52` |
+| Candidate menu | `7a922d6aff13dc18df1ebfc3c1f74e2d0c5a53d4b03b517254f75a38d5ef3d9e` |
+
+The candidate kernel and ADT hashes equal the baseline. Host assembly
+verified all 98 non-backlight addon members unchanged and added one new
+CodeDirectory hash. Menu isolation checks, Python compilation, shell syntax
+checks and diff whitespace checks passed. They do not constitute hardware
+qualification.
+
+| Function | Compiled | Attached on device | End-to-end verified |
+|---|---|---|---|
+| Backlight v2 | Yes, run 43251838244 | No | No |
+| Wi-Fi modem/GLINK/WLFW | Yes, baseline | Yes, CRC-valid batch-6 log | Firmware mission mode only |
+| Wi-Fi scan/join/IP/SSH | Donor pieces only | Radio refused DMA start | No |
+| Home-screen icons | Baseline shim | Present; daemon still crashes | Owner-reported home-screen artwork only |
+| Settings | Baseline OS | Main thread stuck in icon cache | No, watchdog termination |
+| IPA installer | Yes, baseline | Ran, seen=0 installed=0 | No IPA tested |
+
+ESP installation was rejected by automatic approval review before the
+command reached the PC; explicit owner confirmation is pending. The tablet
+remains in recovery with its ESP read-only. This candidate has not booted,
+and no hardware-qualified release is claimed.
+
 ## Trial installation and rollback
 
 `tools/pc/prepare_batch7.py` validates all five baseline hashes, replaces

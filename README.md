@@ -1,4 +1,9 @@
-# nabu iPadOS / UniXNU — private macOS build lab
+# nabu iPadOS / UniXNU — experimental macOS build lab
+
+Current takeover status: [batch-6 hardware evidence and batch-7 trial](docs/BATCH7_HARDWARE_EVIDENCE.md).
+The repository is public. The notes below describe the original bootstrap
+milestone; they are not the current feature status. Device firmware, credentials
+and assembled device payloads remain owner-local.
 
 This private repository runs an experimental **XNU bootstrap compilation** for the **Xiaomi Pad 5 (nabu)** using the published UniXNU sources and iPadOS 17.7 (21H16) inputs.
 
