@@ -830,8 +830,11 @@ static int auto_up(void)
 	struct timeval bt = { 0 };
 	n = sizeof(bt);
 	sysctlbyname("kern.boottime", &bt, &n, NULL, 0);
-	char stamp[32] = "", now[32];
-	snprintf(now, sizeof(now), "%ld\n", (long)bt.tv_sec);
+	/* nabu has no RTC under XNU yet: kern.boottime is ~22 s on every boot, so the boot session UUID marks a boot */
+	char stamp[64] = "", now[64], uuid[48] = "";
+	n = sizeof(uuid) - 1;
+	sysctlbyname("kern.bootsessionuuid", uuid, &n, NULL, 0);
+	snprintf(now, sizeof(now), "%s\n", uuid[0] ? uuid : "no-uuid");
 	FILE *f = fopen(WLAND_STAMP, "r");
 	if (f) {
 		if (!fgets(stamp, sizeof(stamp), f))
