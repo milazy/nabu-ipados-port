@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - 'wifi/**'
+      - 'appsync/**'
       - 'ci/build_launchd_cache.py'
       - 'ci/fetch_os_image.py'
       - '.github/workflows/build-nabu-launchd-cache.yml'
@@ -20,6 +21,15 @@ jobs:
         run: |
           set -euxo pipefail
           sh wifi/build-ios.sh 2>&1 | tee wifi-build.log
+      - name: Build IPA auto-installer
+        run: |
+          set -euxo pipefail
+          SDK="$(xcrun --sdk iphoneos --show-sdk-path)"
+          mkdir -p appsync-out
+          xcrun clang -target arm64-apple-ios17.0 -isysroot "$SDK" -fobjc-arc -O2 -Wall -Werror -framework Foundation \
+            appsync/ipa_autoinstall.m -o appsync-out/nabu-ipa-autoinstall
+          codesign --force --sign - --pagesize 4096 --identifier org.nabu.ipa-autoinstall \
+            --entitlements appsync/ipa-autoinstall-entitlements.plist appsync-out/nabu-ipa-autoinstall
       - name: Fetch the 21H16 root OS image (range requests)
         run: |
           set -euxo pipefail
@@ -41,6 +51,13 @@ jobs:
           for k,j in sorted(d['LaunchDaemons'].items()): print(j.get('Label'),k,j.get('Program') or (j.get('ProgramArguments') or [''])[0])
           PY
           grep -i iconservices out/os-launchd-labels.txt || true
+          python3 appsync/build.py --os-root "$OS" --output appsync-out/appsync 2>&1 | tee appsync-build.log || echo APPSYNC_BUILD_FAILED
+          du -sh appsync-out/appsync/* || true
+          python3 ci/build_launchd_cache.py --source "$OS/System/Library/xpc/launchd.plist" \
+            --job wifi/org.nabu.wland.plist --job appsync/org.nabu.ipa-autoinstall.plist \
+            --env com.apple.iconservices.iconservicesagent:FORCE_SOFTWARE_RENDERER=0 \
+            --env com.apple.iconservices.iconservicesagent:CI_ENABLE_METAL_GPU=0 \
+            --out out/cache-iconfix-appsync
           python3 ci/build_launchd_cache.py --source "$OS/System/Library/xpc/launchd.plist" \
             --job wifi/org.nabu.wland.plist \
             --env com.apple.iconservices.iconservicesagent:FORCE_SOFTWARE_RENDERER=0 \
@@ -58,4 +75,6 @@ jobs:
           retention-days: 3
           path: |
             out/
+            appsync-out/
             wifi-build.log
+            appsync-build.log
